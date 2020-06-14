@@ -38,6 +38,7 @@ function App() {
 					Chequear de conexión de Backend con Frontend
 				</button>
 			</header>
+			{/* Aqui iria los routers para los tres tipo de usuario, cada uno redigiria a un login */}
 		</div>
 	);
 }
