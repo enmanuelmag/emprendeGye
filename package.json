@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@material-ui/core": "^4.10.2",
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.5.0",
 		"@testing-library/user-event": "^7.2.1",
@@ -10,14 +11,14 @@
 		"@types/node": "^12.12.39",
 		"@types/react": "^16.9.35",
 		"@types/react-dom": "^16.9.8",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"react-scripts": "3.4.1",
-		"typescript": "^3.7.5",
 		"body-parser": "^1.19.0",
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
-		"mongoose": "^5.9.9"
+		"mongoose": "^5.9.9",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-scripts": "3.4.1",
+		"typescript": "^3.7.5"
 	},
 	"scripts": {
 		"dev": "react-scripts start",
