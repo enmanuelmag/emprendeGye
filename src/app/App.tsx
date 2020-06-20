@@ -1,19 +1,14 @@
 import React from 'react';
-
 import './App.css';
-import { Container } from '@material-ui/core';
+import Home from './pages';
 
-import Emprendedor from './pages/emprendedor/cuenta';
-
-function App() {
+export default function App() {
 	return (
+
 		<div className='App'>
-			<Container>
-				<Emprendedor />
-			</Container>
+			<Home />
 			{/* Aqui iria los routers para los tres tipo de usuario, cada uno redigiria a un login */}
 		</div>
 	);
 }
 
-export default App;
