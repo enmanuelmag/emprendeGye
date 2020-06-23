@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { Grid, Paper, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 import Form from './components/form';
 import Image from './components/image';
 
-import style from './style';
+//import style from './style';
 
 export default function page() {
-	const classes = style();
+	//const classes = style();
 
 	return (
 		<Grid container spacing={3}>

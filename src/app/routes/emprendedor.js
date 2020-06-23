@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router , Switch} from 'react-router-dom'
-import Home from '../pages/emprendedor'
-import Cuenta from '../pages/emprendedor/cuenta'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
+import {Page, Cuenta } from '../pages/emprendedor'
 
 
 export default function home() {
@@ -10,13 +8,14 @@ export default function home() {
 
     return (
         <Router >
-            <Route path="/emprendedor" component={Home} />
+            <Route path="/emprendedor" component={Page} />
             <Route path="/emprendedor/cuenta" component={Cuenta} />
         </Router>
         
     )
-{/*<IndexRoute component={Home} />
+
+}
+/*<IndexRoute component={Home} />
                 <Route path="home" component={Home} />
                 <Route path="about" component={About} />
-                <Route path="contact" component={Contact} />*/}
-}
+                <Route path="contact" component={Contact} />*/

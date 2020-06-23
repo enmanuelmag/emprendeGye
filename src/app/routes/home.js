@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import App from '../App'
 import Emprendedor from '../routes/emprendedor'
 export default function home() {
@@ -14,8 +13,4 @@ export default function home() {
             </Switch>
         </Router>
     )
-{/*<IndexRoute component={Home} />
-                <Route path="home" component={Home} />
-                <Route path="about" component={About} />
-                <Route path="contact" component={Contact} />*/}
 }

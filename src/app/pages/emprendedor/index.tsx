@@ -1,7 +1,12 @@
 import React from 'react';
 
-import Page from './page';
+import PageEmprendedor from './page';
+import CuentaEmprendedor from './cuenta'
 
-export default function index() {
-	return <Page />;
+export function Page() {
+	return <PageEmprendedor />;
+}
+
+export function Cuenta() {
+	return <CuentaEmprendedor />
 }
