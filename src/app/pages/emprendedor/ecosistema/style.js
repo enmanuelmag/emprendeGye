@@ -14,8 +14,8 @@ export default makeStyles((theme) => ({
 	container: {
 		paddingTop: theme.spacing(8),
 		paddingBottom: theme.spacing(8),
-		paddingLeft: theme.spacing(16),
-		paddingRight: theme.spacing(16),
+		paddingLeft: theme.spacing(8),
+		paddingRight: theme.spacing(8),
 	},
 	containerList: {
 		paddingTop: theme.spacing(3),

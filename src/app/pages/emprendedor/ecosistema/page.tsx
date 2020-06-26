@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-	Grid,
-	Container,
-	Card,
-	CardContent,
-	Typography,
-	CardMedia,
-	Button,
-} from '@material-ui/core';
+import { Grid, Container, Card, Typography, Button } from '@material-ui/core';
 
 import CardPeople from './components/card-people';
 import CardGroups from './components/card-groups';
@@ -33,7 +25,7 @@ export default function page({ data }: { data: any }) {
 	return (
 		<Container className={classes.container} maxWidth={'xl'}>
 			<Grid container spacing={4}>
-				<Grid item lg={4}>
+				<Grid item xs={12} md={6} lg={4}>
 					<Card className={classes.containerList} variant='outlined'>
 						<Typography className={classes.title} variant='h5'>
 							{people.title}
@@ -51,7 +43,7 @@ export default function page({ data }: { data: any }) {
 					</Card>
 				</Grid>
 
-				<Grid item lg={4}>
+				<Grid item xs={12} md={6} lg={4}>
 					<Card className={classes.containerList} variant='outlined'>
 						<Typography className={classes.title} variant='h5'>
 							{gruopFroums.title}
@@ -68,7 +60,7 @@ export default function page({ data }: { data: any }) {
 						{initData.btnGroup}
 					</Button>
 				</Grid>
-				<Grid item lg={4}>
+				<Grid item xs={12} md={6} lg={4}>
 					<Card className={classes.containerList} variant='outlined'>
 						<Typography className={classes.title} variant='h5'>
 							{events.title}
