@@ -3,14 +3,16 @@ import React from 'react';
 import Page from './page';
 import { EnvEvents, EnvGroupForum, EnvPeople } from '@interfaces/emprendedor';
 
-import datosEcosistema from './datosEcosistema';
+import dataEcosistema from './datosEcosistema';
 
 export default function index() {
-	const datos = datosEcosistema;
+	const dataExample = dataEcosistema;
 
-	const people: EnvPeople = datos['personas'];
-	const events: EnvEvents = datos['eventos_talleres'];
-	const gruopFroums: EnvGroupForum = datos['grupos_foros'];
+	const people: EnvPeople = dataExample['personas'];
+	const events: EnvEvents = dataExample['eventos_talleres'];
+	const gruopFroums: EnvGroupForum = dataExample['grupos_foros'];
 
-	return <Page />;
+	const data = { people, events, gruopFroums };
+
+	return <Page data={data} />;
 }
