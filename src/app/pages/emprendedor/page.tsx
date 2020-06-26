@@ -21,7 +21,7 @@ export default function DenseAppBar() {
                                 Aprendizaje
                             </Link>
 
-                            <Link className={classes.link} href="./herramientas"  >
+                            <Link className={classes.link} href="/emprendedor/herramientas"  >
                                 Herramientas
                             </Link>
                         </Typography>
@@ -45,9 +45,7 @@ export default function DenseAppBar() {
                                 Cuenta
                             </Link>
 
-                            <Link className={classes.link} href="./herramientas" >
-                                Herramientas
-                            </Link>
+                            
                         </Typography>
                     </div>
                 </Toolbar>

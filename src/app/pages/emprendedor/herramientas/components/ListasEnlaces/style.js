@@ -5,19 +5,13 @@ export default makeStyles((theme) =>
     root: {
       '& > *': {
         margin: theme.spacing(3),
+        marginTop:'1%',
         display: 'flex',
         flexWrap: 'wrap',
         width: '80%',
-        marginLeft: theme.spacing(6),
+        marginLeft: theme.spacing(5),
       },
-    },
-
-    typography: {
-      paddingLeft:'25%',
-      paddingTop: '8%',
-    },
-
-    
+    },    
   }),
 );
 

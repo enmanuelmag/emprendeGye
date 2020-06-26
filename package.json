@@ -45,6 +45,7 @@
 	},
 	"proxy": "http://localhost:8080",
 	"devDependencies": {
+		"json-loader": "^0.5.7",
 		"nodemon": "^2.0.3"
 	}
 }

@@ -7,13 +7,8 @@ export default makeStyles((theme) =>
         margin: theme.spacing(1),
         flexWrap: 'wrap',
         width: '80%',
-        marginLeft:'16%',
+        marginLeft:'12%',
       },
-    },
-
-    typography: {
-      paddingLeft:'30%',
-      paddingTop: '10%',
     },
 
     img: {

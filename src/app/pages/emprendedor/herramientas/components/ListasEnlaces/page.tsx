@@ -7,10 +7,7 @@ export default function ListButtom() {
 
   return (
     <div className={classes.root}>
-            <div className={classes.typography}>
-                <Typography variant='h5'>Herramienta</Typography>
-            </div>
-      
+          
       <Button variant="outlined" size="large" color="primary">
         Análisis de Ventas
       </Button>
