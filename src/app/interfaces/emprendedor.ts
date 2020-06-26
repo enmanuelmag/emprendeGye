@@ -6,9 +6,11 @@ export interface EnvPeople {
 	items: ItemsPeople[];
 }
 
-interface ItemsPeople {
+export interface ItemsPeople {
 	name: string;
 	description: string;
+	srcImg: string;
+	alt: string;
 }
 
 /* Interfaz para grupos y foros relacionados */
@@ -17,7 +19,7 @@ export interface EnvGroupForum {
 	items: ItemsGroupForum[];
 }
 
-interface ItemsGroupForum {
+export interface ItemsGroupForum {
 	title: string;
 	srcImg: string;
 	alt: string;
@@ -30,7 +32,7 @@ export interface EnvEvents {
 	items: ItemsEvents[];
 }
 
-interface ItemsEvents {
+export interface ItemsEvents {
 	title: string;
 	description: string;
 	srcInfo: string;
