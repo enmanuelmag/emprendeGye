@@ -20,8 +20,8 @@ export default function DenseAppBar() {
                             <Link className={classes.link} href="./aprendizaje" onClick={preventDefault} >
                                 Aprendizaje
                             </Link>
-                        
-                            <Link className={classes.link} href="./herramientas" onClick={preventDefault} >
+
+                            <Link className={classes.link} href="./herramientas"  >
                                 Herramientas
                             </Link>
                         </Typography>
@@ -33,7 +33,7 @@ export default function DenseAppBar() {
                     </div>
                     <div className={classes.divLinkR}>
                         <Typography className={classes.typographyLink}>
-                            <Link className={classes.link} href="./notas" onClick={preventDefault} >
+                            <Link className={classes.link} href="./notas"  onClick={preventDefault} >
                                 Notas
                             </Link>
                         
@@ -43,6 +43,10 @@ export default function DenseAppBar() {
                         
                             <Link className={classes.link} href="/emprendedor/cuenta" >
                                 Cuenta
+                            </Link>
+
+                            <Link className={classes.link} href="./herramientas" >
+                                Herramientas
                             </Link>
                         </Typography>
                     </div>
