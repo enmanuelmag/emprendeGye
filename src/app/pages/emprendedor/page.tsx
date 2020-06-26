@@ -27,9 +27,13 @@ export default function DenseAppBar() {
                         </Typography>
                     </div>
                     <div className={classes.center}>
+
+                        <Link className={classes.link} href="/emprendedor/home" >
                         <Typography className={classes.typographyLink}>
                             EmprendeGye
                         </Typography>
+                        </Link>
+                        
                     </div>
                     <div className={classes.divLinkR}>
                         <Typography className={classes.typographyLink}>

@@ -1,43 +1,43 @@
 import React from 'react';
-import { Grid, Typography, Button } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import style from './style';
-
+import {ColorButton} from './style'
 
 export default function home() {
 
     const classes = style();
 
     return (
-        <div className='App'>
+        <div className={classes.app}>
 
             <Grid container spacing={3}>
                 <Grid item xs={12}>
-                    <Typography variant='h2'>Guayaquil</Typography>
+                    <Typography variant='h4'>Guayaquil</Typography>
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Typography variant='h1'>EmprendeGYE</Typography>
+                    <Typography variant='h2'>EmprendeGYE</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                    <Typography variant='h3'>Soy</Typography>
+                    <Typography variant='h5'>Soy</Typography>
                 </Grid>
 
-                <Grid item xs={12}>
-                    <Grid container>
-                        <Grid item xs={10} lg={4}>
-                            <Button variant="contained" className={classes.button}>
+                <Grid item xs={12} >
+                    <Grid container justify="center" spacing={3}>
+                        <Grid item xs={10} md={3}>
+                            <ColorButton className={classes.button} >
                                 Entidad
-                    </Button>
+                            </ColorButton>
                         </Grid>
-                        <Grid item xs={10} lg={4}>
-                            <Button variant="contained" href='/emprendedor' className={classes.button}>
+                        <Grid item xs={10} md={3}>
+                            <ColorButton  href='/emprendedor' className={classes.button} >
                                 Emprendedor
-                    </Button>
+                            </ColorButton>
                         </Grid>
-                        <Grid item xs={10} lg={4}>
-                            <Button variant="contained" className={classes.button}>
+                        <Grid item xs={10} md={3}>
+                            <ColorButton className={classes.button} variant="contained" color='primary'>
                                 Mentor
-                    </Button>
+                            </ColorButton>
                         </Grid>
                     </Grid>
                 </Grid>
