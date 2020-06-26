@@ -5,18 +5,20 @@ export default {
 			{
 				name: 'Kevin Celsius',
 				description: 'Emprendedor y entusiasta de la tecnología',
+				srcImg: '/emprendedor/assets/avatar.png',
+				alt: '...',
 			},
 			{
 				name: 'Ana Paula Ortíz',
 				description: 'Marketing digital y community management',
+				srcImg: '/emprendedor/assets/avatar.png',
+				alt: '...',
 			},
 			{
 				name: 'Marlon Segura',
 				description: 'En busca de ideas en las cuales invertir',
-			},
-			{
-				name: 'Katherine Romero',
-				description: 'Desarrollador de software senior',
+				srcImg: '/emprendedor/assets/avatar.png',
+				alt: '...',
 			},
 		],
 	},
@@ -25,42 +27,43 @@ export default {
 		items: [
 			{
 				title: 'Pymes del Sur',
-				srcImg: '...',
+				srcImg: '/emprendedor/assets/enterpise.jpg',
 				alt: 'Logo de Pymes del sur',
 				type: 'GROUP',
 			},
 			{
 				title: 'Consejos del abuelo emprendedor',
-				srcImg: '...',
+				srcImg: '/emprendedor/assets/enterpise.jpg',
 				alt: 'Imagen de una persona',
 				type: 'FORO',
 			},
 			{
 				title: 'Emprendedorres sin límites y sin miedos',
-				srcImg: '...',
+				srcImg: '/emprendedor/assets/enterpise.jpg',
 				alt: 'Logo de Emprendedor sin límites y sin miedos',
 				type: 'GRUPO',
 			},
 		],
 	},
 	eventos_talleres: {
-		title: '...',
+		title: 'Eventos y talleres relacionados',
 		items: [
 			{
 				title: 'Conferencia ÉPICO 2020',
 				description:
 					'Conoce las técnicas y habilidades necesarias para que tu negocio triunfe en esta nueva década.',
-				srcInfo: '...',
-				srcImg: '...',
-				alt: '...',
+				srcInfo: 'https://epico.gob.ec',
+				srcImg: '/emprendedor/assets/epico.jpg',
+				alt: 'Foto de evento de EPICO',
 			},
 			{
 				title: 'Conferencia Pymes del Sur 2021',
 				description:
 					'Impulsa tu negocio con nuestras sugerencias de nuestros panelistas.',
-				srcInfo: '...',
-				srcImg: '...',
-				alt: '...',
+				srcInfo:
+					'https://revistas.unl.edu.ec/index.php/suracademia/article/view/519',
+				srcImg: '/emprendedor/assets/pymes.jpg',
+				alt: 'Foto de evento de PYMES del Sur',
 			},
 		],
 	},
