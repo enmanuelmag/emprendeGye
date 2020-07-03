@@ -4,7 +4,8 @@ import {
 	CardMedia,
 	CardContent,
 	Typography,
-	Divider,
+    Divider,
+    Grid
 } from '@material-ui/core';
 
 import { ItemsPeople } from '@interfaces/emprendedor';
@@ -27,23 +28,30 @@ export default function page({
 				elevation={0}
 				variant={'elevation'}
 			>
-				<CardMedia
-					component='img'
-					className={classes.cover}
-					image={item.srcImg}
-					title={item.alt}
-				/>
-				<div className={classes.details}>
-					<CardContent className={classes.content}>
-						<Typography component='h5' variant='h5'>
-							{item.name}
-						</Typography>
-						<Typography variant='subtitle1' color='textSecondary'>
-							{item.description}
-						</Typography>
-					</CardContent>
-				</div>
+            <Grid container direction="row" justify="center" alignItems="center">
+                <Grid item xs={4}>
+                    <CardMedia
+                        component='img'
+                        className={classes.cover}
+                        image={item.srcImg}
+                        title={item.alt}
+                    />
+                </Grid>
+                <Grid item xs={8}>
+                    <div className={classes.details}>
+                        <CardContent className={classes.content}>
+                            <Typography component='h6' variant='subtitle1'>
+                                {item.name}
+                            </Typography>
+                            <Typography variant='body2' color='textSecondary'>
+                                {item.description}
+                            </Typography>
+                        </CardContent>
+                    </div>
+                </Grid>
+            </Grid>
 			</Card>
+
 			<Divider variant='middle' />
 		</React.Fragment>
 	);
