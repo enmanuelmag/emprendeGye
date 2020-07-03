@@ -22,7 +22,10 @@ export default function page({
 	index: number;
 	item: ItemsEvents;
 }) {
-	const classes = style();
+    const classes = style();
+    const initData = {
+        btnText: 'Más información',
+    };
 
 	return (
 		<React.Fragment>
@@ -42,8 +45,8 @@ export default function page({
 						/>
 					</Grid>
 					<Grid item xs={12}>
-						<CardContent>
-							<Typography gutterBottom variant='h5' component='h2'>
+						<CardContent className={classes.cardContent}>
+							<Typography gutterBottom variant='subtitle1' component='h2'>
 								{item.title}
 							</Typography>
 							<Typography variant='body2' color='textSecondary' component='p'>
@@ -53,8 +56,8 @@ export default function page({
 					</Grid>
 					<Grid item xs={12}>
 						<CardActions>
-							<Button color='primary' variant='text' href={item.srcInfo}>
-								Más Información
+							<Button color='primary' variant='text' href={item.srcInfo} className = {classes.btnText}>
+								{initData.btnText}
 							</Button>
 						</CardActions>
 					</Grid>
