@@ -1,10 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const center = {
-	display: 'block',
-	margin: 'auto',
-};
-
 export default makeStyles((theme) => ({
 	cardContainer: {
 		display: 'flex',
@@ -19,13 +14,14 @@ export default makeStyles((theme) => ({
 	},
 	containerList: {
 		paddingTop: theme.spacing(3),
-		paddingBottom: theme.spacing(3),
-		paddingLeft: theme.spacing(1.5),
-		paddingRight: theme.spacing(1.5),
+		paddingBottom: theme.spacing(1),
+		paddingLeft: theme.spacing(2),
+		paddingRight: theme.spacing(2),
 	},
 	title: {
 		textAlign: 'center',
-		paddingBottom: theme.spacing(2),
+        paddingBottom: theme.spacing(2),
+        fontWeight: 'bold',
 	},
 	details: {
 		display: 'flex',
@@ -46,9 +42,11 @@ export default makeStyles((theme) => ({
 	},
 
 	buttonText: {
-		marginTop: theme.spacing(5),
+		marginTop: theme.spacing(1),
 		borderColor: '#3558BB',
-		color: '#3558BB',
-		...center,
+        color: '#3558BB',
+        textTransform: 'none',
+        float: 'right',
+        fontWeight: 'bold',
 	},
 }));

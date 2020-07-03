@@ -13,9 +13,9 @@ export default function page({ data }: { data: any }) {
 	const classes = style();
 
 	const initData = {
-		btnPeople: 'Buscar más personas',
-		btnGroup: 'Buscar más grupos o foros',
-		btnEvents: 'Buscar más eventos',
+		btnPeople: 'Ver más',
+		btnGroup: 'Ver más',
+		btnEvents: 'Ver más',
 	};
 
 	const people: EnvPeople = data['people'];
@@ -26,7 +26,7 @@ export default function page({ data }: { data: any }) {
 		<Container className={classes.container} maxWidth={'xl'}>
 			<Grid container spacing={4}>
 				<Grid item xs={12} md={6} lg={4}>
-					<Card className={classes.containerList} variant='outlined'>
+					<Card className={classes.containerList} variant='elevation' elevation={2}>
 						<Typography className={classes.title} variant='h5'>
 							{people.title}
 						</Typography>
@@ -35,7 +35,6 @@ export default function page({ data }: { data: any }) {
 						})}
 						<Button
 							className={classes.buttonText}
-							variant='outlined'
 							color='primary'
 						>
 							{initData.btnPeople}
@@ -44,38 +43,36 @@ export default function page({ data }: { data: any }) {
 				</Grid>
 
 				<Grid item xs={12} md={6} lg={4}>
-					<Card className={classes.containerList} variant='outlined'>
+					<Card className={classes.containerList} variant='elevation' elevation={2}>
 						<Typography className={classes.title} variant='h5'>
 							{gruopFroums.title}
 						</Typography>
 						{gruopFroums.items.map((item, index) => {
 							return <CardGroups index={index} item={item} />;
 						})}
+                        <Button
+                            className={classes.buttonText}
+                            color='primary'
+                        >
+                            {initData.btnGroup}
+                        </Button>
 					</Card>
-					<Button
-						className={classes.buttonText}
-						variant='outlined'
-						color='primary'
-					>
-						{initData.btnGroup}
-					</Button>
 				</Grid>
 				<Grid item xs={12} md={6} lg={4}>
-					<Card className={classes.containerList} variant='outlined'>
+					<Card className={classes.containerList} variant='elevation' elevation={2}>
 						<Typography className={classes.title} variant='h5'>
 							{events.title}
 						</Typography>
 						{events.items.map((item, index) => {
 							return <CardEvent index={index} item={item} />;
 						})}
+                        <Button
+                            className={classes.buttonText}
+                            color='primary'
+                        >
+                            {initData.btnGroup}
+                        </Button>
 					</Card>
-					<Button
-						className={classes.buttonText}
-						variant='outlined'
-						color='primary'
-					>
-						{initData.btnGroup}
-					</Button>
 				</Grid>
 			</Grid>
 		</Container>
