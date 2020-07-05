@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './style';
-import PropTypes from "prop-types";
-import {Button,Typography} from '@material-ui/core';;
+import {Button} from '@material-ui/core';;
 
 interface Tipos{srcLink: string, srcImg: string , alt:string};
 interface Props{array:Tipos[]};

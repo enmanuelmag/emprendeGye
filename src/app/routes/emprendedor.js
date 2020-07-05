@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom'
-import {Page, Cuenta, Herramientas} from '../pages/emprendedor'
+import {Page, Cuenta, Herramientas,QuienesSomos} from '../pages/emprendedor'
 
 
 export default function home() {
@@ -11,6 +11,7 @@ export default function home() {
             <Route path="/emprendedor" component={Page} />
             <Route path="/emprendedor/cuenta" component={Cuenta} />
             <Route path="/emprendedor/herramientas" component={Herramientas} />
+            <Route path="/emprendedor/quienes_somos" component={QuienesSomos} />
         </Router>
         
     )
