@@ -6,7 +6,7 @@ import {
     ListItemText,
     Checkbox,
     Card,
-    CardHeader,
+    ListSubheader,
     CardContent,
     Divider,
 } from '@material-ui/core';
@@ -34,11 +34,10 @@ export default function Home() {
 
     return (
         <Card>
-            <CardHeader title={palabras.encabezado} />
-            <Divider />
             <CardContent className={classes.content}>
-                <List className={classes.root}>
-
+            <List className={classes.root}>
+            <ListSubheader>{palabras.encabezado}</ListSubheader>
+            <Divider/>
                     {[0, 1, 2, 3].map((value) => {
                         const labelId = `checkbox-list-label-${value}`;
                         return (

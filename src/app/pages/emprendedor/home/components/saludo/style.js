@@ -2,8 +2,16 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) =>
   createStyles({
-    typographyTitle: {
-      variant: 'h3'
+    root: {
+      textAlign: 'center',
+      padding: '10px',
+      variant: 'outlined',
+      raised: "true",
+      elevation: '5',
+
+    },
+    typographyBody: {
+      variant: 'h4'
     }
 
   }),

@@ -4,6 +4,7 @@ export default makeStyles((theme) =>
   createStyles({
     root: {
         flexGrow: 1,
+        backgroundColor: "blue",
       },
     menuButton: {
       marginRight: theme.spacing(2),
