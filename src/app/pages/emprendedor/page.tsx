@@ -17,7 +17,7 @@ export default function DenseAppBar() {
                                 Ecosistema
                             </Link>
                         
-                            <Link className={classes.link} href="./aprendizaje" onClick={preventDefault} >
+                            <Link className={classes.link} href="/emprendedor/aprendizaje">
                                 Aprendizaje
                             </Link>
                         
