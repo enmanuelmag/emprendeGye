@@ -8,8 +8,10 @@ export default makeStyles((theme) => ({
 	cardContainer: {
 		display: 'flex',
 		marginTop: theme.spacing(2),
-		marginBottom: theme.spacing(2),
-	},
+    },
+    cardContent: {
+        paddingBottom: '5px !important',
+    },
 	cover: {
 		display: 'block',
 		maxWidth: '90%',
@@ -23,5 +25,9 @@ export default makeStyles((theme) => ({
 	},
 	content: {
 		display: 'block',
-	},
+    },
+    btnText: {
+        textTransform: 'none',
+        float: 'right',
+    }
 }));

@@ -7,16 +7,19 @@ export default makeStyles((theme) => ({
 		marginBottom: theme.spacing(2),
 	},
 	cover: {
-		maxWidth: 100,
-		minWidth: 100,
-		margin: theme.spacing(0.75),
-		backgroundSize: 'contain',
+		maxWidth: 75,
+		minWidth: 75,
+        backgroundSize: 'contain',
+        display: 'block',
+        margin: 'auto',
 	},
 	details: {
 		display: 'flex',
 		flexDirection: 'column',
 	},
 	content: {
-		flex: '1 0 auto',
+        flex: '1 0 auto',
+        padding: '16px !important',
+        paddingLeft: '0px !important',
 	},
 }));
