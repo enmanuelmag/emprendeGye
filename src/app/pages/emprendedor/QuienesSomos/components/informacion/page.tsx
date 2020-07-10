@@ -1,6 +1,5 @@
 import React from 'react';
 import style from "./style";
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 export default function page() {
@@ -12,7 +11,7 @@ export default function page() {
           ¿Quiénes Somos?
           </Typography>
 
-          <Typography className={classes.info} variant="body2" component="p">
+          <Typography className={classes.info} variant="body1">
             Nuestra plataforma cuenta con herramientas intuitivas que permitirán al emprendedor gestionar y
             administrar su negocio, socializar con personal experimentado, adquirir conocimientos que
             le permita establecer un buen plan de negocio y definir estrategias

@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core';
-import { SketchPicker } from 'react-color';
+//import { SketchPicker } from 'react-color';
 
 
 export default makeStyles((theme) => ({
@@ -16,6 +16,7 @@ export default makeStyles((theme) => ({
 	},
 
 	franja: {
+		//es para que salga en la franja de nuestros objetivos el color azul.
 		background: '#16244b',
 		height: '12rem',
 		marginTop: '4%',
@@ -23,8 +24,6 @@ export default makeStyles((theme) => ({
 
 	frases1: {
 		fontFamily: 'Playfair Display',
-		//fontFamily: 'Satisfy',
-		//color:'#959393',
 		color:'#A8A7A7',
 		fontWeight: 'bold',
 		textAlign: 'center',
@@ -36,9 +35,6 @@ export default makeStyles((theme) => ({
 	frases: {
 		textDecorationColor: '#555555',
 		marginTop: '3%',
-		fontSize: '20px',
-		fontFamily:'Roboto',
-		//fontWeight: 'bold',
 		textAlign: 'center',
 		marginRight: "6%",
 		paddingLeft: '6%',

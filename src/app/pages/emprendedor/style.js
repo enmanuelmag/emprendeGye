@@ -1,5 +1,4 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { SketchPicker } from 'react-color';
 
 export default makeStyles((theme) =>
   createStyles({
@@ -19,8 +18,6 @@ export default makeStyles((theme) =>
     link: {
         margin: theme.spacing(2),
         color: 'inherit',
-        variant: 'body2',
-        fontFamily:'roboto',
     },
 
     barra:{
