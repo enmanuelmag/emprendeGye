@@ -17,9 +17,9 @@ export default function DenseAppBar() {
                             <Link className={classes.link} href="/emprendedor/quienes_somos">
                                 ¿Quiénes Somos?
                             </Link>
-                            <Link className={classes.link} href="./ecosistema" onClick={preventDefault} >
-                                Ecosistema
-                            </Link>
+                            <Link className={classes.link} href='/emprendedor/ecosistema'>
+								Ecosistema
+							</Link>
 
                             <Link className={classes.link} href="./aprendizaje" onClick={preventDefault} >
                                 Aprendizaje
@@ -32,9 +32,9 @@ export default function DenseAppBar() {
                                 Notas
                             </Link>
 
-                            <Link className={classes.link} href="/emprendedor/board" >
-                                Board
-                            </Link>
+                            <Link className={classes.link} href='/emprendedor/board'>
+								Board
+							</Link>
 
                             <Link className={classes.link} href="/emprendedor/cuenta" >
                                 Cuenta
@@ -48,3 +48,8 @@ export default function DenseAppBar() {
         </div>
     );
 }
+
+
+
+
+

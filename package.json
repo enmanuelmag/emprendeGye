@@ -24,9 +24,9 @@
 		"typescript": "^3.7.5"
 	},
 	"scripts": {
-		"dev": "react-scripts start",
+		"dev": "react-app-rewired start",
 		"start": "node ./src/server/server.js",
-		"build": "react-scripts build",
+		"build": "react-app-rewired build",
 		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
@@ -48,5 +48,7 @@
 	"devDependencies": {
 		"json-loader": "^0.5.7",
 		"nodemon": "^2.0.3"
+		"react-app-rewire-alias": "^0.1.6",
+		"react-app-rewired": "^2.1.6"
 	}
 }
