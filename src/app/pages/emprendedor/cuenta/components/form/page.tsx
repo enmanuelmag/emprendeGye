@@ -11,15 +11,13 @@ export default function page() {
 				id='outlined-basic'
 				required
 				type='text'
-				fullWidth
 				label='Nombres'
-				variant='outlined'
+                variant='outlined'
 			/>
 			<TextField
 				id='outlined-basic'
 				required
 				type='text'
-				fullWidth
 				label='Apellidos'
 				variant='outlined'
 			/>
@@ -27,13 +25,11 @@ export default function page() {
 				id='outlined-basic'
 				required
 				type='email'
-				fullWidth
 				label='Correo'
 				variant='outlined'
 			/>
 			<TextField
 				id='outlined-basic'
-				fullWidth
 				required
 				type='tel'
 				label='Teléfono'
@@ -41,7 +37,6 @@ export default function page() {
 			/>
 			<TextField
 				id='outlined-basic'
-				fullWidth
 				required
 				label='Fecha de nacimiento'
 				variant='outlined'

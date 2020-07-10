@@ -4,7 +4,6 @@ export default makeStyles((theme) => ({
 	root: {
 		'& > *': {
 			margin: theme.spacing(3),
-
 			display: 'flex',
 			flexWrap: 'wrap',
 		},
@@ -16,6 +15,7 @@ export default makeStyles((theme) => ({
 	},
 	center: {
 		display: 'block',
-		margin: 'auto',
+        margin: 'auto',
+        textTransform: 'none',
 	},
 }));
