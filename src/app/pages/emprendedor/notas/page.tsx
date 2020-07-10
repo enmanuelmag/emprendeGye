@@ -3,7 +3,6 @@ import Board from 'react-trello';
 import data from './data.json';
 
 import style from './style';
-import { Container } from '@material-ui/core';
 
 export default function Page() {
   const classes = style();
