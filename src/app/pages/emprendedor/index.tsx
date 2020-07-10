@@ -5,24 +5,28 @@ import CuentaEmprendedor from './cuenta';
 import HerramientasEmprendedor from './herramientas';
 import QuienesSomosEmprendedor from './QuienesSomos';
 import EcosistemaEmprendedor from './ecosistema';
-
+import NotasEmprendeodr from './notas';
 
 export function Page() {
-	return <PageEmprendedor />;
+  return <PageEmprendedor />;
 }
 
 export function Cuenta() {
-	return <CuentaEmprendedor />;
+  return <CuentaEmprendedor />;
 }
 
 export function Ecosistema() {
-	return <EcosistemaEmprendedor />;
+  return <EcosistemaEmprendedor />;
 }
 
 export function Herramientas() {
-	return <HerramientasEmprendedor />
+  return <HerramientasEmprendedor />;
 }
 
 export function QuienesSomos() {
-	return <QuienesSomosEmprendedor />
+  return <QuienesSomosEmprendedor />;
+}
+
+export function Notas() {
+  return <NotasEmprendeodr />;
 }
