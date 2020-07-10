@@ -11,16 +11,18 @@ export default makeStyles((theme) => ({
     },
     gridItem: {
         alignItems:'stretch',
-        direction:'row',
         display: 'block',
-        margin: 'auto'
+        margin: 'auto',
     },
     gridInfo: {
         padding: '0px 12px !important',
     },
     textPerfil: {
         textAlign: 'center',
-        marginTop: '4%',
-        padding: '0px 12px !important',
+        marginTop: '7%',
+        // marginRight: '13%',
+        // marginLeft: '5%',
+        // margin: '0px',
+        padding: '0px !important',
     }
 }));

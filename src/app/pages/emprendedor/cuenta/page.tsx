@@ -17,6 +17,7 @@ export default function page() {
                 <Grid item xs={12} lg={6} className={classes.textPerfil}>
                     <Typography variant='h3'>Perfil</Typography>
                 </Grid>
+                <Grid lg={6}></Grid>
 
                 <Grid item xs={12} className={classes.gridInfo}>
                     <Grid container>
