@@ -1,6 +1,7 @@
 import React from 'react';
+import style from './style';
 
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography, Container } from '@material-ui/core';
 
 import Form from './components/form';
 import Image from './components/image';
@@ -8,24 +9,28 @@ import Image from './components/image';
 //import style from './style';
 
 export default function page() {
-	//const classes = style();
+	const classes = style();
 
 	return (
-		<Grid container spacing={3}>
-			<Grid item xs={12}>
-				<Typography variant='h2'>Perfil</Typography>
-			</Grid>
+        <Container maxWidth="lg">
+            <Grid container spacing={3}>
+                <Grid item xs={12} lg={6} className={classes.textPerfil}>
+                    <Typography variant='h3'>Perfil</Typography>
+                </Grid>
+                <Grid lg={6}></Grid>
 
-			<Grid item xs={12}>
-				<Grid container>
-					<Grid item xs={12} lg={6}>
-						<Image />
-					</Grid>
-					<Grid item xs={12} lg={6}>
-						<Form />
-					</Grid>
-				</Grid>
-			</Grid>
-		</Grid>
+                <Grid item xs={12} className={classes.gridInfo}>
+                    <Grid container>
+                    <Grid  item xs={12} lg={5} className={classes.gridItem}>
+                            <Form />
+                        </Grid>
+                        <Grid item xs={12} lg={5} className={classes.gridItem}>
+                            <Image />
+                        </Grid>
+                        
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Container>
 	);
 }
