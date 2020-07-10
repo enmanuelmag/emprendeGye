@@ -1,0 +1,14 @@
+[
+    {"srcImg": "https://angeles.ec/wp-content/uploads/2018/10/Logo-Angeles-Ec.png" , 
+     "srcLink":"https://angeles.ec/",
+     "alt":"Angeles_ec"},
+
+    {"srcImg": "http://www.aei.ec/wp-content/uploads/2020/02/logo-header.png", 
+     "srcLink":"http://www.aei.ec/",
+     "alt":"aei"},
+
+    {"srcImg": "https://bancopacificoprensa.ec/wp-content/uploads/2017/12/BdP4.png", 
+    "srcLink":  "https://www.bancodelpacifico.com/personas/inicio",
+    "alt": "Banco del Pacifico"}
+
+]

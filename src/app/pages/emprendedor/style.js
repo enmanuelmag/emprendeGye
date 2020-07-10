@@ -4,16 +4,12 @@ export default makeStyles((theme) =>
   createStyles({
     root: {
         flexGrow: 1,
+        marginBottom:0,
+       
       },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
+    
     typographyLink : {
         //marginLeft: theme.spacing(2),
-    },
-    divLinkL: {
-        marginLeft: 0,
-        marginRight: 'auto',
     },
     divLinkR: {
         marginLeft: 'auto',
@@ -22,11 +18,14 @@ export default makeStyles((theme) =>
     link: {
         margin: theme.spacing(2),
         color: 'inherit',
-        variant: 'body2'
     },
-    center: {
-        textAlign: 'center',
-    }
 
+    barra:{
+      background:'#16244b',
+    },
+
+    img: {
+      width: '10%',
+    },
   }),
 );
