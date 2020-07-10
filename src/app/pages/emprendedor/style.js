@@ -9,10 +9,12 @@ export default makeStyles((theme) =>
     menuButton: {
       marginRight: theme.spacing(2),
     },
-    typographyLink : {
+    typographyLink : {//typographyLink
+      display: 'flex',
         //marginLeft: theme.spacing(2),
     },
     divLinkL: {
+        //display: "inlineBlock",
         marginLeft: 0,
         marginRight: 'auto',
     },

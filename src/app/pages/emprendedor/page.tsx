@@ -6,15 +6,16 @@ import style from './style';
 export default function DenseAppBar() {
     const classes = style();
     const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
-    
+
     return (
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar variant="dense">
                     <div className={classes.divLinkL}>
-                        <Typography className={classes.typographyLink}>
+                       <Typography className={classes.typographyLink}>
+                       
                             <Link className={classes.link} href="./ecosistema" onClick={preventDefault} >
-                                Ecosistema
+                                Ecosisstema
                             </Link>
                         
                             <Link className={classes.link} href="/emprendedor/aprendizaje">

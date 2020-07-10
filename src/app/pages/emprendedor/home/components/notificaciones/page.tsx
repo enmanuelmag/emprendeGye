@@ -1,8 +1,8 @@
 import React, { useState}  from 'react';
 import style from './style';
 import { List, ListItem, 
-    ListItemSecondaryAction, IconButton, ListItemIcon,
-    ListItemText, CardHeader,Divider,Card,CardContent, ListSubheader, Typography} from '@material-ui/core';
+    IconButton, ListItemIcon,
+    ListItemText, Divider,Card,CardContent, ListSubheader} from '@material-ui/core';
 
 import DeleteIcon from '@material-ui/icons/Delete';
 const palabras = {encabezado: "Notificaciones"};

@@ -1,10 +1,4 @@
 import React from 'react';
-import { Paper, Typography, Grid } from '@material-ui/core';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
 import style from './style';
 
 
@@ -23,7 +17,7 @@ export default function home({aprender} : Props) {
         return (
                 <div className={classes.root}>
                 <div className={classes.gridList} >
-                  {aprender.links.map((elemento:string, indice) => (
+                  {aprender.links.map((elemento, indice) => (
                     <div className={classes.gridListTile} key={`${indice}`} >
                             <iframe title={`${indice}`} className={classes.iframe}
                                 src={elemento} 

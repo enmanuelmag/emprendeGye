@@ -1,7 +1,6 @@
 import React from 'react';
 import {
 	Card,
-	CardHeader,
 	CardContent,
 	Divider,Typography
 } from '@material-ui/core';
@@ -10,15 +9,14 @@ import Image from "./image";
 
 export default function page() {
 	const classes = style();
-	var titulo = React.createElement('Typography', 
-	{id:'tituloCurva', variant:'caption'},'Curva de emprendimiento');
+	var titulo = {titulo: 'Curva de emprendimiento'}
 
 	return (
 		<Card className={classes.card}>
 			<Divider />
 			<CardContent  className={classes.content} >
-				<Typography variant="h5" className={classes.titulo} >
-					Curva de emprendimiento
+				<Typography variant="h6" className={classes.titulo} >
+					{titulo.titulo}
 					</Typography>
 				<Divider/>
 				<Image/>	

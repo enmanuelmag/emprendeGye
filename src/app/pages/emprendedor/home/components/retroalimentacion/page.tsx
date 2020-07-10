@@ -2,7 +2,7 @@ import React, { useState}  from 'react';
 import style from './style';
 import { List, ListItem, 
     ListSubheader, IconButton,ListItemIcon,
-    ListItemText, CardHeader,Divider,Card,CardContent,} from '@material-ui/core';
+    ListItemText,Divider,Card,CardContent,} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 const palabras = {encabezado: "Retroalimentación"};
 

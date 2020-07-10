@@ -1,7 +1,7 @@
 import React from 'react';
-import { Paper, Typography, Grid } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 import style from './style';
-import {aprendizaje} from './xample/index.js'
+import {aprendizaje, otros} from './xample/index.js'
 import VideoList from "./components/VideoList"
 import Otros from "./components/Otros"
 export default function home() {
@@ -14,16 +14,16 @@ export default function home() {
                         {aprendizaje.slice(0,2).map((element, index) => (
                                 <Grid key={index} container item spacing={3} xs={12} >
                                         <Grid item xs={12}>
-                                                <Typography> {element.name} </Typography>
+                                                <Typography variant='h6'> {element.name} </Typography>
                                         </Grid>
                                         <Grid item xs={12}>
                                                 <VideoList aprender={element}/>
                                         </Grid>
                                 </Grid>
                         ))}
-                        <Grid container item spacing={3} xs={12} >
+                        <Grid container item spacing={3} xs={6} >
                                         <Grid item xs={12}>
-                                                <Otros aprender={aprendizaje[2]}/>
+                                                <Otros aprender={otros}/>
                                         </Grid>
                                 </Grid>
                 </Grid>

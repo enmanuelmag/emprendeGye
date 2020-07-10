@@ -16,12 +16,20 @@ export const aprendizaje = [
         ]
 
     },
+    
+]
+export const otros = 
     {
         'name': "Otros recursos",
         'links': [
-            "https://www.youtube.com/channel/UCyM-2pRapEv6V2q7UNO9icg",
-            "https://www.youtube.com/watch?v=falxioWme9k",
+            {'name': "Emprende Aprendiendo (Youtube)", 
+            "url": "https://www.youtube.com/channel/UCyM-2pRapEv6V2q7UNO9icg",},
+            
+            {'name': "Entrepreneur (blog - EN)", 
+            "url": "https://www.youtube.com/watch?v=falxioWme9k",},
+            
         ]
 
     }
-]
+    
+
