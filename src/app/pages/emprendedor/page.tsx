@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Link } from '@material-ui/core';
 import imagePath from './assets/logobarr.svg';
+import Informacion from './informacion'
 import style from './style';
 
 export default function DenseAppBar() {
@@ -11,14 +12,17 @@ export default function DenseAppBar() {
         <div className={classes.root}>
             <AppBar className={classes.barra} position="static">
                 <Toolbar variant="dense">
-                           <img className={classes.img} src={imagePath} alt='EmprendeGye' />
+                    <img className={classes.img} src={imagePath} alt='EmprendeGye' />
                     <div className={classes.divLinkR}>
+
                         <Typography className={classes.typographyLink}>
-                            <Link className={classes.link} href="/emprendedor/quienes_somos">
-                                ¿Quiénes Somos?
+                            
+                            <Link className={classes.link} >
+                            <Informacion />
+                               
                             </Link>
                             <Link className={classes.link} href='/emprendedor/ecosistema'>
-								Ecosistema
+                                Ecosistema
 							</Link>
 
                             <Link className={classes.link} href="./aprendizaje" onClick={preventDefault} >
@@ -27,13 +31,13 @@ export default function DenseAppBar() {
 
                             <Link className={classes.link} href="/emprendedor/herramientas"  >
                                 Herramientas
-                            </Link>
+                                </Link>
                             <Link className={classes.link} href="./notas" onClick={preventDefault} >
                                 Notas
                             </Link>
 
                             <Link className={classes.link} href='/emprendedor/board'>
-								Board
+                                Board
 							</Link>
 
                             <Link className={classes.link} href="/emprendedor/cuenta" >

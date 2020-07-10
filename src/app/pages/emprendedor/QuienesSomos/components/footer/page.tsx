@@ -14,7 +14,7 @@ export default function page() {
 
                 <div className={classes.columna}>
                     <Typography variant="h6">
-                        COLABORACIONES
+                        EQUIPO DE DESARROLLO
                     </Typography>
 
                     <Typography variant="body2">
@@ -34,8 +34,8 @@ export default function page() {
 
                     <Typography variant="body2">
                         <ul className={classes.lista}>
-                            <li>fmagalla@espol.edu.ec</li>
                             <li>dianmoli@espol.edu.ec</li>
+                            <li>fmagalla@espol.edu.ec</li>
                             <li>jcoboss@espol.edu.ec</li>
                             <li>jpvasque@espol.edu.ec</li>
                         </ul>

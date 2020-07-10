@@ -10,10 +10,12 @@ export default makeStyles((theme) =>
     
     typographyLink : {
         //marginLeft: theme.spacing(2),
+        display:"flex"
     },
     divLinkR: {
         marginLeft: 'auto',
         marginRight: 0,
+        display:"inLine"
     },
     link: {
         margin: theme.spacing(2),
