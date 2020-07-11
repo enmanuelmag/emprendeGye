@@ -11,7 +11,7 @@ interface peopleCardType{
     array: Array<personCardType>
 }
 
-export default function index(peopleCard:peopleCardType) {
+export default function index(peopleCard:any) {
 	return <Page peopleCard={peopleCard} />;
 }
 

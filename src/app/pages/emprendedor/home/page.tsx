@@ -38,7 +38,7 @@ export default function home() {
                     <Actividades />
                 </Grid>
                 <Grid item xs={6}>
-                    <Retroalimentación />
+                    <Retroalimentación  peopleCard={feed} />
                 </Grid>
             </Grid>
 

@@ -9,7 +9,7 @@ interface personCardType{
     img: string;
 }
 
-export default function index({personCard}:personCardType) {
+export default function index(personCard:any) {
 	return <Page personCard={personCard} />;
 }
 

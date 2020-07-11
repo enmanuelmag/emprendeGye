@@ -12,10 +12,11 @@ interface personCardType{
     img: string;
 }
 
-export default function Home (personCard:personCardType) {
+export default function Home ({personCard}:any) {
 
     const classes = style();
-    
+    console.log(personCard);
+
     return (
         <Card className={classes.root}>
       <CardHeader
@@ -29,8 +30,8 @@ export default function Home (personCard:personCardType) {
             <MoreVertIcon />
           </IconButton>
         }
-        title={personCard.nombre}
-        subheader={personCard.descripcion}
+        title={personCard.personCard.nombre}
+        subheader={personCard.personCard.descripcion}
       />
     </Card>
     )

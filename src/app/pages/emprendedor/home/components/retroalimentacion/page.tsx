@@ -4,9 +4,10 @@ import { List, ListItem,
     ListSubheader, IconButton,ListItemIcon,
     ListItemText, CardHeader,Divider,Card,CardContent,} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
+import FeedBackCard from '../feedbackCard';
 const palabras = {encabezado: "Retroalimentación"};
 
-export default function Home () {
+export default function Home ({peopleCard}:any) {
 
     const classes = style();
     const [checked, setChecked] = useState([0]);
@@ -31,21 +32,14 @@ export default function Home () {
             <CardContent className={classes.content}>
             <List className={classes.root}>
             <ListSubheader>{palabras.encabezado}</ListSubheader>
-            <Divider/>
-            {[0, 1, 2, 3].map((value) => {
-                const labelId = `checkbox-list-label-${value}`;
-                return (
-                    <ListItem key={value} role={undefined} dense button onClick={handleToggle(value)}>
-                        
-                        <ListItemText id={labelId} primary={`Retroalimentacion ${value + 1}`} />
-                        <ListItemIcon>
-                            <IconButton edge="end" aria-label="delete">
-                                <DeleteIcon />
-                            </IconButton>
-                        </ListItemIcon>
+            {peopleCard.peopleCard.map((value:any, indice:number ) => 
+                //const labelId = `checkbox-list-label-${value}`;
+                (
+                    <ListItem key={indice} role={undefined} dense >
+                        <FeedBackCard personCard={value}/>
                     </ListItem>
-                );
-            })}
+                )
+            )}
             </List>
 
             </CardContent>

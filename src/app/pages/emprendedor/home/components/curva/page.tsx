@@ -15,7 +15,7 @@ export default function page() {
 
 	return (
 		<Card className={classes.card}>
-			<Divider />
+			
 			<CardContent  className={classes.content} >
 				<Typography variant="h5" className={classes.titulo} >
 					Curva de emprendimiento

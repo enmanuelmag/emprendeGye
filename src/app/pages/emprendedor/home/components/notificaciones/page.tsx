@@ -15,7 +15,7 @@ interface personCardType{
 interface peopleCardType{
     array: Array<personCardType>
 }
-export default function Home (peopleCard:peopleCardType) {
+export default function Home ({peopleCard}:any) {
 
     const classes = style();
     const [checked, setChecked] = useState([0]);
@@ -32,24 +32,22 @@ export default function Home (peopleCard:peopleCardType) {
 
     setChecked(newChecked);
     };
-
 //CardHeader,Divider,Card,CardContent
     return (
 
-        <Card>
+        <Card className={classes.root}>
             <CardContent className={classes.content}>
             <List className={classes.root}>
             <ListSubheader>{palabras.encabezado}</ListSubheader>
-            <Divider/>
             
-            {peopleCard.array.map((value:personCardType) => {
+            {peopleCard.peopleCard.map((value:any, indice:number ) => 
                 //const labelId = `checkbox-list-label-${value}`;
-                return (
-                    <ListItem key={value.nombre} role={undefined} dense >
+                (
+                    <ListItem key={indice} role={undefined} dense >
                         <FeedBackCard personCard={value}/>
                     </ListItem>
-                );
-            })}
+                )
+            )}
         </List>
 
             </CardContent>

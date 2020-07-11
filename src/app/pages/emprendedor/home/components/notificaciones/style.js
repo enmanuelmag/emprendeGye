@@ -6,6 +6,7 @@ export default makeStyles((theme) =>
       variant: 'h6'
     },
     root: {
+      padding: '0',
       width: '100%',
       backgroundColor: theme.palette.background.paper,
     },
