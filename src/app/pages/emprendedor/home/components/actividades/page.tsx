@@ -37,7 +37,7 @@ export default function Home() {
             <CardContent className={classes.content}>
             <List className={classes.root}>
             <ListSubheader>{palabras.encabezado}</ListSubheader>
-            <Divider/>
+            
                     {[0, 1, 2, 3].map((value) => {
                         const labelId = `checkbox-list-label-${value}`;
                         return (
