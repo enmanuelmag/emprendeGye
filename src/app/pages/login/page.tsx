@@ -87,7 +87,7 @@ export default function Page({ func }: { func: any }) {
             color="primary"
             className={classes.submit}
             //onClick={login}
-            href="/emprendedor"
+            href="/emprendedor/home"
           >
             {initData.button}
           </Button>
