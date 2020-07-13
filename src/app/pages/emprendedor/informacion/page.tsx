@@ -70,7 +70,9 @@ export default function Informacion() {
 						  <Link href="/emprendedor/quienes_somos" className={classes.link}> ¿Quiénes Somos?</Link>
 						  </MenuItem>
 					  <MenuItem onClick={handleClose}>Noticias</MenuItem>
-					  <MenuItem onClick={handleClose}>Contáctanos</MenuItem>
+					  <MenuItem onClick={handleClose}>
+					  <Link href="/emprendedor/contactanos" className={classes.link}>Contáctanos</Link>
+						  </MenuItem>
 					</MenuList>
 				  </ClickAwayListener>
 				</Paper>
@@ -82,34 +84,3 @@ export default function Informacion() {
 	);
   }
 
-
-/*<div className={classes.root}>
-		
-		  <Button
-			ref={anchorRef}
-			aria-controls={open ? 'menu-list-grow' : undefined}
-			aria-haspopup="true"
-			onClick={handleToggle}
-		  >
-			Toggle Menu Grow
-		  </Button>
-		  <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-			{({ TransitionProps, placement }) => (
-			  <Grow
-				{...TransitionProps}
-				style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-			  >
-				<Paper>
-				  <ClickAwayListener onClickAway={handleClose}>
-					<MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-					  <MenuItem onClick={handleClose}>Profile</MenuItem>
-					  <MenuItem onClick={handleClose}>My account</MenuItem>
-					  <MenuItem onClick={handleClose}>Logout</MenuItem>
-					</MenuList>
-				  </ClickAwayListener>
-				</Paper>
-			  </Grow>
-			)}
-		  </Popper>
-		</div>
-	  */

@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
 	franja: {
 		//es para que salga en la franja de nuestros objetivos el color azul.
 		background: '#16244b',
-		height: '12rem',
+		height: '9rem',
 		marginTop: '4%',
 	},
 
@@ -27,7 +27,7 @@ export default makeStyles((theme) => ({
 		color:'#A8A7A7',
 		fontWeight: 'bold',
 		textAlign: 'center',
-		fontSize: '80px',
+		fontSize: '70px',
 		marginTop: '-4%',
 		
 	},

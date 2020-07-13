@@ -6,5 +6,12 @@ export default makeStyles((theme) =>
       paddingLeft:'38%',
       paddingTop: '8%',
     },    
+
+    containerList: {
+      paddingTop: theme.spacing(3),
+      paddingBottom: theme.spacing(1),
+      paddingLeft: theme.spacing(2),
+      paddingRight: theme.spacing(2),
+    },
   }),
 );
