@@ -24,7 +24,8 @@
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "3.4.1",
 		"react-trello": "^2.2.7",
-		"typescript": "^3.7.5"
+		"typescript": "^3.7.5",
+		"react-color": "^2.18.1"
 	},
 	"scripts": {
 		"dev": "react-app-rewired start",
@@ -49,6 +50,7 @@
 	},
 	"proxy": "http://localhost:8080",
 	"devDependencies": {
+		"json-loader": "^0.5.7",
 		"nodemon": "^2.0.3",
 		"react-app-rewire-alias": "^0.1.6",
 		"react-app-rewired": "^2.1.6"

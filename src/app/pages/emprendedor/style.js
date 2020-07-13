@@ -3,22 +3,25 @@ import { createStyles, makeStyles, fade } from '@material-ui/core/styles';
 export default makeStyles((theme) =>
   createStyles({
     root: {
-        flexGrow: 1,
-      },
-    divLinkR: {
-        marginLeft: 'auto',
-        marginRight: 0,
-        marginTop: '1%',
-        marginBottom: '1%',
-    },
-    link: {
-        margin: theme.spacing(2),
-        color: 'inherit',
-        textDecoration: 'none !important',
+      flexGrow: 1,
+      marginBottom: 0,
     },
 
-    barra:{
-        background:'#16244b',
+    typographyLink: {
+      //marginLeft: theme.spacing(2),
+    },
+    divLinkR: {
+      marginLeft: 'auto',
+      marginRight: 0,
+    },
+    link: {
+      margin: theme.spacing(2),
+      color: 'inherit',
+      textDecoration: 'none !important',
+    },
+
+    barra: {
+      background: '#16244b',
     },
 
     img: {
