@@ -14,7 +14,7 @@ export default function DenseAppBar() {
   return (
     <AppBar className={classes.barra} position="static">
       <Toolbar variant="dense">
-        <Grid container className={classes.root}>
+        <Grid container direction="row" justify="center" alignItems="center">
           <Grid item lg={1}>
             <img className={classes.img} src={imagePath} alt="EmprendeGye" />
           </Grid>
@@ -61,11 +61,7 @@ export default function DenseAppBar() {
                   >
                     Herramientas
                   </Link>
-                  <Link
-                    className={classes.link}
-                    href="./notas"
-                    onClick={preventDefault}
-                  >
+                  <Link className={classes.link} href="/emprendedor/notas">
                     Notas
                   </Link>
 
