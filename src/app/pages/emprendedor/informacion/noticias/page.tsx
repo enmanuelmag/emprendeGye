@@ -15,14 +15,30 @@ export default function QuienesSomos() {
 	const classes = style();
 
 	return(
-	<Grid container  className={classes.root}> 
-		<Grid item xs={8}  > 
-		<NewsPrimary/>
-			
+	<Grid container className={classes.root}> 
+		<Grid direction="row"
+  justify="center"
+  alignItems="flex-start" className={classes.root} item xs={8}  > 
+			<Grid container item justify="center" xs={12}>
+				<Typography className={classes.titulo} variant='h6'>
+					Destacada
+				</Typography>
+			</Grid>
+			<Grid container item justify="center" xs={12}>
+				<NewsPrimary />
+			</Grid>
 		</Grid>
-		<Grid item xs={4}  > 
-		<NewsList/>
-
+		<Grid direction="row"
+  justify="center"
+  alignItems="flex-start" className={classes.root} item xs={4}  > 
+			<Grid container item justify="center" xs={12}>
+				<Typography className={classes.titulo}  variant='h6'>
+					Otras noticias
+				</Typography>
+			</Grid >
+			<Grid container item justify="center" xs={12}>
+				<NewsList/>
+			</Grid>
 		</Grid>
 
 	</Grid>

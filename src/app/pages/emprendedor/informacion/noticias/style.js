@@ -5,8 +5,16 @@ import { makeStyles } from '@material-ui/core';
 export default makeStyles((theme) => ({
     
     root: {
-        padding: '10px',
+        padding: '20px',
         spacing: '3',
+        
+        direction:"row",
+        justify:"center",
+        alignItems:"flex-start",
+    },
+    titulo: {
+        variant: 'h6'
+        
     }
     
 }));

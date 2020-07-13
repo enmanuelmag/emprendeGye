@@ -13,7 +13,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
-//import InfoIcon from '@material-ui/icons/Info';
+import InfoIcon from '@material-ui/icons/Info';
 //import tileData from './tileData';
 
 const tile = {
@@ -27,18 +27,21 @@ export default function QuienesSomos() {
 	const classes = style();
 
 	return(
-		<GridListTile key={tile.img}>
+		<Paper className={classes.root}>
+		<GridListTile  key={tile.img} className={classes.gridTile}>
+			
 		<img src={tile.img} alt={tile.title} className={classes.img}/>
-		<GridListTileBar
-		  title={tile.title}
-		  subtitle={<span>by: {tile.author}</span>}
-		  actionIcon={
-			<IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
-			  {//<InfoIcon />
-		  		}</IconButton>
-		  }
-		/>
-	  </GridListTile>
+			<GridListTileBar
+			title={tile.title}
+			subtitle={<span>by: {tile.author}</span>}
+			actionIcon={
+				<IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
+				<InfoIcon />
+				</IconButton>
+			}
+			/>
+	  	</GridListTile>
+	  </Paper>
 	);
   }
 
