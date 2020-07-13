@@ -1,12 +1,14 @@
 import React from 'react';
 import {
 	Card,
-	CardHeader,
 	CardContent,
-	Divider,Typography
+	Typography
 } from '@material-ui/core';
 import style from './style';
 import Image from "./image";
+
+
+
 
 export default function page() {
 	const classes = style();
@@ -20,7 +22,7 @@ export default function page() {
 				<Typography variant="h5" className={classes.titulo} >
 					Curva de emprendimiento
 					</Typography>
-				<Divider/>
+				
 				<Image/>	
 			</CardContent>
 		</Card>

@@ -8,7 +8,6 @@ import {
     Card,
     ListSubheader,
     CardContent,
-    Divider,
 } from '@material-ui/core';
 
 const palabras = { encabezado: "Actividades" };

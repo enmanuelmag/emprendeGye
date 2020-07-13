@@ -3,7 +3,7 @@ import { red } from '@material-ui/core/colors';
 export default makeStyles((theme) =>
   createStyles({
     root: {
-      minWidth: '350px',
+      width: '100%',
     },
     avatar: {
       backgroundColor: red[500],

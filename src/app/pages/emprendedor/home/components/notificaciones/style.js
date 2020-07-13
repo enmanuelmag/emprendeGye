@@ -6,7 +6,7 @@ export default makeStyles((theme) =>
       variant: 'h6'
     },
     root: {
-      padding: '0',
+      
       width: '100%',
       backgroundColor: theme.palette.background.paper,
     },
@@ -15,6 +15,14 @@ export default makeStyles((theme) =>
     },
     title: {
       variant: "h5",
+    },
+    rootList:{
+      padding: '0px',
+      spacing: '1px',
+    },
+    listItem: {
+      width: '100%',
+      padding: '2px',
     }
 
   }),
