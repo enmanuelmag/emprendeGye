@@ -69,18 +69,13 @@ export default function Informacion() {
 					  <MenuItem onClick={handleClose} >
 						  <Link href="/emprendedor/quienes_somos" className={classes.link}> ¿Quiénes Somos?</Link>
 						  </MenuItem>
-<<<<<<< HEAD
-					  <MenuItem onClick={handleClose}>Noticias</MenuItem>
 					  <MenuItem onClick={handleClose}>
 					  <Link href="/emprendedor/contactanos" className={classes.link}>Contáctanos</Link>
 						  </MenuItem>
-=======
 					  <MenuItem onClick={handleClose}>
 					  <Link href="/emprendedor/noticias" className={classes.link}>Noticias</Link>
 						  
 					  </MenuItem>
-					  <MenuItem onClick={handleClose}>Contáctanos</MenuItem>
->>>>>>> 5e378be839ccf4deece3acdd48a65840afaa11a2
 					</MenuList>
 				  </ClickAwayListener>
 				</Paper>
