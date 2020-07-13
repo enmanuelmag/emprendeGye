@@ -69,7 +69,10 @@ export default function Informacion() {
 					  <MenuItem onClick={handleClose} >
 						  <Link href="/emprendedor/quienes_somos" className={classes.link}> ¿Quiénes Somos?</Link>
 						  </MenuItem>
-					  <MenuItem onClick={handleClose}>Noticias</MenuItem>
+					  <MenuItem onClick={handleClose}>
+					  <Link href="/emprendedor/noticias" className={classes.link}>Noticias</Link>
+						  
+					  </MenuItem>
 					  <MenuItem onClick={handleClose}>Contáctanos</MenuItem>
 					</MenuList>
 				  </ClickAwayListener>
