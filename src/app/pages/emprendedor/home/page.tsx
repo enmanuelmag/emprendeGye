@@ -6,7 +6,8 @@ import Saludo from './components/saludo';
 import Actividades from "./components/actividades";
 import Retroalimentación from "./components/retroalimentacion";
 import Notificaciones from "./components/notificaciones";
-
+import {feed} from './components/xamples/feedbacks';
+import {noti} from './components/xamples/notificaciones';
 
 
 export default function home() {
@@ -25,7 +26,7 @@ export default function home() {
                             <Saludo />
                         </Grid>
                         <Grid item xs={12} style={{ maxHeight: 'auto' }}>
-                            <Notificaciones />
+                            <Notificaciones peopleCard={noti} />
                         </Grid>
                     </Grid>
                 </Grid>
@@ -37,7 +38,7 @@ export default function home() {
                     <Actividades />
                 </Grid>
                 <Grid item xs={6}>
-                    <Retroalimentación />
+                    <Retroalimentación  peopleCard={feed} />
                 </Grid>
             </Grid>
 
