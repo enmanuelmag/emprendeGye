@@ -14,6 +14,7 @@ export default function home() {
             <Route path="/emprendedor/aprendizaje" component={Aprendizaje} />
         </Router>
         
+        
     )
 
 }
