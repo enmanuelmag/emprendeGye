@@ -6,6 +6,7 @@ import HerramientasEmprendedor from './herramientas';
 import QuienesSomosEmprendedor from './QuienesSomos';
 import EcosistemaEmprendedor from './ecosistema';
 import FContactanos from './informacion/contactanos';
+import NoticiasEmprendedor from './informacion/noticias';
 
 
 export function Page() {
@@ -31,3 +32,8 @@ export function QuienesSomos() {
 export function Contactanos() {
 	return <FContactanos />
 }
+
+export function Noticias() {
+	return <NoticiasEmprendedor />
+}
+
