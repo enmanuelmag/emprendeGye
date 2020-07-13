@@ -6,6 +6,8 @@ import HerramientasEmprendedor from './herramientas';
 import QuienesSomosEmprendedor from './QuienesSomos';
 import EcosistemaEmprendedor from './ecosistema';
 import NotasEmprendeodr from './notas';
+import HomeEmprendedor from './home'
+import AprendizajeEmprendedor from './aprendizaje';
 
 export function Page() {
   return <PageEmprendedor />;
@@ -29,4 +31,12 @@ export function QuienesSomos() {
 
 export function Notas() {
   return <NotasEmprendeodr />;
+}
+
+export function Home() {
+	return <HomeEmprendedor />
+}
+
+export function Aprendizaje() {
+	return <AprendizajeEmprendedor />
 }

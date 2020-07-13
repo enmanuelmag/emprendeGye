@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import { AppBar, Toolbar, Typography, Link, Grid } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Link, Grid, CardActionArea } from '@material-ui/core';
 import imagePath from './assets/logobarr.svg';
 import style from './style';
 import InputAsync from './components/inputAsync';
@@ -16,7 +16,9 @@ export default function DenseAppBar() {
       <Toolbar variant="dense">
         <Grid container direction="row" justify="center" alignItems="center">
           <Grid item lg={1}>
-            <img className={classes.img} src={imagePath} alt="EmprendeGye" />
+            <CardActionArea href="/emprendedor/home">
+            <img className={classes.img} src={imagePath} alt="EmprendeGye"/>
+            </CardActionArea>
           </Grid>
           <Grid item lg={11} className={classes.divLinkR}>
             <Grid container>
@@ -49,8 +51,7 @@ export default function DenseAppBar() {
 
                   <Link
                     className={classes.link}
-                    href="./aprendizaje"
-                    onClick={preventDefault}
+                    href="/emprendedor/aprendizaje"
                   >
                     Aprendizaje
                   </Link>
