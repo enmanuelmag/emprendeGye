@@ -5,7 +5,9 @@ import CuentaEmprendedor from './cuenta';
 import HerramientasEmprendedor from './herramientas';
 import QuienesSomosEmprendedor from './QuienesSomos';
 import EcosistemaEmprendedor from './ecosistema';
+import FContactanos from './informacion/contactanos';
 import NoticiasEmprendedor from './informacion/noticias';
+
 
 export function Page() {
 	return <PageEmprendedor />;
@@ -26,6 +28,12 @@ export function Herramientas() {
 export function QuienesSomos() {
 	return <QuienesSomosEmprendedor />
 }
+
+export function Contactanos() {
+	return <FContactanos />
+}
+
 export function Noticias() {
 	return <NoticiasEmprendedor />
 }
+

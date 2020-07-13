@@ -4,6 +4,7 @@ import { Grid, Typography } from '@material-ui/core';
 import Image from "./components/image";
 import Info from "./components/informacion";
 import Footer from "./components/footer";
+import EquipodeDesarrollo from "./components/equipodesarrollo";
 import style from './style';
 import imagePath from './assets/fondob.jpg';
 
@@ -39,7 +40,7 @@ export default function QuienesSomos() {
 				</Grid>
 
 				<Grid container>
-					<Grid item>
+					<Grid item xs={12} lg={12}>
 
 						<div className={classes.frases} >
 							<Typography variant="body1">
@@ -48,10 +49,31 @@ export default function QuienesSomos() {
 								contactos, mentorías y financiación.
           </Typography>
 
-						</div>
+						</div >
 						<img className={classes.img} src={imagePath} alt='Exito en emprender' />
 					</Grid>
 				</Grid>
+
+				<Grid container>
+					<Grid item xs={12} lg={12}>
+						<div className={classes.franja} >
+						</div>
+					</Grid>
+
+
+					<Grid item xs={12} lg={12}>
+						<div className={classes.frases1} >
+							Equipo de Desarrollo
+						</div>
+					</Grid>
+				</Grid>
+
+				<Grid container>
+					<Grid item xs={12} lg={12}>
+						<EquipodeDesarrollo />
+					</Grid>
+				</Grid>
+
 
 				<Grid container>
 					<Grid item xs={12} lg={12}>
