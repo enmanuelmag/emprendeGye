@@ -1,11 +1,13 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, createStyles } from '@material-ui/core';
 //import { SketchPicker } from 'react-color';
 
 
-export default makeStyles((theme) => ({
-	root: {
-		display: 'flex',
-		
+export default makeStyles((theme) =>
+  createStyles({
+    root: {
+		//display: 'flex',
+		position: "relative",
+		zIndex: "1",
 	  },
 	  paper: {
 		//marginRight: theme.spacing(2),
@@ -13,4 +15,5 @@ export default makeStyles((theme) => ({
 	  link: {
 		color: "inherit"
 	 },
-}));
+  })
+);
