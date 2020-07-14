@@ -3,7 +3,7 @@ import style from "./style";
 import imagePathfooter from './assets/logofoot.svg';
 import Typography from '@material-ui/core/Typography';
 
-export default function page() {
+export default function Footer() {
     const classes = style();
 
     return (
