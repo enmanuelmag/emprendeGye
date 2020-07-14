@@ -1,50 +1,36 @@
 import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import style from './style';
-import Button from '@material-ui/core/Button';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-
-
+import Image from "./components/image";
 export default function QuienesSomos() {
-	
-	return(
-	<> </>
+	const classes = style();
+	return (
+		<Grid container className={classes.root} spacing={3}>
+			
+			<Grid item xs={6}>
+				<Image/>
+			</Grid>
+
+			<Grid item container justify="flex-start"
+  					alignItems="flex-start" spacing={3} xs={6}>
+			
+			<Grid item  xs={12}>
+				<Typography className={classes.typography}  variant="h5" component="h2">
+					¿Qué hacemos?
+				</Typography>
+			</Grid>
+
+			<Grid item xs={12}>
+				<Typography className={classes.info} variant="body1">
+					Dado el rango variado de emprendedores dentro de Guayaquil en distintas áreas se debe priorizar que la solución sea comprensible, dinámica y evidente sin exceso o carencia de funcionalidades que distraigan al emprendedor al igual que diseños muy complejos que conllevan a que el emprendedor abandone la plataforma digital y pierda oportunidades de desarrollo.
+					Por eso la plataforma EmprendeGye presenta al usuario una interfaz intuitiva con herramientas fáciles de usar que cumplan sus necesidades dependiendo de la etapa de la curva del emprendimiento en la que se encuentre, integrando diferentes actores tanto públicos como privados en este proceso.
+			</Typography>
+
+			</Grid>
+
+		</Grid>
+		
+		</Grid>
 	);
   }
 
-
-/*<div className={classes.root}>
-		
-		  <Button
-			ref={anchorRef}
-			aria-controls={open ? 'menu-list-grow' : undefined}
-			aria-haspopup="true"
-			onClick={handleToggle}
-		  >
-			Toggle Menu Grow
-		  </Button>
-		  <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-			{({ TransitionProps, placement }) => (
-			  <Grow
-				{...TransitionProps}
-				style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-			  >
-				<Paper>
-				  <ClickAwayListener onClickAway={handleClose}>
-					<MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-					  <MenuItem onClick={handleClose}>Profile</MenuItem>
-					  <MenuItem onClick={handleClose}>My account</MenuItem>
-					  <MenuItem onClick={handleClose}>Logout</MenuItem>
-					</MenuList>
-				  </ClickAwayListener>
-				</Paper>
-			  </Grow>
-			)}
-		  </Popper>
-		</div>
-	  */

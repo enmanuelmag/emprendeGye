@@ -1,11 +1,11 @@
 import React from 'react';
-import { Grid, Container, Card, Typography, Button } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Form from "./components/form";
-import Image from "./components/image";
-import style from './style';
+//import Image from "./components/image";
+//import style from './style';
 
 export default function FContactanos() {
-	const classes = style();
+	//const classes = style();
 	return (
 		<Grid container spacing={3}>
 			<Grid item xs={12}>

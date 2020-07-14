@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Link } from '@material-ui/core';
+import {Link } from '@material-ui/core';
 import style from './style';
 import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
@@ -65,7 +65,9 @@ export default function Informacion() {
 				<Paper>
 				  <ClickAwayListener onClickAway={handleClose}>
 					<MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown} >
-					  <MenuItem onClick={handleClose} >¿Qué hacemos?</MenuItem>
+					<MenuItem onClick={handleClose} >
+						  <Link href="/emprendedor/que_hacemos" className={classes.link}> ¿Que hacemos?</Link>
+						  </MenuItem>
 					  <MenuItem onClick={handleClose} >
 						  <Link href="/emprendedor/quienes_somos" className={classes.link}> ¿Quiénes Somos?</Link>
 						  </MenuItem>

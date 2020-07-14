@@ -1,9 +1,9 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, createStyles } from '@material-ui/core';
 //import { SketchPicker } from 'react-color';
 
 
-export default makeStyles((theme) => ({
-    
+export default makeStyles((theme) =>
+  createStyles({
     root: {
         padding: '20px',
         spacing: '3',
@@ -16,5 +16,6 @@ export default makeStyles((theme) => ({
         variant: 'h6'
         
     }
-    
-}));
+  }),
+);
+

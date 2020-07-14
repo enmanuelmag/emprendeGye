@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Route, BrowserRouter as Router } from 'react-router-dom'
-import {Page, Cuenta, Herramientas,QuienesSomos, Ecosistema,Contactanos, Noticias} from '../pages/emprendedor'
+import {Page, Cuenta, Herramientas,QuienesSomos, Ecosistema,Contactanos, Noticias, QueHacemos} from '../pages/emprendedor'
 
 
 
@@ -17,6 +17,8 @@ export default function home() {
             <Route path="/emprendedor/contactanos" component={Contactanos} />
       	     <Route path='/emprendedor/ecosistema' component={Ecosistema}></Route>
             <Route path='/emprendedor/noticias' component={Noticias}/>
+            <Route path='/emprendedor/que_hacemos' component={QueHacemos}/>
+            
         </Router>
         
     )
