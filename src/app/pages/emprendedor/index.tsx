@@ -8,6 +8,9 @@ import EcosistemaEmprendedor from './ecosistema';
 import NotasEmprendeodr from './notas';
 import HomeEmprendedor from './home'
 import AprendizajeEmprendedor from './aprendizaje';
+import FContactanos from './informacion/contactanos';
+import NoticiasEmprendedor from './informacion/noticias';
+import QueHacemosEmprendedor from "./informacion/queHacemos";
 
 export function Page() {
   return <PageEmprendedor />;
@@ -40,3 +43,16 @@ export function Home() {
 export function Aprendizaje() {
 	return <AprendizajeEmprendedor />
 }
+
+export function Contactanos() {
+	return <FContactanos />
+}
+
+export function Noticias() {
+	return <NoticiasEmprendedor />
+}
+
+export function QueHacemos() {
+	return <QueHacemosEmprendedor />
+}
+

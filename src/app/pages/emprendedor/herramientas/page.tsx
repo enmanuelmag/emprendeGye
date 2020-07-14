@@ -12,30 +12,19 @@ export default function page() {
 	 const classes = makeStyles();
 
 	return (
-			<Grid container spacing={3}>			
-            <Grid item xs={12}>
-				<Grid container>
-					<Grid item xs={6} lg={4}>
-					<Typography className={classes.typography} variant='h5'>Herramientas</Typography>
-					</Grid>
-					<Grid item xs={3} lg={4}>
-						<Typography className={classes.typography} variant='h5'>Consultorías</Typography>
-					</Grid>
-					<Grid item xs={3} lg={4}>
-						<Typography className={classes.typography} variant='h5'>Inversiones</Typography>
-					</Grid>
-				</Grid>
-			</Grid>
-
+           <Grid container spacing={4}>
 			<Grid item xs={12}>
 				<Grid container>
-					<Grid item xs={6} lg={4}>
+					<Grid item xs={12} lg={4}>
+					<Typography className={classes.typography} variant='h5'>Herramientas</Typography>
 						<ListButtom />
 					</Grid>
-					<Grid item xs={3} lg={4}>
+					<Grid item xs={12} lg={4}>
+					<Typography className={classes.typography} variant='h5'>Consultorías</Typography>
 						<ListLinks array={Consultorias} />
 					</Grid>
-					<Grid item xs={3} lg={4}>
+					<Grid item xs={12} lg={4}>
+					<Typography className={classes.typography} variant='h5'>Inversiones</Typography>
 					    <ListLinks array={Inversion} />
 					</Grid>
 				</Grid>

@@ -12,6 +12,7 @@ export default makeStyles((theme) =>
     typographyLink : {//typographyLink
       display: 'flex',
         //marginLeft: theme.spacing(2),
+        display:"flex"
     },
     divLinkL: {
         //display: "inlineBlock",
