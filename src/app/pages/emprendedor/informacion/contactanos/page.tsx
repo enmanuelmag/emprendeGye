@@ -1,20 +1,26 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, Container, Typography } from '@material-ui/core';
 import Form from "./components/form";
-//import Image from "./components/image";
-//import style from './style';
+import style from "./style";
 
 export default function FContactanos() {
-	//const classes = style();
+	const classes = style();
 	return (
-		<Grid container spacing={3}>
-			<Grid item xs={12}>
-				<Grid container>
-					<Grid item xs={12} lg={8}>
-						<Form/>
+		<Container maxWidth="lg" >
+			<Grid container spacing={3} className={classes.root}>
+				<Grid item xs={12} lg={12} className={classes.textPerfil}>
+					<Typography variant='h5'>¿Tienes preguntas?</Typography>
+					<Typography variant='h2'>CONTÁCTANOS</Typography>
+				</Grid>
+				<Grid lg={6}></Grid>
+				<Grid item xs={12} className={classes.gridInfo}>
+					<Grid container>
+						<Grid item xs={12} lg={12} className={classes.gridItem}>
+							<Form />
+						</Grid>
+						</Grid>
 					</Grid>
 				</Grid>
-			</Grid>
-		</Grid>
+		</Container>
 	);
 }

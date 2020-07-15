@@ -1,5 +1,6 @@
 import { createStyles, makeStyles, withStyles } from '@material-ui/core/styles';
 import { indigo } from '@material-ui/core/colors';
+
 import { Button } from "@material-ui/core";
 
 export default makeStyles((theme) =>
@@ -8,6 +9,13 @@ export default makeStyles((theme) =>
         minHeight: '150px',
         minWidth: "100%", 
     },
+
+    imagen: {
+      width: '50%',
+      paddingLeft: '7%',
+      marginTop: '2%',
+    },
+
     app: {
       marginTop: "50px",
       //padding: theme.spacing(50),
@@ -23,3 +31,4 @@ export const ColorButton = withStyles((theme) => ({
     },
   },
 }))(Button);
+

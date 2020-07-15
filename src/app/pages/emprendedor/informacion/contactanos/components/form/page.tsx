@@ -11,15 +11,6 @@ export default function Form() {
 	const classes = style();
 	return (
 		<div className={classes.root}>
-			<Box fontSize={26} fontWeight={500}>
-				¿Tienes preguntas?
-
-      </Box>
-			<Typography variant="h3" component="div" >
-				<Box fontWeight={999}>
-					CONTÁCTANOS
-      </Box>
-			</Typography>
 			<form autoComplete='off' className={classes.paper}>
 				<TextField
 					id='outlined-basic'
