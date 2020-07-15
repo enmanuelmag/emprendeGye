@@ -7,13 +7,18 @@ export default makeStyles((theme) =>
     root: {
 		//display: 'flex',
 		position: "relative",
-		zIndex: "1",
+		//zIndex: '10000',
+		//zIndex: "1",
 	  },
 	  paper: {
 		//marginRight: theme.spacing(2),
 	  },
 	  link: {
-		color: "inherit"
+		color: 'inherit',
+      textDecoration: 'none !important',
 	 },
+	 dropMenuPaper:{
+		// zIndex: '1',
+	 }
   })
 );

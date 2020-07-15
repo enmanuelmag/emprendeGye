@@ -18,7 +18,7 @@ export default function QuienesSomos() {
 	const classes = style();
 
 	return(
-		<Paper className={classes.root}>
+		<Paper className={classes.root} >
 		<GridListTile  key={tile.img} className={classes.gridTile}>
 			
 		<img src={tile.img} alt={tile.title} className={classes.img}/>

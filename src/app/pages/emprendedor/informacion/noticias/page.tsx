@@ -9,15 +9,14 @@ export default function QuienesSomos() {
 
 	return(
 	<Grid container className={classes.root}> 
-		<Grid direction="row"
-  justify="center"
-  alignItems="flex-start" className={classes.root} item xs={8}  > 
+		<Grid direction="row" justify="center" alignItems="flex-start" 
+		className={classes.root} item xs={8}  > 
 			<Grid container item justify="center" xs={12}>
 				<Typography className={classes.titulo} variant='h6'>
 					Destacada
 				</Typography>
 			</Grid>
-			<Grid container item justify="center" xs={12}>
+			<Grid container item justify="center"  xs={12}>
 				<NewsPrimary />
 			</Grid>
 		</Grid>
