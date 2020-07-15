@@ -17,15 +17,17 @@
 		"cors": "^2.8.5",
 		"cross-fetch": "^3.0.5",
 		"express": "^4.17.1",
+		"intro.js": "2.9.3",
+		"intro.js-react": "^0.2.0",
 		"mongoose": "^5.9.9",
 		"react": "^16.13.1",
+		"react-color": "^2.18.1",
 		"react-dom": "^16.13.1",
 		"react-router": "^5.2.0",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "3.4.1",
 		"react-trello": "^2.2.7",
-		"typescript": "^3.7.5",
-		"react-color": "^2.18.1"
+		"typescript": "^3.7.5"
 	},
 	"scripts": {
 		"dev": "react-app-rewired start",
