@@ -9,7 +9,7 @@ export default makeStyles((theme) =>
         display: 'flex',
         flexWrap: 'wrap',
         width: '80%',
-        marginLeft: theme.spacing(5),
+        //marginLeft: theme.spacing(5),
       },
     },    
   }),
