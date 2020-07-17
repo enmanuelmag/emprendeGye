@@ -5,14 +5,14 @@ import Image from "./components/image";
 export default function QuienesSomos() {
 	const classes = style();
 	return (
-		<Grid container className={classes.root} spacing={3}>
+		<Grid container className={classes.root}>
 			
-			<Grid item xs={6}>
+			<Grid item xs={12}>
 				<Image/>
 			</Grid>
 
 			<Grid item container justify="flex-start"
-  					alignItems="flex-start" spacing={3} xs={6}>
+  					alignItems="flex-start" spacing={3}>
 			
 			<Grid item  xs={12}>
 				<Typography className={classes.typography}  variant="h5" component="h2">

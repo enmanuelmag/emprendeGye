@@ -17,10 +17,11 @@ export default makeStyles((theme) => ({
         color:'#A8A7A7',
         fontSize:'2rem',
         fontWeight:'bold',
+        paddingTop:"20%",
       },
   
       info:{
-        paddingTop:"3%",
+        paddingTop:"0%",
         textAlign:"justify",
         lineHeight: '200%',
         //fontSize:'17px',

@@ -22,7 +22,7 @@ export default makeStyles((theme) => ({
 
     textPerfil: {
         textAlign: 'center',
-        marginTop: '7%',
+        marginTop: '4%',
         // marginRight: '13%',
         // marginLeft: '5%',
         // margin: '0px',

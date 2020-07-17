@@ -6,18 +6,19 @@ import { Button } from "@material-ui/core";
 export default makeStyles((theme) =>
   createStyles({
     button: {
-        minHeight: '150px',
+      
+        minHeight: '140px',
         minWidth: "100%", 
     },
 
     imagen: {
-      width: '50%',
-      paddingLeft: '7%',
-      marginTop: '2%',
+      width: '40%',
+      //paddingLeft: '7%',
+      //marginTop: '2%',
     },
 
     app: {
-      marginTop: "50px",
+      marginTop: "25px",
       //padding: theme.spacing(50),
     }
   }),
