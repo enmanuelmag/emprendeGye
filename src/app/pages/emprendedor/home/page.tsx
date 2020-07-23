@@ -62,27 +62,27 @@ export default function Home() {
 
         <Grid className={classes.contPrincipal} id="grid home" container spacing={3}>
             <Grid container item spacing={3} xs={12}>
-                <Grid className="curvaComponet" item xs={8}>
+                <Grid className="curvaComponet" item md={8} xs={12}>
                     <Curva/>
                 </Grid>
-                <Grid item xs={4} >
-                    <Grid container direction="column" spacing={3}>
-                        <Grid  className="saludo" item xs={12} style={{ maxHeight: 'auto' }} >
+                <Grid item md={4} xs={12} >
+                    <Grid container direction="column" spacing={3} xs={12}>
+                        <Grid  className="saludo" item xs={12}  >
                             <Saludo />
                         </Grid>
-                        <Grid  className="notificaciones" item xs={12} style={{ maxHeight: 'auto' }}>
+                        <Grid  className="notificaciones" item xs={12} >
                             <Notificaciones peopleCard={noti} />
                         </Grid>
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid container item spacing={3} xs={8}
-                justify="center"
+            <Grid container item spacing={3} xs={12}
+                justify="flex-start"
                 alignItems="flex-start">
-                <Grid className="actividades" item xs={6}>
+                <Grid className="actividades" item md={4} xs={12}>
                     <Actividades />
                 </Grid>
-                <Grid className="retroalimentacion" item xs={6}>
+                <Grid className="retroalimentacion" item md={4} xs={12}>
                     <Retroalimentación  peopleCard={feed} />
                 </Grid>
             </Grid>

@@ -1,6 +1,6 @@
 import React, { useState}  from 'react';
 import style from './style';
-import { List, ListItem,Card,CardContent, ListSubheader} from '@material-ui/core';
+import { List, Typography, ListItem,Card,CardContent, ListSubheader} from '@material-ui/core';
 import FeedBackCard from '../feedbackCard';
 const palabras = {encabezado: "Notificaciones"};
 
@@ -33,14 +33,16 @@ export default function Home ({peopleCard}:any) {
     return (
 
         <Card className={classes.root}>
+
+                <Typography className={classes.title} variant='h5'>
+							{palabras.encabezado}
+				</Typography>
             <CardContent className={classes.content}>
             <List className={classes.rootList}>
-            <ListSubheader>{palabras.encabezado}</ListSubheader>
-            
             {peopleCard.peopleCard.map((value:any, indice:number ) => 
                 //const labelId = `checkbox-list-label-${value}`;
                 (
-                    <ListItem className={classes.listItem} key={indice} role={undefined} dense >
+                    <ListItem className={classes.listItem} key={indice} role={undefined} dense divider>
                         <FeedBackCard personCard={value}/>
                     </ListItem>
                 )

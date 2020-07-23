@@ -16,8 +16,10 @@ export default function home() {
                                         <Grid item xs={12}>
                                                 <Typography variant='h6'> {element.name} </Typography>
                                         </Grid>
-                                        <Grid item xs={12}>
+                                        <Grid container xs={12}  justify="flex-start">
+                                                <Grid item>
                                                 <VideoList aprender={element}/>
+                                                </Grid>
                                         </Grid>
                                 </Grid>
                         ))}

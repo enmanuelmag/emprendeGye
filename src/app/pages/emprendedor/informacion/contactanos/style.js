@@ -17,7 +17,7 @@ export default makeStyles((theme) => ({
     },
 
     gridInfo: {
-        padding: '0px 12px !important',
+        padding: '0px 8px !important',
 	},
 	
 	textPerfil: {

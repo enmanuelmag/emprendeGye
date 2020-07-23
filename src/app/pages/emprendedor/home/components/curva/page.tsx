@@ -18,7 +18,7 @@ export default function page() {
 		<Card className={classes.card}>
 			
 			<CardContent  className={classes.content} >
-				<Typography variant="h6" className={classes.titulo} >
+				<Typography variant="h5" className={classes.titulo} >
 					{titulo.titulo}
 					</Typography>
 				
