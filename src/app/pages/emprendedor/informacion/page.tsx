@@ -64,7 +64,7 @@ export default function Informacion() {
 				  <ClickAwayListener onClickAway={handleClose}>
 					<MenuList  className={classes.dropMenuPaper} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown} >
 					<MenuItem onClick={handleClose} >
-						  <Link href="/emprendedor/que_hacemos" className={classes.link}> ¿Que hacemos?</Link>
+						  <Link href="/emprendedor/que_hacemos" className={classes.link}> ¿Qué hacemos?</Link>
 						  </MenuItem>
 					  <MenuItem onClick={handleClose} >
 						  <Link href="/emprendedor/quienes_somos" className={classes.link}> ¿Quiénes Somos?</Link>

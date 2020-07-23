@@ -14,11 +14,7 @@ export default function FContactanos() {
 				</Grid>
 				<Grid lg={6}></Grid>
 				<Grid item xs={12} className={classes.gridInfo}>
-					<Grid container>
-						<Grid item xs={12} lg={12} className={classes.gridItem}>
-							<Form />
-						</Grid>
-						</Grid>
+					
 					</Grid>
 				</Grid>
 		</Container>

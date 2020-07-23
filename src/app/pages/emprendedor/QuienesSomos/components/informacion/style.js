@@ -11,10 +11,8 @@ export default makeStyles((theme) => ({
       textAlign: 'center',
           paddingBottom: theme.spacing(2),
           fontWeight: 'bold',
-          color:'#A8A7A7',
-          fontSize:'2rem',
       marginLeft:'7%',
-      marginTop: '15%',
+      marginTop: '17%',
     },
 
 
@@ -24,6 +22,7 @@ export default makeStyles((theme) => ({
       lineHeight: '200%',
       marginLeft:'5%',
       marginRight:'5%',
+      textAlign:"justify",
       //fontSize:'17px',
     },
 
