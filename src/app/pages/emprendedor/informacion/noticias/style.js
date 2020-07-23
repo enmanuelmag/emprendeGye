@@ -5,7 +5,7 @@ import { makeStyles, createStyles } from '@material-ui/core';
 export default makeStyles((theme) =>
   createStyles({
     root: {
-        padding: '20px',
+        padding: '10px',
     },
     titulo: {
         variant: 'h6'
