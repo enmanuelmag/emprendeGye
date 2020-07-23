@@ -16,19 +16,19 @@ export default function page() {
            <Grid container spacing={4}>
 				<Grid item xs={12} md={6} lg={4}>
 					<Card className={classes.containerList} variant='elevation' elevation={2}>
-					<Typography className={classes.typography} variant='h5'>Herramientas</Typography>
+					<Typography className={classes.title} variant='h5'>Herramientas</Typography>
 						<ListButtom />
 						</Card>
 					</Grid>
 					<Grid item xs={12} md={6} lg={4}>
 					<Card className={classes.containerList} variant='elevation' elevation={2}>
-					<Typography className={classes.typography} variant='h5'>Consultorías</Typography>
+					<Typography className={classes.title} variant='h5'>Consultorías</Typography>
 						<ListLinks array={Consultorias} />
 						</Card>
 					</Grid>
 					<Grid item xs={12} md={6} lg={4}>
 					<Card className={classes.containerList} variant='elevation' elevation={2}>
-					<Typography className={classes.typography} variant='h5'>Inversiones</Typography>
+					<Typography className={classes.title} variant='h5'>Inversiones</Typography>
 					    <ListLinks array={Inversion} />
 						</Card>
 					</Grid>

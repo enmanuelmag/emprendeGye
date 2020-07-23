@@ -8,27 +8,25 @@ export default makeStyles((theme) => ({
 	},
 	
 	img: {
-		width: '98%',
-		marginTop: "5%",
-		paddingLeft: '2%',
-		paddingRight: '2%',
+		width: "100%",
+		marginTop:"3%",
+	
 	},
 
 	franja: {
 		//es para que salga en la franja de nuestros objetivos el color azul.
 		background: '#16244b',
 		height: '9rem',
-		marginTop: '4%',
+		marginTop: '2%',
+		
 	},
 
 	frases1: {
-		//fontFamily: 'Playfair Display',
-		color:'#A8A7A7',
-		fontWeight: 'bold',
+
 		textAlign: 'center',
-		fontSize: '360%',
+        paddingBottom: theme.spacing(2),
+		fontWeight: 'bold',
 		marginTop: '4%',
-		
 	},
 
 	frases: {

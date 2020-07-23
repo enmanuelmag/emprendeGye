@@ -10,6 +10,7 @@ export default function EquipodeDesarrollo() {
   const classes = style();
 
   return (
+    <div className={classes.contenedor}>
     <Card className={classes.root}>
     <Grid container spacing={4}>
       <Grid item xs={12} md={6} lg={6}>
@@ -154,5 +155,6 @@ export default function EquipodeDesarrollo() {
         </Grid>
 </Grid>
 </Card>
+</div>
   )
 }

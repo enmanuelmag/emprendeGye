@@ -2,9 +2,11 @@ import { createStyles, makeStyles} from '@material-ui/core/styles';
 
 export default makeStyles((theme) =>
   createStyles({
-    typography: {
-      paddingLeft:'25%',
-    },    
+    title: {
+      textAlign: 'center',
+          paddingBottom: theme.spacing(2),
+          fontWeight: 'bold',
+    },
 
     containerList: {
       paddingTop: theme.spacing(3),

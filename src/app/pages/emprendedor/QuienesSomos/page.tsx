@@ -31,12 +31,13 @@ export default function QuienesSomos() {
 						</div>
 					</Grid>
 
-
+					
 					<Grid item xs={12} lg={12}>
-						<Typography className={classes.frases1} variant='h5'>
+						<Typography className={classes.frases1} variant='h4'>
 							Nuestros Objetivos
 						</Typography>
 					</Grid>
+					
 				</Grid>
 
 				<Grid container>
@@ -62,7 +63,7 @@ export default function QuienesSomos() {
 
 
 					<Grid item xs={12} lg={12}>
-						<Typography className={classes.frases1} variant='h5'>
+						<Typography className={classes.frases1} variant='h4'>
 							Equipo de Desarrollo
 						</Typography>
 

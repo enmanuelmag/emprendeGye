@@ -5,6 +5,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
+import {Typography} from "@material-ui/core";
 //import tileData from './tileData';
 
 const tile = {
@@ -19,6 +20,10 @@ export default function QuienesSomos() {
 
 	return(
 		<Paper className={classes.root} >
+			<Typography className={classes.title} variant='h5'>
+			Destacada
+						</Typography>
+			
 		<GridListTile  key={tile.img} className={classes.gridTile}>
 			
 		<img src={tile.img} alt={tile.title} className={classes.img}/>

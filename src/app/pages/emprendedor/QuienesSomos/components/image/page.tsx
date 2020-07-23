@@ -7,6 +7,9 @@ import style from './style';
 export default function page() {
 	const classes = style();
 	return (
-		<img className={classes.img} src={imagePath} alt='Exito en emprender' />
+		<div className={classes.root}>
+			<img className={classes.img} src={imagePath} alt='Exito en emprender' />
+		</div>
+		
 	);
 }
