@@ -8,9 +8,10 @@ export default function QuienesSomos() {
 	const classes = style();
 
 	return(
-	<Grid container className={classes.root}> 
+	<Grid container className={classes.root} justify="center"
+	alignItems="center"> 
 		<Grid direction="row" justify="center" alignItems="flex-start" 
-		className={classes.root} item xs={8}  > 
+		className={classes.root} item xs={12} md={8} > 
 			<Grid container item justify="center" xs={12}>
 				<Typography className={classes.titulo} variant='h6'>
 					Destacada
@@ -22,7 +23,7 @@ export default function QuienesSomos() {
 		</Grid>
 		<Grid direction="row"
   justify="center"
-  alignItems="flex-start" className={classes.root} item xs={4}  > 
+  alignItems="flex-start" className={classes.root} item xs={12} md={4} > 
 			<Grid container item justify="center" xs={12}>
 				<Typography className={classes.titulo}  variant='h6'>
 					Otras noticias
