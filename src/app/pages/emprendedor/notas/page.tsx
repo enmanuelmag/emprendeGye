@@ -7,16 +7,14 @@ import style from './style';
 export default function Page() {
   const classes = style();
   return (
-    <div className={classes.container}>
-      <Board
-        className={[classes.board]}
-        data={data}
-        editLaneTitle
-        draggable
-        editable
-        collapsibleLanes
-        canAddLanes
-      />
-    </div>
+    <Board
+      className={[classes.board]}
+      data={data}
+      editLaneTitle
+      draggable
+      editable
+      collapsibleLanes
+      canAddLanes
+    />
   );
 }
