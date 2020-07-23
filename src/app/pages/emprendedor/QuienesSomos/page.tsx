@@ -33,9 +33,9 @@ export default function QuienesSomos() {
 
 
 					<Grid item xs={12} lg={12}>
-						<div className={classes.frases1} >
+						<Typography className={classes.frases1} variant='h5'>
 							Nuestros Objetivos
-						</div>
+						</Typography>
 					</Grid>
 				</Grid>
 
@@ -62,9 +62,10 @@ export default function QuienesSomos() {
 
 
 					<Grid item xs={12} lg={12}>
-						<div className={classes.frases1} >
+						<Typography className={classes.frases1} variant='h5'>
 							Equipo de Desarrollo
-						</div>
+						</Typography>
+
 					</Grid>
 				</Grid>
 

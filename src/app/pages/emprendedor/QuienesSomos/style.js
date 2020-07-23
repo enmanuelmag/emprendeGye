@@ -5,7 +5,6 @@ export default makeStyles((theme) => ({
 
 	root: {
 		flexGrow: 1,
-		marginTop: "5%",
 	},
 	
 	img: {
@@ -23,7 +22,7 @@ export default makeStyles((theme) => ({
 	},
 
 	frases1: {
-		fontFamily: 'Playfair Display',
+		//fontFamily: 'Playfair Display',
 		color:'#A8A7A7',
 		fontWeight: 'bold',
 		textAlign: 'center',
