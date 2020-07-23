@@ -6,10 +6,15 @@ export default makeStyles((theme) => ({
     maxWidth: 745,
     marginLeft:"22%",
     marginRight:"20%",
-    paddingTop:"6%",
+    marginTop:"3%",
+    margin:"auto",
     
   },
 
+  contenedor: {
+    margin:"auto",
+    
+  },
   
 
 }));

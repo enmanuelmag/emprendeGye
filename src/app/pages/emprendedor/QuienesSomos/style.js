@@ -22,12 +22,12 @@ export default makeStyles((theme) => ({
 	},
 
 	frases1: {
-		fontFamily: 'Playfair Display',
+		//fontFamily: 'Playfair Display',
 		color:'#A8A7A7',
 		fontWeight: 'bold',
 		textAlign: 'center',
-		fontSize: '70px',
-		marginTop: '-4%',
+		fontSize: '360%',
+		marginTop: '4%',
 		
 	},
 

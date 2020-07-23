@@ -7,9 +7,9 @@ export default function page() {
 
   return (
     <div className={classes.root}>
-          <Typography className={classes.typography} gutterBottom variant="h5" component="h2">
-          ¿Quiénes Somos?
-          </Typography>
+          <Typography className={classes.frases1} variant='h5'>
+				  ¿Quiénes Somos?
+						</Typography>
 
           <Typography className={classes.info} variant="body1">
             Nuestra plataforma cuenta con herramientas intuitivas que permitirán al emprendedor gestionar y
