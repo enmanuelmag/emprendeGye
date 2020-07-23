@@ -4,11 +4,10 @@ export default makeStyles((theme) =>
   createStyles({
      
     root: {
-      //display: 'flex',
-      //flexWrap: 'wrap',
-      //justifyContent: 'space-around',
-      //overflow: 'hidden',
-      //backgroundColor: theme.palette.background.paper,
+      paddingTop: theme.spacing(3),
+		  paddingBottom: theme.spacing(1),
+		  paddingLeft: theme.spacing(2),
+		  paddingRight: theme.spacing(2),
       width: '85%',
       zIndex: '-1',
     },
@@ -23,6 +22,11 @@ export default makeStyles((theme) =>
     gridTile: {
       listStyle: 'none',
       padding: '5px'
+    },
+    title: {
+      textAlign: 'center',
+          paddingBottom: theme.spacing(2),
+          fontWeight: 'bold',
     }
 
   }),

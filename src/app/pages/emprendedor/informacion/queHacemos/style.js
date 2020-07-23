@@ -100,6 +100,15 @@ export default makeStyles((theme) => ({
         width: '95%',
         marginTop:"3%",
         marginLeft:'5%',
+<<<<<<< HEAD
 	    },*/
+=======
+      },
+      title: {
+        textAlign: 'center',
+            paddingBottom: theme.spacing(2),
+            fontWeight: 'bold',
+      },
+>>>>>>> 1f0f1165ea073bee62de25ee379fd3e67d40629a
   
 }));

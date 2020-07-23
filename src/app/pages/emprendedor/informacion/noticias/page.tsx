@@ -12,11 +12,7 @@ export default function QuienesSomos() {
 	alignItems="center"> 
 		<Grid direction="row" justify="center" alignItems="flex-start" 
 		className={classes.root} item xs={12} md={8} > 
-			<Grid container item justify="center" xs={12}>
-				<Typography className={classes.titulo} variant='h6'>
-					Destacada
-				</Typography>
-			</Grid>
+			
 			<Grid container item justify="center"  xs={12}>
 				<NewsPrimary />
 			</Grid>
@@ -24,11 +20,7 @@ export default function QuienesSomos() {
 		<Grid direction="row"
   justify="center"
   alignItems="flex-start" className={classes.root} item xs={12} md={4} > 
-			<Grid container item justify="center" xs={12}>
-				<Typography className={classes.titulo}  variant='h6'>
-					Otras noticias
-				</Typography>
-			</Grid >
+			
 			<Grid container item justify="center" xs={12}>
 				<NewsList/>
 			</Grid>

@@ -7,7 +7,12 @@ export default makeStyles((theme) =>
     },
     videoList: {
       
-    }
+    },
+    title: {
+      textAlign: 'center',
+          paddingBottom: theme.spacing(2),
+          fontWeight: 'bold',
+    },
 
   }),
 );

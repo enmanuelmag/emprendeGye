@@ -6,6 +6,10 @@ export default makeStyles((theme) => ({
     
     root: {
         width: '100%',
+        paddingTop: theme.spacing(3),
+		    paddingBottom: theme.spacing(1),
+		    paddingLeft: theme.spacing(2),
+		    paddingRight: theme.spacing(2),
         //maxWidth: '36ch',
         //backgroundColor: theme.palette.background.paper,
       },
@@ -18,6 +22,11 @@ export default makeStyles((theme) => ({
       },
       list:{
         width: '100%',
+      },
+      title: {
+        textAlign: 'center',
+            paddingBottom: theme.spacing(2),
+            fontWeight: 'bold',
       }
       
 

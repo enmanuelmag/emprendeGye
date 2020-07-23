@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './style';
-
+import {Grid} from "@material-ui/core";
 
 interface SubProps {
         name: string;
@@ -15,21 +15,22 @@ export default function home({aprender} : Props) {
         const classes = style();
 
         return (
-                <div className={classes.root}>
-                <div className={classes.gridList} >
+                //<div className={classes.root}>
+                <Grid  className={classes.root} container item spacing={3} justify="flex-start"
+                alignItems="flex-start">
                   {aprender.links.map((elemento, indice) => (
-                    <div className={classes.gridListTile} key={`${indice}`} >
+                    <Grid item xs={12} md={5} key={`${indice}`} >
                             <iframe title={`${indice}`} className={classes.iframe}
                                 src={elemento} 
                                 allowFullScreen = {true}
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                                 >
                         </iframe>
-                    </div>
+                    </Grid>
                   ))}
-                </div>
+                </Grid>
                
-              </div>
+              //</div>
 
         )
 }
