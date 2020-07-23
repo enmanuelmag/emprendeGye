@@ -8,28 +8,30 @@ export default makeStyles((theme) => ({
 
     root: {
         background: '#16244b',
-        marginTop: '3%',
-    },
-
-    columna: {
-        color: '#FFFFFF',
-        marginTop: '3%',
-        marginLeft: '27%',
-        lineHeight: '160%',
+        marginTop: '7%',
+    
     },
 
     columna2: {
         color: '#FFFFFF',
         marginTop: '3%',
-        marginLeft: '13%',
         lineHeight: '160%',
+        //marginLeft: '12%',
     },
 
     imagen: {
-        width: '16%',
-        paddingLeft: '7%',
+        width: '100%',
+        //paddingLeft: '7%',
         marginTop: '2%',
     },
+
+    imacont: {
+       display:"block",
+        margin:"auto",
+        //paddingLeft: '7%',
+        //marginTop: '2%',
+    },
+
 
     lista: {
         listStyleType: 'none',
@@ -37,7 +39,7 @@ export default makeStyles((theme) => ({
     },
 
     foot: {
-        marginTop: '3%',
+        //marginTop: '3%',
         textAlign: 'center',
         paddingBottom: '1%',
         color: '#FFFFFF',
