@@ -6,7 +6,7 @@ import {
     ListItemText,
     Checkbox,
     Card,
-    ListSubheader,
+    Typography,
     CardContent,
 } from '@material-ui/core';
 
@@ -32,10 +32,13 @@ export default function Home() {
 
 
     return (
-        <Card>
+        <Card className={classes.root }>
+            <Typography className={classes.title} variant='h5'>
+							{palabras.encabezado}
+				</Typography>
             <CardContent className={classes.content}>
             <List className={classes.root}>
-            <ListSubheader>{palabras.encabezado}</ListSubheader>
+            
             
                     {[0, 1, 2, 3].map((value) => {
                         const labelId = `checkbox-list-label-${value}`;

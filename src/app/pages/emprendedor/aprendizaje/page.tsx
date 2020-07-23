@@ -21,8 +21,11 @@ export default function home() {
                                                 </Typography>
 
                                         </Grid>
-                                        <Grid item xs={12}>
-                                                <VideoList aprender={element} />
+                                        <Grid container xs={12}  justify="flex-start">
+                                                <Grid item>
+                                                <VideoList aprender={element}/>
+                                                </Grid>
+
                                         </Grid>
                                 </Grid>
                         ))}

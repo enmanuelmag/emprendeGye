@@ -4,6 +4,9 @@ export default makeStyles((theme) =>
   createStyles({
     root: {
       width: '100%',
+      raised: 'false',
+      elevation: '0',
+      borderWidth: '0',
     },
     avatar: {
       backgroundColor: red[500],

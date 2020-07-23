@@ -7,14 +7,17 @@ export default makeStyles((theme) =>
       width: "100%"
     },
     content: {
-      padding: 0,
+      
+      paddingTop: theme.spacing(3),
+		paddingBottom: theme.spacing(1),
+		paddingLeft: theme.spacing(2),
+		paddingRight: theme.spacing(2),
     },
     titulo: {
-      textAlign: "center",
-      fontWeight: "fontWeightMedium",
-      padding: 5,
-      fontFamily: "sans-serif"
+      textAlign: 'center',
+      paddingBottom: theme.spacing(2),
+      fontWeight: 'bold',
     }
-
+    
   }),
 );

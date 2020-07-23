@@ -15,10 +15,9 @@ interface personCardType{
 export default function Home ({personCard}:any) {
 
     const classes = style();
-    console.log(personCard);
 
     return (
-        <Card className={classes.root}>
+        <Card className={classes.root}  variant="outlined">
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>

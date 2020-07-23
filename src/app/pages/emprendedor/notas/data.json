@@ -50,7 +50,6 @@
         }
       ]
     },
-
     {
       "id": "COMPLETED",
       "title": "Completed",
@@ -70,6 +69,22 @@
           "title": "Maintain Daily Journal",
           "label": "15 mins",
           "description": "Use Spreadsheet for now"
+        }
+      ]
+    },
+    {
+      "id": "ARCHIVED2",
+      "title": "Archived2",
+      "style": {
+        "width": 280
+      },
+      "label": "1/1",
+      "cards": [
+        {
+          "id": "Archived2",
+          "title": "Go Jogging",
+          "label": "300 mins",
+          "description": "Completed 10km on cycle"
         }
       ]
     }
