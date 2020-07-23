@@ -5,7 +5,7 @@ export default makeStyles((theme) =>
     root: {
       display: 'flex',
       flexWrap: 'wrap',
-      justifyContent: 'space-around',
+      //justifyContent: 'space-around',
       overflow: 'hidden',
       backgroundColor: theme.palette.background.paper,
     },
@@ -24,13 +24,13 @@ export default makeStyles((theme) =>
         'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
     },
     iframe: {
-      //minWidth: '300px'
+      margin: 'auto'
       
     },
     gridListTile:{
       padding: '0px',
-      float: "left",
-      display: 'block',
+      //float: "left",
+      //display: 'block',
       
     }
 

@@ -30,6 +30,11 @@ export default makeStyles((theme) => ({
         width: '95%',
         marginTop:"3%",
         marginLeft:'5%',
-	    },
+      },
+      title: {
+        textAlign: 'center',
+            paddingBottom: theme.spacing(2),
+            fontWeight: 'bold',
+      },
   
 }));

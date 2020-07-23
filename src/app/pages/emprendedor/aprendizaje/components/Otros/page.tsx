@@ -24,10 +24,13 @@ export default function Home({ aprender }: Props) {
     const classes = style();
 
     return (
-        <Card>
+        <Card className={classes.root}>
+            <Typography className={classes.title} variant='h5'>
+							Otros Recursos
+						</Typography>
             <CardContent className={classes.content}>
                 <List className={classes.root}>
-                    <ListSubheader>{aprender.name}</ListSubheader>
+                    
                     <Divider />
                     {aprender.links.map((value:ObjectURL, indice) => (
                         <ListItem role={undefined} dense button>

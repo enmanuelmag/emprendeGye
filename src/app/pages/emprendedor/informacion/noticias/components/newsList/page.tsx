@@ -37,6 +37,9 @@ export default function QuienesSomos() {
 
 	return (
 		<Paper className={classes.root} >
+			<Typography className={classes.title} variant='h5'>
+							Otras Noticias
+						</Typography>
 			<List className={classes.list}>
 				{
 					noticias.map((obj, index) => {

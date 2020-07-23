@@ -7,14 +7,20 @@ export default makeStyles((theme) =>
       variant: 'h6'
     },
     root: {
-      width: '100%',
+      //width: '100%',
       backgroundColor: theme.palette.background.paper,
+      paddingTop: theme.spacing(2),
+		paddingBottom: theme.spacing(2),
+		paddingLeft: theme.spacing(2),
+		paddingRight: theme.spacing(2),
     },
     content: {
       padding: "0",
     },
     title: {
-      variant: "h5",
+      textAlign: 'center',
+          paddingBottom: theme.spacing(2),
+          fontWeight: 'bold',
     },
     typographyLink:{
 
