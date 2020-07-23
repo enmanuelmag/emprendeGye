@@ -1,48 +1,40 @@
 import React from 'react';
-import { Grid, Typography, Button } from '@material-ui/core';
+import imagePathfooter from './emprendedor/assets/logodark.svg';
+import { Grid, Typography } from '@material-ui/core';
 import style from './style';
-
+import {ColorButton} from './style'
 export default function home() {
-  const classes = style();
 
-  return (
-    <div className="App">
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Typography variant="h2">Guayaquil</Typography>
-        </Grid>
+    const classes = style();
 
-        <Grid item xs={12}>
-          <Typography variant="h1">EmprendeGYE</Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography variant="h3">Soy</Typography>
-        </Grid>
+    return (
+        <div className={classes.app}>
 
-        <Grid item xs={12}>
-          <Grid container>
-            <Grid item xs={10} lg={4}>
-              <Button variant="contained" className={classes.button}>
-                Entidad
-              </Button>
+            <Grid container spacing={3}>
+                <Grid item xs={12}>
+                <img className={classes.imagen} src={imagePathfooter} alt='Logo' />
+                </Grid>
+                <Grid item xs={12} >
+                    <Grid container justify="center" spacing={3}>
+                        <Grid item xs={10} md={3}>
+                            <ColorButton className={classes.button} >
+                                Entidad
+                            </ColorButton>
+                        </Grid>
+                        <Grid item xs={10} md={3}>
+                            <ColorButton href="/login" className={classes.button} >
+                                Emprendedor
+                            </ColorButton>
+                        </Grid>
+                        <Grid item xs={10} md={3}>
+                            <ColorButton className={classes.button} variant="contained" color='primary'>
+                                Mentor
+                            </ColorButton>
+                        </Grid>
+                    </Grid>
+                </Grid>
             </Grid>
-            <Grid item xs={10} lg={4}>
-              <Button
-                variant="contained"
-                href="/login"
-                className={classes.button}
-              >
-                Emprendedor
-              </Button>
-            </Grid>
-            <Grid item xs={10} lg={4}>
-              <Button variant="contained" className={classes.button}>
-                Mentor
-              </Button>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+            
     </div>
   );
 }

@@ -3,8 +3,23 @@ import { createStyles, makeStyles} from '@material-ui/core/styles';
 export default makeStyles((theme) =>
   createStyles({
     typography: {
-      paddingLeft:'38%',
-      paddingTop: '8%',
+      paddingLeft:'25%',
     },    
+
+    containerList: {
+      paddingTop: theme.spacing(3),
+      paddingBottom: theme.spacing(1),
+      paddingLeft: theme.spacing(2),
+      paddingRight: theme.spacing(2),
+      marginTop: "3%",
+      //marginLeft: "12%",
+    },
+
+    container: {
+      paddingTop: theme.spacing(8),
+      paddingBottom: theme.spacing(8),
+      paddingLeft: theme.spacing(8),
+      paddingRight: theme.spacing(8),
+    },
   }),
 );

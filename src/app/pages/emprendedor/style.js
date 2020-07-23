@@ -2,8 +2,22 @@ import { createStyles, makeStyles, fade } from '@material-ui/core/styles';
 
 export default makeStyles((theme) =>
   createStyles({
-    typographyLink: {
-      //marginLeft: theme.spacing(2),
+    root: {
+        flexGrow: 1,
+        backgroundColor: "blue",
+      },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    typographyLink : {//typographyLink
+      display: 'flex',
+        //marginLeft: theme.spacing(2),
+        display:"flex"
+    },
+    divLinkL: {
+        //display: "inlineBlock",
+        marginLeft: 0,
+        marginRight: 'auto',
     },
     divLinkR: {
       marginLeft: 'auto',

@@ -1,8 +1,9 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import { AppBar, Toolbar, Typography, Link, Grid } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Link, Grid, CardActionArea } from '@material-ui/core';
 import imagePath from './assets/logobarr.svg';
+import Informacion from './informacion'
 import style from './style';
 import InputAsync from './components/inputAsync';
 
@@ -16,11 +17,13 @@ export default function DenseAppBar() {
       <Toolbar variant="dense">
         <Grid container direction="row" justify="center" alignItems="center">
           <Grid item lg={1}>
-            <img className={classes.img} src={imagePath} alt="EmprendeGye" />
+            <CardActionArea href="/emprendedor/home">
+              <img className={classes.img} src={imagePath} alt="EmprendeGye" />
+            </CardActionArea>
           </Grid>
           <Grid item lg={11} className={classes.divLinkR}>
             <Grid container>
-              <Grid item lg={4} className={classes.searchBar}>
+              <Grid item lg={3} className={classes.searchBar}>
                 <div className={classes.search}>
                   <div className={classes.searchIcon}>
                     <SearchIcon />
@@ -35,22 +38,20 @@ export default function DenseAppBar() {
                   />
                 </div>
               </Grid>
-              <Grid item lg={8} className={classes.tabs}>
+              <Grid item lg={9} className={classes.tabs}>
                 <Typography>
-                  <Link
-                    className={classes.link}
-                    href="/emprendedor/quienes_somos"
-                  >
-                    ¿Quiénes Somos?
+                  
+                  <Link className={classes.link} >
+                    <Informacion />
                   </Link>
-                  <Link className={classes.link} href="/emprendedor/ecosistema">
+
+                 <Link className={classes.link} href="/emprendedor/ecosistema">
                     Ecosistema
                   </Link>
 
                   <Link
                     className={classes.link}
-                    href="./aprendizaje"
-                    onClick={preventDefault}
+                    href="/emprendedor/aprendizaje"
                   >
                     Aprendizaje
                   </Link>

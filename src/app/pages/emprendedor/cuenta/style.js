@@ -9,17 +9,20 @@ export default makeStyles((theme) => ({
 		textAlign: 'center',
 		color: theme.palette.text.secondary,
     },
+    
     gridItem: {
         alignItems:'stretch',
         display: 'block',
         margin: 'auto',
     },
+
     gridInfo: {
         padding: '0px 12px !important',
     },
+
     textPerfil: {
         textAlign: 'center',
-        marginTop: '7%',
+        marginTop: '4%',
         // marginRight: '13%',
         // marginLeft: '5%',
         // margin: '0px',

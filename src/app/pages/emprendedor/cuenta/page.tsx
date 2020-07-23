@@ -14,19 +14,21 @@ export default function page() {
 	return (
         <Container maxWidth="lg">
             <Grid container spacing={3}>
+            <Grid lg={6}></Grid>
                 <Grid item xs={12} lg={6} className={classes.textPerfil}>
                     <Typography variant='h3'>Perfil</Typography>
                 </Grid>
-                <Grid lg={6}></Grid>
+               
 
                 <Grid item xs={12} className={classes.gridInfo}>
                     <Grid container>
+                    <Grid item xs={12} lg={5} className={classes.gridItem}>
+                            <Image />
+                        </Grid>
                     <Grid  item xs={12} lg={5} className={classes.gridItem}>
                             <Form />
                         </Grid>
-                        <Grid item xs={12} lg={5} className={classes.gridItem}>
-                            <Image />
-                        </Grid>
+                        
                         
                     </Grid>
                 </Grid>
