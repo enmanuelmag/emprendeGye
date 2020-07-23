@@ -31,7 +31,7 @@ function Copyright() {
 export default function Page({ func }: { func: any }) {
   const classes = style();
   console.log(func);
-  const { login, updateEmail } = func;
+  const { updateEmail } = func;
 
   const initData = {
     title: 'Inicio de sesión',

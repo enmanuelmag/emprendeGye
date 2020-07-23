@@ -3,21 +3,34 @@ import { createStyles, makeStyles, fade } from '@material-ui/core/styles';
 export default makeStyles((theme) =>
   createStyles({
     root: {
-        flexGrow: 1,
-        backgroundColor: "blue",
-      },
+      flexGrow: 1,
+      backgroundColor: 'blue',
+    },
     menuButton: {
       marginRight: theme.spacing(2),
     },
-    typographyLink : {//typographyLink
+    list: {
+      width: 200,
+    },
+    padding: {
+      paddingRight: 30,
+      cursor: 'pointer',
+    },
+
+    sideBarIcon: {
+      padding: 0,
+      color: 'white',
+      cursor: 'pointer',
+    },
+    typographyLink: {
+      //typographyLink
       display: 'flex',
-        //marginLeft: theme.spacing(2),
-        display:"flex"
+      //marginLeft: theme.spacing(2),
     },
     divLinkL: {
-        //display: "inlineBlock",
-        marginLeft: 0,
-        marginRight: 'auto',
+      //display: "inlineBlock",
+      marginLeft: 0,
+      marginRight: 'auto',
     },
     divLinkR: {
       marginLeft: 'auto',
@@ -35,6 +48,9 @@ export default makeStyles((theme) =>
 
     img: {
       width: '80%',
+    },
+    imgMobile: {
+      width: '25%',
     },
     searchBar: {
       display: 'block',
@@ -81,6 +97,9 @@ export default makeStyles((theme) =>
       [theme.breakpoints.up('md')]: {
         width: '20ch',
       },
+    },
+    nested: {
+      paddingLeft: theme.spacing(2),
     },
     // sectionDesktop: {
     //     display: 'none',
