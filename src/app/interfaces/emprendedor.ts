@@ -39,3 +39,12 @@ export interface ItemsEvents {
 	srcImg: string;
 	alt: string;
 }
+
+/* Interfaz para SoftSkills */
+export interface EnvSoftSkills {
+	items: ItemsEvents[];
+}
+
+export interface ItemsSoftSkills {
+	hability: string;
+}
