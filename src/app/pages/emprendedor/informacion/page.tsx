@@ -85,7 +85,7 @@ export default function Informacion() {
                       className={classes.link}
                     >
                       {' '}
-                      ¿Que hacemos?
+                      ¿Qué hacemos?
                     </Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
