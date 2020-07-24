@@ -1,6 +1,6 @@
 import React from 'react';
 import imagePathfooter from './emprendedor/assets/logodark.svg';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import style from './style';
 import {ColorButton} from './style'
 export default function home() {

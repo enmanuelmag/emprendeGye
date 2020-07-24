@@ -1,11 +1,9 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
 import style from './style';
 import { TextField, Button } from '@material-ui/core';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Box from '@material-ui/core/Box';
 
 export default function Form() {
 	const classes = style();

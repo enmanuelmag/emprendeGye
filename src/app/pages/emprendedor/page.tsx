@@ -5,12 +5,10 @@ import { AppBar, Toolbar, Typography, Link, Grid, CardActionArea } from '@materi
 import imagePath from './assets/logobarr.svg';
 import Informacion from './informacion'
 import style from './style';
-import InputAsync from './components/inputAsync';
 
 export default function DenseAppBar() {
   const classes = style();
-  const preventDefault = (event: React.SyntheticEvent) =>
-    event.preventDefault();
+//   const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
 
   return (
     <AppBar className={classes.barra} position="static">

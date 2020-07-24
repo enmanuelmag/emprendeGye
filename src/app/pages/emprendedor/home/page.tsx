@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React from "react";
 import { Grid } from '@material-ui/core';
 import style from './style';
 import Curva from './components/curva';
@@ -9,9 +8,9 @@ import Retroalimentación from "./components/retroalimentacion";
 import Notificaciones from "./components/notificaciones";
 import {feed} from './components/xamples/feedbacks';
 import {noti} from './components/xamples/notificaciones';
-import { Steps, Hints } from "intro.js-react";
+import { Steps } from "intro.js-react";
 import "intro.js/introjs.css";
-import introJs from 'intro.js';
+// import introJs from 'intro.js';
 
 import {HomeSteps} from './steps/index.js';
 //introJs().addHints();
