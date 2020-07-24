@@ -98,7 +98,7 @@ export default function Page({ func }: { func: any }) {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="/register" variant="body2">
+              <Link href="/registerSteps" variant="body2">
                 {initData.create}
               </Link>
             </Grid>
