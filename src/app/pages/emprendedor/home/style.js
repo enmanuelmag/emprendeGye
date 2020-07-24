@@ -5,6 +5,5 @@ export default makeStyles((theme) =>
     contPrincipal: {
       padding: 50
     }
-
   }),
 );
