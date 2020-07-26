@@ -36,7 +36,7 @@ export default function Home({ peopleCard }: any) {
     };*/
   //CardHeader,Divider,Card,CardContent
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} variant='outlined'>
       <Typography className={classes.title} variant="h5">
         {palabras.encabezado}
       </Typography>

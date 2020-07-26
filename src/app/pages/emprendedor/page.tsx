@@ -14,7 +14,6 @@ import {
   Collapse,
 } from '@material-ui/core';
 import imagePath from './assets/logobarr.svg';
-import Informacion from './informacion';
 import style from './style';
 import MenuIcon from '@material-ui/icons/Menu';
 import ExpandLess from '@material-ui/icons/ExpandLess';
@@ -230,9 +229,6 @@ export default function DenseAppBar() {
                 </Grid>
                 <Grid item lg={8} className={classes.tabs}>
                   <Typography>
-                    <Link className={classes.link}>
-                      <Informacion />
-                    </Link>
 
                     <Link
                       className={classes.link}

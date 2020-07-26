@@ -6,18 +6,18 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-interface personCardType{
-    nombre: string;
-    descripcion: string;
-    img: string;
+interface personCardType {
+  nombre: string;
+  descripcion: string;
+  img: string;
 }
 
-export default function Home ({personCard}:any) {
+export default function Home({ personCard }: any) {
 
-    const classes = style();
+  const classes = style();
 
-    return (
-        <Card className={classes.root}  variant="outlined">
+  return (
+    <Card className={classes.root} variant="outlined">
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
@@ -33,5 +33,5 @@ export default function Home ({personCard}:any) {
         subheader={personCard.personCard.descripcion}
       />
     </Card>
-    )
+  )
 }

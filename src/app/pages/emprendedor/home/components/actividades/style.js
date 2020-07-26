@@ -3,7 +3,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) =>
   createStyles({
     root: {
-      
+      border: "1px solid rgba(0, 0, 0, 0.23)",
       //width: '100%',
       backgroundColor: theme.palette.background.paper,
       paddingTop: theme.spacing(3),
@@ -16,8 +16,8 @@ export default makeStyles((theme) =>
     },
     title: {
       textAlign: 'center',
-            paddingBottom: theme.spacing(2),
-            fontWeight: 'bold',
+      paddingBottom: theme.spacing(2),
+      fontWeight: 'bold',
     },
 
   }),

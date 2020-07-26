@@ -6,7 +6,7 @@ export default makeStyles((theme) =>
       variant: 'h6'
     },
     root: {
-      
+      border: "1px solid rgba(0, 0, 0, 0.23)",
       //width: '100%',
       backgroundColor: theme.palette.background.paper,
       paddingTop: theme.spacing(3),
@@ -19,10 +19,10 @@ export default makeStyles((theme) =>
     },
     title: {
       textAlign: 'center',
-            paddingBottom: theme.spacing(2),
-            fontWeight: 'bold',
+      paddingBottom: theme.spacing(2),
+      fontWeight: 'bold',
     },
-    rootList:{
+    rootList: {
       padding: '0px',
       spacing: '1px',
     },

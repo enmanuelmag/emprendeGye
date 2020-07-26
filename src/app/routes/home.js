@@ -4,6 +4,7 @@ import App from '../App';
 import Emprendedor from '../routes/emprendedor';
 import Login from '../pages/login';
 import Register from '../pages/registerSteps';
+import Admin from '../pages/admin/App'
 
 export default function home() {
   return (
@@ -13,6 +14,7 @@ export default function home() {
         <Route path="/login" component={Login} />
         <Route path="/registerSteps" component={Register} />
         <Route path="/emprendedor" component={Emprendedor} />
+        <Route exact path="/admin" component={Admin} />
       </Switch>
     </Router>
   );

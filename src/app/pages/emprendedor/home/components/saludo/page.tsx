@@ -1,17 +1,19 @@
 import React from 'react';
-import { Paper, Typography } from '@material-ui/core';
+import { Paper, Typography, Card } from '@material-ui/core';
 import style from './style';
 
-const initData = { saludo: 'Buenos dias, ', 
-                frase: "Existe el mañana por alguna razón", 
-                hora: "21:04:56" };
+const initData = {
+        saludo: 'Buenos dias, ',
+        frase: "Existe el mañana por alguna razón",
+        hora: "21:04:56"
+};
 
 export default function home() {
 
         const classes = style();
 
         return (
-                <Paper className={classes.root} >
+                <Card variant='outlined' className={classes.root} >
                         <Typography className={classes.typographyBody}>
                                 {initData.saludo}
                         </Typography>
@@ -21,7 +23,7 @@ export default function home() {
                         <Typography className={classes.typographyBody}>
                                 {initData.frase}
                         </Typography>
-                </Paper>
+                </Card>
 
         )
 }

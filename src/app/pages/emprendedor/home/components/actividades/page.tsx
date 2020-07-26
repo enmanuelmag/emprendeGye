@@ -32,14 +32,14 @@ export default function Home() {
 
 
     return (
-        <Card className={classes.root }>
+        <Card variant='outlined' className={classes.root}>
             <Typography className={classes.title} variant='h5'>
-							{palabras.encabezado}
-				</Typography>
+                {palabras.encabezado}
+            </Typography>
             <CardContent className={classes.content}>
-            <List className={classes.root}>
-            
-            
+                <List >
+
+
                     {[0, 1, 2, 3].map((value) => {
                         const labelId = `checkbox-list-label-${value}`;
                         return (

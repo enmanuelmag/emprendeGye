@@ -1,7 +1,12 @@
 {
 	"compilerOptions": {
 		"paths": {
-			"@interfaces/*": ["app/interfaces/*"]
+			"@interfaces/*": [
+				"app/interfaces/*"
+			],
+			"@components/*": [
+				"app/pages/admin/components/*"
+			]
 		}
 	}
 }

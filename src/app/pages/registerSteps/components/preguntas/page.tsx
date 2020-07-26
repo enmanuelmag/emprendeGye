@@ -17,25 +17,25 @@ export default function Page() {
         setValue((event.target as HTMLInputElement).value);
     };
 
-    const opciones = [  "Por ahora solo pero eventualemente espero incorporar más personas",
-                        "Somos 10 o menos",
-                        "Somos más de 10",
-                        "Necesito hacerlo para atraer a mis clientes",
-                        "Me comunico más por redes sociales",
-                        "Tengo que habalar con mis clientes solo al momento de cerrar la venta",
-                        "Sí, Scrum",
-                        "Sí, Ágil",
-                        "No, desconozco qué es una metodoloǵia de gestión de proyectos",
-                        "Me enfurezco o me deprimo",
-                        "No me ha tocado pasar por obstáculos",
-                        "No lo soluciono, voy por lo más fácil",
-                        "Pido ayuda"]
+    const opciones = ["Por ahora solo pero eventualemente espero incorporar más personas",
+        "Somos 10 o menos",
+        "Somos más de 10",
+        "Necesito hacerlo para atraer a mis clientes",
+        "Me comunico más por redes sociales",
+        "Tengo que hablar con mis clientes solo al momento de cerrar la venta",
+        "Sí, Scrum",
+        "Sí, Ágil",
+        "No, desconozco qué es una metodología de gestión de proyectos",
+        "Me enfurezco o me deprimo",
+        "No me ha tocado pasar por obstáculos",
+        "No lo soluciono, voy por lo más fácil",
+        "Pido ayuda"]
 
     return (
         <Grid container xs={12} className={classes.container}>
             <Grid item xs={12} lg={12}>
-            <Typography variant="h4" align="center" display='block' className={classes.title}>
-                Preguntas
+                <Typography variant="h4" align="center" display='block' className={classes.title}>
+                    Preguntas
             </Typography>
             </Grid>
             <Grid item lg={2}></Grid>
