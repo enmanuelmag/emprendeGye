@@ -11,12 +11,25 @@ import FormControl from '@material-ui/core/FormControl';
 export default function Page() {
     const classes = style();
     const [value, setValue] = React.useState('');
+    const [otherOption, setOther] = React.useState('');
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue((event.target as HTMLInputElement).value);
+        let newValue = (event.target as HTMLInputElement).value;
+        setValue(newValue);
+
+        if (newValue != 'otro') {
+            setOther('');
+        }
     };
 
-	return (
+    const handleOther = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+        if (value === 'otro') {
+            setOther(event.target.value);
+        }
+    }
+
+    return (
         <Grid container xs={12} className={classes.container}>
             <Grid item xs={12} lg={12}>
                 <Typography variant="h4" align="center" display='block' className={classes.title}>
@@ -67,33 +80,36 @@ export default function Page() {
                                 type="date"
                                 defaultValue={new Date()}
                                 InputLabelProps={{
-                                shrink: true,
+                                    shrink: true,
                                 }}
                             />
                         </form>
                     </CardContent>
                 </Card>
-                </Grid>
+            </Grid>
             <Grid item xs={12} lg={4}>
                 <Card variant="outlined" className={classes.formControl}>
                     <CardContent>
                         <form className={classes.root} autoComplete='off'>
-                        <FormControl component="fieldset">
-                            <Typography gutterBottom variant="h6" component="h2" align='center' className={classes.title2}>
-                                Ocupación
+                            <FormControl component="fieldset">
+                                <Typography gutterBottom variant="h6" component="h2" align='center' className={classes.title2}>
+                                    Ocupación
                             </Typography>
-                            <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-                                <FormControlLabel value="estudiante" control={<Radio />} label="Estudiante universitario" />
-                                <FormControlLabel value="jubilado" control={<Radio />} label="Jubilado" />
-                                <FormControlLabel value="empleado" control={<Radio />} label="Empleado" />
-                                <FormControlLabel value="subempleado" control={<Radio />} label="Subempleado" />
-                                <FormControlLabel value="otro" control={<Radio />} label="Otro" />
-                                <TextField
-                                    id='outlined-basic'
-                                    type='text'
-                                    label='Otra ocupación'
-                                />
-                            </RadioGroup>
+                                <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+                                    <FormControlLabel value="estudiante" control={<Radio />} label="Estudiante universitario" />
+                                    <FormControlLabel value="jubilado" control={<Radio />} label="Jubilado" />
+                                    <FormControlLabel value="empleado" control={<Radio />} label="Empleado" />
+                                    <FormControlLabel value="subempleado" control={<Radio />} label="Subempleado" />
+                                    <FormControlLabel value="otro" control={<Radio />} label="Otro" />
+                                    <TextField
+                                        id='outlined-basic'
+                                        type='text'
+                                        label='Otra ocupación'
+                                        value={otherOption}
+                                        onChange={handleOther}
+                                        disabled={value === 'otro' ? false : true}
+                                    />
+                                </RadioGroup>
                             </FormControl>
                         </form>
                     </CardContent>
@@ -101,5 +117,5 @@ export default function Page() {
             </Grid>
             <Grid item lg={2}></Grid>
         </Grid>
-	);
+    );
 }
