@@ -6,7 +6,7 @@ export default makeStyles((theme) => ({
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
     minHeight: '8rem',
-    minHeight: '8rem',
+    maxHeight: '8rem',
   },
   cover: {
     maxWidth: 100,

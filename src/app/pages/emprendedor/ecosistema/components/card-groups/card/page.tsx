@@ -4,7 +4,6 @@ import {
   CardContent,
   Typography,
   Card,
-  Divider,
   Chip,
   Grid,
 } from '@material-ui/core';
