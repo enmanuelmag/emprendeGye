@@ -50,12 +50,12 @@ export default function page({ data }: { data: any }) {
 						{gruopFroums.items.map((item, index) => {
 							return <CardGroups index={index} item={item} />;
 						})}
-                        <Button
-                            className={classes.buttonText}
-                            color='primary'
-                        >
-                            {initData.btnGroup}
-                        </Button>
+						<Button
+							className={classes.buttonText}
+							color='primary'
+						>
+							{initData.btnGroup}
+						</Button>
 					</Card>
 				</Grid>
 				<Grid item xs={12} md={6} lg={4}>
@@ -66,12 +66,12 @@ export default function page({ data }: { data: any }) {
 						{events.items.map((item, index) => {
 							return <CardEvent index={index} item={item} />;
 						})}
-                        <Button
-                            className={classes.buttonText}
-                            color='primary'
-                        >
-                            {initData.btnGroup}
-                        </Button>
+						<Button
+							className={classes.buttonText}
+							color='primary'
+						>
+							{initData.btnGroup}
+						</Button>
 					</Card>
 				</Grid>
 			</Grid>
