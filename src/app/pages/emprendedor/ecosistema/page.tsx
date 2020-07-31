@@ -1,80 +1,109 @@
 import React from 'react';
-import { Grid, Container, Card, Typography, Button } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
+import {
+  Grid,
+  Container,
+  Card,
+  Typography,
+  Button,
+  AppBar,
+  Tabs,
+  Box,
+  Tab,
+} from '@material-ui/core';
 
+import SwipeableViews from 'react-swipeable-views';
 import CardPeople from './components/card-people';
 import CardGroups from './components/card-groups';
-import CardEvent from './components/card-events';
 
 import { EnvEvents, EnvGroupForum, EnvPeople } from '@interfaces/emprendedor';
 
 import style from './style';
 
-export default function page({ data }: { data: any }) {
-	const classes = style();
+function a11yProps(index) {
+  return {
+    id: `full-width-tab-${index}`,
+    'aria-controls': `full-width-tabpanel-${index}`,
+  };
+}
 
-	const initData = {
-		btnPeople: 'Ver más',
-		btnGroup: 'Ver más',
-		btnEvents: 'Ver más',
-	};
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
-	const people: EnvPeople = data['people'];
-	const events: EnvEvents = data['events'];
-	const gruopFroums: EnvGroupForum = data['gruopFroums'];
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`full-width-tabpanel-${index}`}
+      aria-labelledby={`full-width-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
 
-	return (
-		<Container className={classes.container} maxWidth={'xl'}>
-			<Grid container spacing={4}>
-				<Grid item xs={12} md={6} lg={4}>
-					<Card className={classes.containerList} variant='elevation' elevation={2}>
-						<Typography className={classes.title} variant='h5'>
-							{people.title}
-						</Typography>
-						{people.items.map((item, index) => {
-							return <CardPeople index={index} item={item} />;
-						})}
-						<Button
-							className={classes.buttonText}
-							color='primary'
-						>
-							{initData.btnPeople}
-						</Button>
-					</Card>
-				</Grid>
+export default function Page({ data }: { data: any }) {
+  const classes = style();
+  const theme = useTheme();
 
-				<Grid item xs={12} md={6} lg={4}>
-					<Card className={classes.containerList} variant='elevation' elevation={2}>
-						<Typography className={classes.title} variant='h5'>
-							{gruopFroums.title}
-						</Typography>
-						{gruopFroums.items.map((item, index) => {
-							return <CardGroups index={index} item={item} />;
-						})}
-						<Button
-							className={classes.buttonText}
-							color='primary'
-						>
-							{initData.btnGroup}
-						</Button>
-					</Card>
-				</Grid>
-				<Grid item xs={12} md={6} lg={4}>
-					<Card className={classes.containerList} variant='elevation' elevation={2}>
-						<Typography className={classes.title} variant='h5'>
-							{events.title}
-						</Typography>
-						{events.items.map((item, index) => {
-							return <CardEvent index={index} item={item} />;
-						})}
-						<Button
-							className={classes.buttonText}
-							color='primary'
-						>
-							{initData.btnGroup}
-						</Button>
-					</Card>
-				</Grid>
-			</Grid>
-		</Container>
-	);
+  const initData = {
+    btnPeople: 'Ver más',
+    btnGroup: 'Ver más',
+    btnEvents: 'Ver más',
+  };
+  const [value, setValue] = React.useState(0);
+
+  const people: EnvPeople = data['people'];
+  const gruopFroums: EnvGroupForum = data['gruopFroums'];
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const handleChangeIndex = (index) => {
+    setValue(index);
+  };
+
+  return (
+    <React.Fragment>
+      <AppBar position="static" color="default">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          variant="fullWidth"
+          aria-label="full width tabs example"
+        >
+          <Tab className={classes.tab} label={people.title} {...a11yProps(0)} />
+          <Tab
+            className={classes.tab}
+            label={gruopFroums.title}
+            {...a11yProps(1)}
+          />
+        </Tabs>
+      </AppBar>
+      <SwipeableViews
+        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        index={value}
+        onChangeIndex={handleChangeIndex}
+      >
+        <TabPanel value={value} index={0} dir={theme.direction}>
+          {people.items.map((item, index) => {
+            return <CardPeople item={item} index={index} />;
+          })}
+        </TabPanel>
+        <TabPanel value={value} index={1} dir={theme.direction}>
+          {gruopFroums.items.map((item, index) => {
+            return <CardGroups item={item} index={index} />;
+          })}
+        </TabPanel>
+      </SwipeableViews>
+    </React.Fragment>
+  );
 }
