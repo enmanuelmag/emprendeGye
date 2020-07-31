@@ -94,14 +94,10 @@ export default function Page({ data }: { data: any }) {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          {people.items.map((item, index) => {
-            return <CardPeople item={item} index={index} />;
-          })}
+          <CardPeople items={people.items} />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          {gruopFroums.items.map((item, index) => {
-            return <CardGroups item={item} index={index} />;
-          })}
+          <CardGroups items={gruopFroums.items} />
         </TabPanel>
       </SwipeableViews>
     </React.Fragment>
