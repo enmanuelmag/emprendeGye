@@ -1,58 +1,127 @@
 import React from 'react';
-import {
-	CardMedia,
-	CardContent,
-	Typography,
-	Card,
-	Divider,
-    Chip,
-    Grid,
-} from '@material-ui/core';
+import { Grid, TextField, CircularProgress } from '@material-ui/core';
+
+import CardGroups from './card';
 
 import style from './style';
 
 import { ItemsGroupForum } from '@interfaces/emprendedor';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
-export default function page({
-	index,
-	item,
-}: {
-	index: number;
-	item: ItemsGroupForum;
-}) {
-	const classes = style();
+interface CountryType {
+  name: string;
+}
 
-	return (
-		<React.Fragment>
-			<Card
-				className={classes.cardContainer}
-				key={`id_people_${index}`}
-				elevation={0}
-				variant={'elevation'}
-			>
-            <Grid container direction="row" justify="center" alignItems="center">
-                <Grid item xs={4}>
-                    <CardMedia
-                        component='img'
-                        className={classes.cover}
-                        image={item.srcImg}
-                        title={item.alt}
-                    />
+function sleep(delay = 0) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, delay);
+  });
+}
+
+export default function Page({ items }: { items: ItemsGroupForum[] }) {
+  const classes = style();
+  const [open, setOpen] = React.useState(false);
+  const [options, setOptions] = React.useState<CountryType[]>([]);
+  const loading = open && options.length === 0;
+
+  React.useEffect(() => {
+    let active = true;
+
+    if (!loading) {
+      return undefined;
+    }
+
+    (async () => {
+      const response = await fetch(
+        'https://country.register.gov.uk/records.json?page-size=5000'
+      );
+      await sleep(2000); // For demo purposes.
+      const countries = await response.json();
+
+      if (active) {
+        setOptions(
+          Object.keys(countries).map(
+            (key) => countries[key].item[0]
+          ) as CountryType[]
+        );
+      }
+    })();
+
+    return () => {
+      active = false;
+    };
+  }, [loading]);
+
+  React.useEffect(() => {
+    if (!open) {
+      setOptions([]);
+    }
+  }, [open]);
+
+  return (
+    <React.Fragment>
+      <Grid
+        container
+        spacing={6}
+        direction="row"
+        justify="center"
+        alignItems="center"
+        className={classes.grid}
+      >
+        <Grid item xs={5}>
+          <Autocomplete
+            id="asynchronous-demo"
+            fullWidth
+            open={open}
+            onOpen={() => {
+              setOpen(true);
+            }}
+            onClose={() => {
+              setOpen(false);
+            }}
+            getOptionSelected={(option, value) => option.name === value.name}
+            getOptionLabel={(option) => option.name}
+            options={options}
+            loading={loading}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                placeholder="Buscar"
+                variant="outlined"
+                InputProps={{
+                  ...params.InputProps,
+                  endAdornment: (
+                    <React.Fragment>
+                      {loading ? (
+                        <CircularProgress color="inherit" size={20} />
+                      ) : null}
+                      {params.InputProps.endAdornment}
+                    </React.Fragment>
+                  ),
+                }}
+              />
+            )}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Grid
+            container
+            spacing={6}
+            direction="row"
+            justify="center"
+            alignItems="center"
+            className={classes.grid}
+          >
+            {items.map((item, index) => {
+              return (
+                <Grid item xs={12} md={4} lg={4}>
+                  <CardGroups item={item} index={index} />
                 </Grid>
-                <Grid item xs={8}>
-                    <div className={classes.details}>
-                        <CardContent className={classes.content}>
-                            <Typography component='h5' variant='subtitle1'>
-                                {item.title}
-                            </Typography>
-                            <Chip color='primary' label={item.type} size='small' />
-                        </CardContent>
-                    </div>
-                </Grid>
-            </Grid>
-            </Card>
-            
-			<Divider variant='middle' />
-		</React.Fragment>
-	);
+              );
+            })}
+          </Grid>
+        </Grid>
+      </Grid>
+    </React.Fragment>
+  );
 }
