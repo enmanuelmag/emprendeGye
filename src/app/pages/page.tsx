@@ -1,6 +1,6 @@
 import React from 'react';
 import imagePathfooter from './emprendedor/assets/logodark.svg';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography, Button } from '@material-ui/core';
 import style from './style';
 import { ColorButton } from './style';
 export default function home() {
@@ -13,23 +13,50 @@ export default function home() {
           <img className={classes.imagen} src={imagePathfooter} alt="Logo" />
         </Grid>
         <Grid item xs={12}>
-          <Grid container justify="center" spacing={3}>
-            <Grid item xs={10} md={3}>
-              <ColorButton className={classes.button}>Entidad</ColorButton>
+          <Grid container justify="center" spacing={4}>
+            <Grid item xs={7} md={3}>
+                <ColorButton className={classes.button}
+                             variant='contained'>
+                    <Grid container>
+                        <Grid item xs={12}>
+                            <img className={classes.imagen} src='emprendedor/assets/initialPage/entidad.jpg' alt="entidad" />
+                        </Grid>
+                        <Grid item xs={12}>
+                            Entidad
+                        </Grid>
+                    </Grid>
+                </ColorButton>
+                {/* <Typography variant='h5' className={classes.text}>
+                    ENTIDAD
+                </Typography> */}
             </Grid>
-            <Grid item xs={10} md={3}>
-              <ColorButton href="/login" className={classes.button}>
-                Emprendedor
-              </ColorButton>
+            <Grid item xs={7} md={3}>
+                <ColorButton href="/login" className={classes.button}
+                           variant='contained'>
+                    <Grid container>
+                        <Grid item xs={12}>
+                            <img className={classes.imagen} src='emprendedor/assets/initialPage/emprendedores.jpeg' alt="emprendedor" />
+                        </Grid>
+                        <Grid item xs={12}>
+                            Emprendedor
+                        </Grid>
+                    </Grid>
+                </ColorButton>
             </Grid>
-            <Grid item xs={10} md={3}>
-              <ColorButton
+            <Grid item xs={7} md={3}>
+                <ColorButton
                 className={classes.button}
                 variant="contained"
-                color="primary"
-              >
-                Mentor
-              </ColorButton>
+                >
+                    <Grid container>
+                        <Grid item xs={12}>
+                            <img className={classes.imagen} src='emprendedor/assets/initialPage/mentor.jpg' alt="mentor" />
+                        </Grid>
+                        <Grid item xs={12}>
+                            Mentor
+                        </Grid>
+                    </Grid>
+                </ColorButton>
             </Grid>
           </Grid>
         </Grid>
