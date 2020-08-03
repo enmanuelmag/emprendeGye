@@ -25,6 +25,7 @@
 		"intro.js": "2.9.3",
 		"intro.js-react": "^0.2.0",
 		"mongoose": "^5.9.9",
+		"mysql2": "^2.1.0",
 		"react": "^16.13.1",
 		"react-color": "^2.18.1",
 		"react-dom": "^16.13.1",
@@ -33,6 +34,7 @@
 		"react-scripts": "3.4.1",
 		"react-swipeable-views": "^0.13.9",
 		"react-trello": "^2.2.2",
+		"sequelize": "^6.3.4",
 		"typescript": "^3.7.5"
 	},
 	"scripts": {
