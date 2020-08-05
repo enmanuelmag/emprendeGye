@@ -39,6 +39,10 @@ app.get('/ping', function (req, res) {
 	return res.send({ data: 'pong' });
 });
 
+app.get('/', function (req, res) {
+	res.sendFile(path.join(__dirname, '..', '..', 'build', 'index.html'));
+});
+
 //INICIALIZACION DEL SERVIDOR
 app.listen(app.get('port'), () => {
 	console.log(`Server funcionando! ${app.get('port')}`);

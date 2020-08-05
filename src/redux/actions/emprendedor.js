@@ -7,8 +7,8 @@ export const UPDATE_EMPRENDEDOR_ERROR = 'UPDATE_EMPRENDEDOR_ERROR'
 export const UPDATE_EMPRENDEDOR_COMPLETE = 'UPDATE_EMPRENDEDOR_COMPLETE'
 
 
-export const getEmprendedor = (emprendedor) => ({
-    type: GET_EMPRENDEDOR_START, id: emprendedor
+export const getEmprendedor = ({idEmprendedor}) => ({
+    type: GET_EMPRENDEDOR_START, idEmprendedor
 })
 
 export const updateEmprendedor = (emprendedor) => ({

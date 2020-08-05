@@ -29,30 +29,9 @@ router.get("/:id", function(req, res, next) {
         res.send("Error: " + err);
     })
 })
-/*
-app.put('/generar', function (req, res) {
-	console.log('Generando horarios');
 
-	if (typeof req.body !== 'undefined') {
-		const paquetes = req.body;
-		//console.log(paquetes);
-		const castFunction = (paquete) => {
-			return { paquete: paquete };
-		}; //Necesaria debido a falencas de clase set es6
-
-		const paquetesObj = paquetes.map(castFunction);
-
-		const generador = new Generador(paquetesObj);
-
-		//console.log(generador.HorariosGenerados.map((horario) => horario.materias));//horario es una obj de clase
-
-		res.send(generador.HorariosGenerados.map((horario) => horario.materias));
-	} else {
-		res.send([null]);
-	}
-});
-*/ 
-router.update("/update", function(req, res, next) {
+router.post("/update", function(req, res, next) {
+    
     emprendedor.update(req.body).then(emprendedor =>{
         if(emprendedor){
             res.json(emprendedor);

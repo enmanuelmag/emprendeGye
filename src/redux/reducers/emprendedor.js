@@ -9,7 +9,7 @@ import {
 } from '../actions/emprendedor';
 
 export default function emprendedor(
-	state = { state: "", object: {} }, { type, response }) {
+	state = { state: "", object: null }, { type, response }) {
 	switch (type) {
 		case GET_EMPRENDEDOR_START:
 			return { state: "START", object: {} };

@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux';
 import emprendedor from './emprendedor';
-import notifier from './notifier';
+//import notifier from './notifier';
 
 export const initialState = {
-	emprendedor = {state: "", object: {}},
-	notifier = [],
+	emprendedor
 };
 const STORE = combineReducers(initialState);
 

@@ -19,14 +19,28 @@ import style from './style';
 import MenuIcon from '@material-ui/icons/Menu';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
+import { useSelector, useDispatch } from 'react-redux';
+import { emprendedor as emprendedorSelector } from '../../../redux/selectors';
+import { getEmprendedor } from '../../../redux/actions/emprendedor';
 
 export default function DenseAppBar() {
   const classes = style();
+  const dispatch = useDispatch();
   const [display, setDisplay] = useState(true);
   const [drawerActivate, setDrawerActivate] = useState(false);
   const [drawer, setDrawer] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const emprendedor = useSelector((state) => emprendedorSelector(state));
 
+  useEffect(() => {
+		if (!emprendedor) {
+      console.log("e4")
+			dispatch(getEmprendedor({idEmprendedor: "1"}));
+    } 
+  }, [emprendedor, dispatch]);
+  
+  console.log(emprendedor);
+  
   useEffect(() => {
     if (display) {
       if (window.innerWidth <= 1279) {

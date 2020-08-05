@@ -44,5 +44,5 @@ function* updateEmprendedor(emprendedor) {
 //Watcher _START
 export default function* teoricos() {
 	yield takeEvery(GET_EMPRENDEDOR_START, getEmprendedor);
-	yield takeEvery(UPDATE_EMPRENDEDOR_START, updateEmprendedor);
+	//yield takeEvery(UPDATE_EMPRENDEDOR_START, updateEmprendedor);
 }
