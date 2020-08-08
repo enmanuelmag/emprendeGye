@@ -35,8 +35,8 @@ export default function Page({ data }: { data: any }) {
                                                 Categoría del emprendimiento
                                             </Typography>
                                         </Grid>
-                                        <Grid item xs={1}>
-                                            <Alert data={dataAlert["categoria"]} icon={iconAlert} />
+                                        <Grid item xs={1} className={classes.icon}>
+                                            <Alert data={dataAlert["categoria"]} icon={iconAlert}/>
                                         </Grid>
                                         <Grid item xs={12}>
                                             <Autocomplete 
@@ -55,13 +55,13 @@ export default function Page({ data }: { data: any }) {
                                                 Alcance del negocio
                                             </Typography>
                                         </Grid>
-                                        <Grid item xs={1}>
-                                            <Alert data={dataAlert["alcance"]} icon={iconAlert} />
+                                        <Grid item xs={1} className={classes.icon}>
+                                            <Alert data={dataAlert["alcance"]} icon={iconAlert}/>
                                         </Grid>
                                         <Grid item xs={12}>
                                             <RadioGroup row aria-label="position" name="position" defaultValue="top">
                                             <Grid container>
-                                                <Grid item xs={4}>
+                                                <Grid item xs={12}>
                                                     <FormControlLabel
                                                     value="local"
                                                     control={<Radio color="primary" />}
@@ -69,7 +69,7 @@ export default function Page({ data }: { data: any }) {
                                                     labelPlacement="end"
                                                     />
                                                 </Grid>
-                                                <Grid item xs={4}>
+                                                <Grid item xs={12}>
                                                     <FormControlLabel
                                                     value="nacional"
                                                     control={<Radio color="primary" />}
@@ -77,7 +77,7 @@ export default function Page({ data }: { data: any }) {
                                                     labelPlacement="end"
                                                     />
                                                 </Grid>
-                                                <Grid item xs={4}>
+                                                <Grid item xs={12}>
                                                     <FormControlLabel
                                                     value="internacional"
                                                     control={<Radio color="primary" />}
@@ -97,8 +97,8 @@ export default function Page({ data }: { data: any }) {
                                             Impacto del negocio
                                             </Typography>
                                         </Grid>
-                                        <Grid item xs={1}>
-                                            <Alert data={dataAlert["impacto"]} icon={iconAlert} />
+                                        <Grid item xs={1} className={classes.icon}>
+                                            <Alert data={dataAlert["impacto"]} icon={iconAlert}/>
                                         </Grid>
                                     </Grid>
                                     <Grid item xs={12}>
@@ -107,20 +107,20 @@ export default function Page({ data }: { data: any }) {
                                                 id='outlined-basic'
                                                 required
                                                 type='number'
-                                                label='Número de empleos que puede generar'
+                                                label='N° empleos que genera'
                                             />
                                         </form>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={12} className={classes.section}>
+                                <Grid item xs={12} >
                                     <Grid container >
                                         <Grid item xs={11}>
                                             <Typography variant="subtitle1" display='block' className={classes.bold}>
                                                 Tiempo en el mercado (en meses)
                                             </Typography>
                                         </Grid>
-                                        <Grid item xs={1}>
-                                            <Alert data={dataAlert["tiempo"]} icon={iconAlert} />
+                                        <Grid item xs={1} className={classes.icon}>
+                                            <Alert data={dataAlert["tiempo"]} icon={iconAlert}/>
                                         </Grid>
                                         <Grid item xs={12}>
                                             <form className={classes.root} autoComplete='off'>
