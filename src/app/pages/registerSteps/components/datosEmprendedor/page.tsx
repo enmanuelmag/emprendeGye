@@ -74,23 +74,23 @@ export default function Page() {
             <Grid item xs={12} lg={4}>
                 <Card variant="outlined" className={classes.formControl}>
                     <CardContent>
+                        <Typography gutterBottom variant="h6" component="h2" align='center' className={classes.bold}>
+                            Ocupación
+                        </Typography>
                         <form className={classes.root} autoComplete='off'>
-                        <FormControl component="fieldset">
-                            <Typography gutterBottom variant="h6" component="h2" align='center' className={classes.title2}>
-                                Ocupación
-                            </Typography>
-                            <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-                                <FormControlLabel value="estudiante" control={<Radio />} label="Estudiante universitario" />
-                                <FormControlLabel value="jubilado" control={<Radio />} label="Jubilado" />
-                                <FormControlLabel value="empleado" control={<Radio />} label="Empleado" />
-                                <FormControlLabel value="subempleado" control={<Radio />} label="Subempleado" />
-                                <FormControlLabel value="otro" control={<Radio />} label="Otro" />
-                                <TextField
-                                    id='outlined-basic'
-                                    type='text'
-                                    label='Otra ocupación'
-                                />
-                            </RadioGroup>
+                            <FormControl component="fieldset">
+                                <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+                                    <FormControlLabel value="estudiante" control={<Radio />} label="Estudiante universitario" />
+                                    <FormControlLabel value="jubilado" control={<Radio />} label="Jubilado" />
+                                    <FormControlLabel value="empleado" control={<Radio />} label="Empleado" />
+                                    <FormControlLabel value="subempleado" control={<Radio />} label="Subempleado" />
+                                    <FormControlLabel value="otro" control={<Radio />} label="Otro" />
+                                    <TextField
+                                        id='outlined-basic'
+                                        type='text'
+                                        label='Otra ocupación'
+                                    />
+                                </RadioGroup>
                             </FormControl>
                         </form>
                     </CardContent>

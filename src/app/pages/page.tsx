@@ -7,8 +7,7 @@ export default function home() {
   const classes = style();
 
   return (
-    <div className={classes.app}>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} className={classes.app}>
         <Grid item xs={12}>
           <img className={classes.imagen} src={imagePathfooter} alt="Logo" />
         </Grid>
@@ -58,6 +57,5 @@ export default function home() {
           </Grid>
         </Grid>
       </Grid>
-    </div>
   );
 }

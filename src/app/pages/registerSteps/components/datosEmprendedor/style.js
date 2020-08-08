@@ -11,11 +11,6 @@ export default makeStyles((theme) => ({
     title: {
         padding: theme.spacing(2)
     },
-    title2: {
-        paddingBottom: theme.spacing(2),
-        marginTop: '-5%',
-        fontWeight: 'bold',
-    },
     bold: {
         fontWeight: 'bold',
     },
