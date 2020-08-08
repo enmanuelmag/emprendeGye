@@ -1,6 +1,6 @@
 import React from 'react';
 import imagePathfooter from './emprendedor/assets/logodark.svg';
-import { Grid, Typography, Button } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import style from './style';
 import { ColorButton } from './style';
 export default function home() {
@@ -26,9 +26,6 @@ export default function home() {
                         </Grid>
                     </Grid>
                 </ColorButton>
-                {/* <Typography variant='h5' className={classes.text}>
-                    ENTIDAD
-                </Typography> */}
             </Grid>
             <Grid item xs={7} md={3}>
                 <ColorButton href="/login" className={classes.button}

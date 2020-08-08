@@ -1,12 +1,9 @@
 import React from 'react'
 import style from './style';
 import { TextField, Grid, Typography } from '@material-ui/core';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
+import { Card, CardContent } from '@material-ui/core';
+import { Radio, RadioGroup } from '@material-ui/core';
+import { FormControl, FormControlLabel } from '@material-ui/core';
 
 export default function Page() {
     const classes = style();
