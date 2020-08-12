@@ -67,42 +67,54 @@ export default function Page({ items }: { items: ItemsPeople[] }) {
         alignItems="center"
         className={classes.grid}
       >
-        <Grid item xs={5}>
-          <Autocomplete
-            id="asynchronous-demo"
-            fullWidth
-            open={open}
-            onOpen={() => {
-              setOpen(true);
-            }}
-            onClose={() => {
-              setOpen(false);
-            }}
-            getOptionSelected={(option, value) => option.name === value.name}
-            getOptionLabel={(option) => option.name}
-            options={options}
-            loading={loading}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                placeholder="Buscar"
-                variant="outlined"
-                InputProps={{
-                  ...params.InputProps,
-                  endAdornment: (
-                    <React.Fragment>
-                      {loading ? (
-                        <CircularProgress color="inherit" size={20} />
-                      ) : null}
-                      {params.InputProps.endAdornment}
-                    </React.Fragment>
-                  ),
-                }}
-              />
-            )}
-          />
-        </Grid>
         <Grid item xs={12}>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            spacing={6}
+          >
+            <Grid item xs={5}>
+              <Autocomplete
+                id="asynchronous-demo"
+                fullWidth
+                open={open}
+                onOpen={() => {
+                  setOpen(true);
+                }}
+                onClose={() => {
+                  setOpen(false);
+                }}
+                getOptionSelected={(option, value) =>
+                  option.name === value.name
+                }
+                getOptionLabel={(option) => option.name}
+                options={options}
+                loading={loading}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    placeholder="Buscar"
+                    variant="outlined"
+                    InputProps={{
+                      ...params.InputProps,
+                      endAdornment: (
+                        <React.Fragment>
+                          {loading ? (
+                            <CircularProgress color="inherit" size={20} />
+                          ) : null}
+                          {params.InputProps.endAdornment}
+                        </React.Fragment>
+                      ),
+                    }}
+                  />
+                )}
+              />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={5}>
           <Grid
             container
             spacing={6}
@@ -113,7 +125,7 @@ export default function Page({ items }: { items: ItemsPeople[] }) {
           >
             {items.map((item, index) => {
               return (
-                <Grid item xs={12} md={4} lg={4}>
+                <Grid item xs={12} md={12} lg={12}>
                   <CardPeople item={item} index={index} />
                 </Grid>
               );
@@ -124,3 +136,8 @@ export default function Page({ items }: { items: ItemsPeople[] }) {
     </React.Fragment>
   );
 }
+
+const top100Films = [
+  { title: 'Nombre de persona', year: 1994 },
+  { title: 'Tipo de emprendimiento', year: 1972 },
+];
