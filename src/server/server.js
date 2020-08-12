@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, '..', '..', 'build')));
 app.set('port', process.env.PORT || PORT);
 
 
-//Conexcion base de datos
+//Conexion base de datos
 //app.use("/", index);
 app.use("/emprendedor", emprendedor);
 

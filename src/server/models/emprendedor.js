@@ -26,8 +26,7 @@ module.exports = db.sequelize.define(
         },
         nacimiento: {
             type: Sequelize.DATE
-        }
-        
+        }    
     },{ freezeTableName: true,timestamps: false}
     //{timestamps: false},
 

@@ -1,4 +1,4 @@
-import { put, takeEvery, call } from 'redux-saga/effects';
+import { put, takeEvery, call, takeLatest } from 'redux-saga/effects';
 import {
 	GET_EMPRENDEDOR_START,
 	GET_EMPRENDEDOR_ERROR,
