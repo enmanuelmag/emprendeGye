@@ -1,6 +1,4 @@
 import { makeStyles } from '@material-ui/core';
-//import { SketchPicker } from 'react-color';
-
 
 export default makeStyles((theme) => ({
 
@@ -46,8 +44,6 @@ export default makeStyles((theme) => ({
     lineHeight: '200%',
     marginLeft:'5%',
     marginRight:'5%',
-    textAlign:"justify",
-    //fontSize:'17px',
   },
 
   titulo: {

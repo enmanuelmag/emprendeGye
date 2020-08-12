@@ -1,15 +1,17 @@
 import React from 'react'
 import style from './style';
 import { TextField, Grid, Typography } from '@material-ui/core';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import { Card, CardContent} from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Options from '../../../../utils/options';
+import InfoIcon from '@material-ui/icons/Info';
+import Alert from './../../../../utils/alert';
 
-export default function Page() {
+export default function Page({ data }: { data: any }) {
     const classes = style();
+
+    const dataAlert = data;
+    const iconAlert = <InfoIcon fontSize="inherit" />
 
     const sector = ['Biotech','Healthtech','Fintech','Agtech']
 
@@ -20,76 +22,93 @@ export default function Page() {
                     El emprendimiento
                 </Typography>
             </Grid>
-            <Grid item lg={4}></Grid>
-            <Grid item lg={4} className={classes.section2}>
+            <Grid item lg={3}></Grid>
+            <Grid item lg={5} className={classes.section2}>
                 <Card variant="outlined">
                     <CardContent className={classes.formControl}>
                         <Grid container>
                                 <Grid item xs={12} className={classes.section}>
-                                    <Autocomplete
-                                        id="combo-box-demo"
-                                        options={sector}
-                                        getOptionLabel={(option) => option}
-                                        style={{ width: '94%' }}
-                                        renderInput={(params) => <TextField {...params} label='Sector del emprendimiento'/>}
-                                    />
+                                    <Grid container >
+                                        <Grid item xs={11}>
+                                            <Typography variant="subtitle1" display='block' className={classes.bold}>
+                                                Categoría del emprendimiento
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={1} className={classes.icon}>
+                                            <Alert data={dataAlert["categoria"]} icon={iconAlert}/>
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <Autocomplete 
+                                                id="combo-box-demo"
+                                                options={sector}
+                                                getOptionLabel={(option) => option}
+                                                renderInput={(params) => <TextField {...params} label='Categoría'/>}
+                                            />
+                                        </Grid>
+                                    </Grid>
                                 </Grid>
                                 <Grid item xs={12} className={classes.section}>
-                                    <Typography variant="subtitle1" display='block' className={classes.bold}>
-                                        Alcance del negocio
-                                    </Typography>
-                                    <RadioGroup row aria-label="position" name="position" defaultValue="top">
-                                        <FormControlLabel
-                                        value="local"
-                                        control={<Radio color="primary" />}
-                                        label="Local"
-                                        labelPlacement="end"
-                                        />
-                                        <FormControlLabel
-                                        value="ciudad"
-                                        control={<Radio color="primary" />}
-                                        label="Ciudad"
-                                        labelPlacement="end"
-                                        />
-                                        <FormControlLabel
-                                        value="pais"
-                                        control={<Radio color="primary" />}
-                                        label="País"
-                                        labelPlacement="end"
-                                        />
-                                    </RadioGroup>
+                                    <Grid container >
+                                        <Grid item xs={11}>
+                                            <Typography variant="subtitle1" display='block' className={classes.bold}>
+                                                Alcance del negocio
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={1} className={classes.icon}>
+                                            <Alert data={dataAlert["alcance"]} icon={iconAlert}/>
+                                        </Grid>
+                                        <Options data={{"question":"","options":["Local","Nacional","Internacional"]}}/>
+                                    </Grid>
                                 </Grid>
                                 <Grid item xs={12} className={classes.section}>
-                                    <Typography variant="subtitle1" display='block' className={classes.bold}>
-                                        Impacto del negocio
-                                    </Typography>
-                                    <form className={classes.root} autoComplete='off'>
-                                        <TextField
-                                            id='outlined-basic'
-                                            required
-                                            type='text'
-                                            label='Número de empleos que puede generar'
-                                        />
-                                    </form>
+                                    <Grid container >
+                                        <Grid item xs={11}>
+                                            <Typography variant="subtitle1" display='block' className={classes.bold}>
+                                                Impacto del negocio
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={1} className={classes.icon}>
+                                            <Alert data={dataAlert["impacto"]} icon={iconAlert}/>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <form className={classes.root} autoComplete='off'>
+                                            <TextField
+                                                id='outlined-basic'
+                                                required
+                                                type='number'
+                                                label='N° empleos que genera'
+                                            />
+                                        </form>
+                                    </Grid>
                                 </Grid>
-                                <Grid item xs={12} className={classes.section}>
-                                    <Typography variant="subtitle1" display='block' className={classes.bold}>
-                                        Tiempo de implementación
-                                    </Typography>
-                                    <form className={classes.root} autoComplete='off'>
-                                        <TextField
-                                            id='outlined-basic'
-                                            required
-                                            type='text'
-                                            label='Cantidad de meses'
-                                        />
-                                    </form>
+                                <Grid item xs={12} >
+                                    <Grid container >
+                                        <Grid item xs={11}>
+                                            <Typography variant="subtitle1" display='block' className={classes.bold}>
+                                                Tiempo en el mercado (en meses)
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={1} className={classes.icon}>
+                                            <Alert data={dataAlert["tiempo"]} icon={iconAlert}/>
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <form className={classes.root} autoComplete='off'>
+                                                <TextField
+                                                    id='outlined-basic'
+                                                    required
+                                                    type='number'
+                                                    label='Cantidad de meses'
+                                                />
+                                            </form>
+                                        </Grid>
+                                    </Grid>
                                 </Grid>
                         </Grid>
                     </CardContent>
                 </Card>
             </Grid>
-            <Grid item lg={4}></Grid>
+            <Grid item lg={3}></Grid>
         </Grid>
     )
 }

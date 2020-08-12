@@ -1,35 +1,39 @@
 import { createStyles, makeStyles, withStyles } from '@material-ui/core/styles';
-import { indigo } from '@material-ui/core/colors';
 
 import { Button } from "@material-ui/core";
 
 export default makeStyles((theme) =>
   createStyles({
     button: {
-      
-        minHeight: '140px',
+        minHeight: '100%',
         minWidth: "100%", 
+        padding: "0",
+        fontSize: '20px',
     },
-
     imagen: {
-      width: '40%',
-      //paddingLeft: '7%',
-      //marginTop: '2%',
+      width: '90%',
+      height: '100%'
     },
 
     app: {
       marginTop: "25px",
-      //padding: theme.spacing(50),
+    },
+    text: {
+        fontWeight: 'bold',
+        marginTop: '1rem',
     }
   }),
 );
 export const ColorButton = withStyles((theme) => ({
   root: {
-    color: theme.palette.getContrastText(indigo[700]),
-    backgroundColor: indigo[700],
+    color:"#000000",
+    fontWeight: "bold",
+    fontSize: '20px',
+    backgroundColor: '#ffffff',
     '&:hover': {
-      backgroundColor: indigo[900],
+      backgroundColor: '#cdcdcd',
     },
+    flexDirection: 'column'
   },
 }))(Button);
 

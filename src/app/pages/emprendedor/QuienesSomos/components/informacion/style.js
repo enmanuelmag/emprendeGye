@@ -22,8 +22,6 @@ export default makeStyles((theme) => ({
       lineHeight: '200%',
       marginLeft:'5%',
       marginRight:'5%',
-      textAlign:"justify",
-      //fontSize:'17px',
     },
 
   
