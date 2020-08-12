@@ -3,8 +3,7 @@ import style from './style';
 import { TextField, Grid, Typography } from '@material-ui/core';
 import { Card, CardContent} from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { Radio, RadioGroup} from '@material-ui/core';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Options from '../../../../utils/options';
 import InfoIcon from '@material-ui/icons/Info';
 import Alert from './../../../../utils/alert';
 
@@ -58,43 +57,14 @@ export default function Page({ data }: { data: any }) {
                                         <Grid item xs={1} className={classes.icon}>
                                             <Alert data={dataAlert["alcance"]} icon={iconAlert}/>
                                         </Grid>
-                                        <Grid item xs={12}>
-                                            <RadioGroup row aria-label="position" name="position" defaultValue="top">
-                                            <Grid container>
-                                                <Grid item xs={12}>
-                                                    <FormControlLabel
-                                                    value="local"
-                                                    control={<Radio color="primary" />}
-                                                    label="Local"
-                                                    labelPlacement="end"
-                                                    />
-                                                </Grid>
-                                                <Grid item xs={12}>
-                                                    <FormControlLabel
-                                                    value="nacional"
-                                                    control={<Radio color="primary" />}
-                                                    label="Nacional"
-                                                    labelPlacement="end"
-                                                    />
-                                                </Grid>
-                                                <Grid item xs={12}>
-                                                    <FormControlLabel
-                                                    value="internacional"
-                                                    control={<Radio color="primary" />}
-                                                    label="Internacional"
-                                                    labelPlacement="end"
-                                                    />
-                                                </Grid>
-                                            </Grid>
-                                        </RadioGroup>
-                                        </Grid>
+                                        <Options data={{"question":"","options":["Local","Nacional","Internacional"]}}/>
                                     </Grid>
                                 </Grid>
                                 <Grid item xs={12} className={classes.section}>
                                     <Grid container >
                                         <Grid item xs={11}>
                                             <Typography variant="subtitle1" display='block' className={classes.bold}>
-                                            Impacto del negocio
+                                                Impacto del negocio
                                             </Typography>
                                         </Grid>
                                         <Grid item xs={1} className={classes.icon}>

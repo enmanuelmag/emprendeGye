@@ -24,6 +24,6 @@ export default makeStyles((theme) => ({
         paddingBottom: '3%'
     },
     formControl: {
-        margin: theme.spacing(3)
+        margin: theme.spacing(3),
     }
 }));

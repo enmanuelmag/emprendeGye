@@ -18,11 +18,13 @@ export default function Page({data}: {data:{question:String,
     };
 
     return (
-        <Grid item xs={12} className={classes.section}>
-            <Typography variant="subtitle1" display='block' className={classes.bold}>
-                {question}
-            </Typography>
-            <form className={classes.root} autoComplete='off'>
+        <Grid item xs={12} className={question === "" ? classes.none: classes.section}>
+            {question === "" ? <></> : 
+                <Typography variant="subtitle1" display='block' className={classes.bold}>
+                    {question}
+                </Typography>
+            }
+            <form className={question === "" ? classes.none: classes.root} autoComplete='off'>
                 <FormControl component="fieldset">
                     <RadioGroup aria-label="qst" name="qst" value={value} onChange={handleChange}>
                         {options.map((option, index) => {

@@ -14,4 +14,6 @@ export default makeStyles((theme) => ({
     bold: {
         fontWeight: 'bold'
     },
+    none: {
+    },
 }));
