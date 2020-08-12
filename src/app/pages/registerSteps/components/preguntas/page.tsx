@@ -1,35 +1,32 @@
 import React from 'react'
 import style from './style';
 import { Grid, Typography } from '@material-ui/core';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
+import { Card, CardContent } from '@material-ui/core';
+import OptionsThree from './../../../../utils/options_three';
 
-export default function Page() {
+export default function Page({data} : {data:any}) {
     const classes = style();
 
-    const [value, setValue] = React.useState('');
+    const dataQuestions = data;
+    // const [value, setValue] = React.useState('');
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue((event.target as HTMLInputElement).value);
-    };
+    // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     setValue((event.target as HTMLInputElement).value);
+    // };
 
-    const opciones = [  "Por ahora solo pero eventualemente espero incorporar más personas",
-                        "Somos 10 o menos",
-                        "Somos más de 10",
-                        "Necesito hacerlo para atraer a mis clientes",
-                        "Me comunico más por redes sociales",
-                        "Tengo que habalar con mis clientes solo al momento de cerrar la venta",
-                        "Sí, Scrum",
-                        "Sí, Ágil",
-                        "No, desconozco qué es una metodoloǵia de gestión de proyectos",
-                        "Me enfurezco o me deprimo",
-                        "No me ha tocado pasar por obstáculos",
-                        "No lo soluciono, voy por lo más fácil",
-                        "Pido ayuda"]
+    // const opciones = [  "Por ahora solo pero eventualemente espero incorporar más personas",
+    //                     "Somos 10 o menos",
+    //                     "Somos más de 10",
+    //                     "Necesito hacerlo para atraer a mis clientes",
+    //                     "Me comunico más por redes sociales",
+    //                     "Tengo que habalar con mis clientes solo al momento de cerrar la venta",
+    //                     "Sí, Scrum",
+    //                     "Sí, Ágil",
+    //                     "No, desconozco qué es una metodoloǵia de gestión de proyectos",
+    //                     "Me enfurezco o me deprimo",
+    //                     "No me ha tocado pasar por obstáculos",
+    //                     "No lo soluciono, voy por lo más fácil",
+    //                     "Pido ayuda"]
 
     return (
         <Grid container xs={12} className={classes.container}>
@@ -42,7 +39,14 @@ export default function Page() {
             <Grid item lg={8} className={classes.section2}>
                 <Card variant="outlined">
                     <CardContent className={classes.formControl}>
-                        <Grid item xs={12} className={classes.section}>
+                        <Grid container>
+                            {Object.keys(dataQuestions).map((q) => {
+                                const question = dataQuestions[q];
+                                console.log(question);
+                                return <OptionsThree data={question}/>;
+                            })}
+                        </Grid>
+                        {/* <Grid item xs={12} className={classes.section}>
                             <Typography variant="subtitle1" display='block' className={classes.bold}>
                                 ¿Es su emprendimiento, está solo o tiene equipo?
                             </Typography>
@@ -98,6 +102,7 @@ export default function Page() {
                                 </FormControl>
                             </form>
                         </Grid>
+                     */}
                     </CardContent>
                 </Card>
             </Grid>

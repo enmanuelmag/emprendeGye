@@ -14,7 +14,7 @@ export default function Page() {
     };
 
 	return (
-        <Grid container xs={12} className={classes.container}>
+        <Grid container className={classes.container}>
             <Grid item xs={12} lg={12}>
                 <Typography variant="h4" align="center" display='block' className={classes.title}>
                     Datos del emprendedor
