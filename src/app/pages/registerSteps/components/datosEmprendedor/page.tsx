@@ -1,20 +1,36 @@
 import React from 'react'
 import style from './style';
 import { TextField, Grid, Typography } from '@material-ui/core';
-import { Card, CardContent } from '@material-ui/core';
-import { Radio, RadioGroup } from '@material-ui/core';
-import { FormControl, FormControlLabel } from '@material-ui/core';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
 
 export default function Page() {
     const classes = style();
     const [value, setValue] = React.useState('');
+    const [otherOption, setOther] = React.useState('');
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue((event.target as HTMLInputElement).value);
+        let newValue = (event.target as HTMLInputElement).value;
+        setValue(newValue);
+
+        if (newValue != 'otro') {
+            setOther('');
+        }
     };
 
-	return (
-        <Grid container className={classes.container}>
+    const handleOther = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+        if (value === 'otro') {
+            setOther(event.target.value);
+        }
+    }
+
+    return (
+        <Grid container xs={12} className={classes.container}>
             <Grid item xs={12} lg={12}>
                 <Typography variant="h4" align="center" display='block' className={classes.title}>
                     Datos del emprendedor
@@ -64,21 +80,21 @@ export default function Page() {
                                 type="date"
                                 defaultValue={new Date()}
                                 InputLabelProps={{
-                                shrink: true,
+                                    shrink: true,
                                 }}
                             />
                         </form>
                     </CardContent>
                 </Card>
-                </Grid>
+            </Grid>
             <Grid item xs={12} lg={4}>
                 <Card variant="outlined" className={classes.formControl}>
                     <CardContent>
-                        <Typography gutterBottom variant="h6" component="h2" align='center' className={classes.bold}>
-                            Ocupación
-                        </Typography>
                         <form className={classes.root} autoComplete='off'>
                             <FormControl component="fieldset">
+                                <Typography gutterBottom variant="h6" component="h2" align='center' className={classes.title2}>
+                                    Ocupación
+                            </Typography>
                                 <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
                                     <FormControlLabel value="estudiante" control={<Radio />} label="Estudiante universitario" />
                                     <FormControlLabel value="jubilado" control={<Radio />} label="Jubilado" />
@@ -89,6 +105,9 @@ export default function Page() {
                                         id='outlined-basic'
                                         type='text'
                                         label='Otra ocupación'
+                                        value={otherOption}
+                                        onChange={handleOther}
+                                        disabled={value === 'otro' ? false : true}
                                     />
                                 </RadioGroup>
                             </FormControl>
@@ -98,5 +117,5 @@ export default function Page() {
             </Grid>
             <Grid item lg={2}></Grid>
         </Grid>
-	);
+    );
 }

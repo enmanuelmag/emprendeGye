@@ -1,5 +1,19 @@
-const URI = 'mongodb://localhost/pruebas';
+const Sequelize = require("sequelize");
+const db = {};
+const sequelize = new Sequelize("emprendegye", "root","root", {
+	host: "localhost",
+	dialect: "mysql",
+	operatorsAliases: false,
 
-module.exports = {
-	db: URI,
-};
+	pool:{
+		max: 5,
+		min: 0,
+		acquire: 30000,
+		idle: 10000
+	}
+})
+
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+module.exports = db;

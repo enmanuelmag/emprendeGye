@@ -4,12 +4,6 @@ import Page from './page';
 
 import { ItemsPeople } from '@interfaces/emprendedor';
 
-export default function index({
-	index,
-	item,
-}: {
-	index: number;
-	item: ItemsPeople;
-}) {
-	return <Page index={index} item={item} />;
+export default function index({ items }: { items: ItemsPeople[] }) {
+  return <Page items={items} />;
 }
