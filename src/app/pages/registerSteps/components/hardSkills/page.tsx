@@ -2,15 +2,16 @@ import React from 'react'
 import style from './style';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { TextField, Grid, Typography } from '@material-ui/core';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import { FormControl, FormGroup, FormControlLabel } from '@material-ui/core';
+import { Card, Checkbox, CardContent } from '@material-ui/core';
+import InfoIcon from '@material-ui/icons/Info';
+import Alert from './../../../../utils/alert';
 
-export default function Page() {
+export default function Page({ data }: { data: any }) {
     const classes = style();
+    
+    const dataAlert = data;
+    const iconAlert = <InfoIcon fontSize="inherit" />
 
     const nivelEstudio = [{nivel:'Primaria'},
                           {nivel:'Secundaria'}, 
@@ -40,6 +41,16 @@ export default function Page() {
             <Grid item xs={12} lg={4}>
                 <Card variant="outlined" className={classes.formControl}>
                     <CardContent>
+                        <Grid container>
+                            <Grid item xs={11}>
+                                <Typography gutterBottom variant="h6" component="h2" align='center' className={classes.bold}>
+                                    Académico
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={1}>
+                                <Alert data={dataAlert["academico"]} icon={iconAlert} />
+                            </Grid>
+                        </Grid>
                         <form className={classes.root} autoComplete='off'>
                             <Autocomplete
                                 id="combo-box-demo"
@@ -67,6 +78,16 @@ export default function Page() {
             <Grid item xs={12} lg={4}>
                 <Card variant="outlined" className={classes.formControl}>
                     <CardContent>
+                        <Grid container>
+                            <Grid item xs={11}>
+                                <Typography gutterBottom variant="h6" component="h2" align='center' className={classes.bold}>
+                                    Aprendizaje
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={1}>
+                                <Alert data={dataAlert["aprendizaje"]} icon={iconAlert} />
+                            </Grid>
+                        </Grid>
                         <FormControl component="fieldset">
                             <FormGroup className={classes.title}>
                             <FormControlLabel
@@ -93,6 +114,16 @@ export default function Page() {
             <Grid item xs={12} lg={4}>
                 <Card variant="outlined" className={classes.formControl}>
                     <CardContent>
+                        <Grid container>
+                            <Grid item xs={11}>
+                                <Typography gutterBottom variant="h6" component="h2" align='center' className={classes.bold}>
+                                    Certificaciones
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={1}>
+                                <Alert data={dataAlert["certificaciones"]} icon={iconAlert} />
+                            </Grid>
+                        </Grid>
                         <form className={classes.root} autoComplete='off'>
                             <TextField
                                 id='outlined-basic'
