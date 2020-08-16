@@ -9,13 +9,17 @@ export default makeStyles((theme) => ({
 		},
     },
     section: {
-        marginBottom: theme.spacing(3)
+        marginBottom: theme.spacing(5),
     },
     bold: {
         fontWeight: 'bold',
     },
     title: {
         padding: theme.spacing(3)
+    },
+    icon: {
+        textAlign: 'right',
+        padding: '0',
     },
     section2: {
         margin: 'auto'

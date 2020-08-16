@@ -3,7 +3,7 @@ import { Typography } from '@material-ui/core';
 import style from './style';
 import {
     List, ListItem, Link,
-    ListItemText, Divider, Card, CardContent, ListSubheader
+    ListItemText, Divider, Card, CardContent
 } from '@material-ui/core';
 
 

@@ -16,5 +16,8 @@ export default makeStyles((theme) => ({
     },
     formControl: {
         margin: theme.spacing(3)
-    }
+    },
+    bold: {
+        fontWeight: 'bold',
+    },
 }));
