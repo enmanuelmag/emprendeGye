@@ -6,13 +6,11 @@ export default makeStyles((theme) =>
       textAlign: 'center',
       padding: '10px',
       variant: 'outlined',
-      raised: "true",
+      raised: 'true',
       elevation: '5',
-
     },
     typographyBody: {
-      variant: 'h4'
-    }
-
-  }),
+      variant: 'h4',
+    },
+  })
 );

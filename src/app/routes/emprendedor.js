@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import {
   Page,
   Cuenta,
@@ -8,7 +8,10 @@ import {
   Ecosistema,
   Notas,
   Home,
-  Aprendizaje,Contactanos,Noticias,QueHacemos
+  Aprendizaje,
+  Contactanos,
+  Noticias,
+  QueHacemos,
 } from '../pages/emprendedor';
 
 export default function home() {
@@ -23,10 +26,10 @@ export default function home() {
       <Route path="/emprendedor/notas" component={Notas}></Route>
       <Route path="/emprendedor/aprendizaje" component={Aprendizaje} />
       <Route path="/emprendedor/contactanos" component={Contactanos} />
-      <Route path='/emprendedor/noticias' component={Noticias}/>
-      <Route path='/emprendedor/que_hacemos' component={QueHacemos}/>
+      <Route path="/emprendedor/noticias" component={Noticias} />
+      <Route path="/emprendedor/que_hacemos" component={QueHacemos} />
     </Router>
   );
 }
 /*
-*/
+ */

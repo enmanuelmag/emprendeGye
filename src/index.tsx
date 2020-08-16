@@ -8,10 +8,10 @@ import storeFn from './redux/store';
 const store = storeFn();
 
 ReactDOM.render(
-		<Provider store={store}>
-			<HomeRoutes />,
-		</Provider>
-	,document.getElementById('root')
+  <Provider store={store}>
+    <HomeRoutes />,
+  </Provider>,
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
