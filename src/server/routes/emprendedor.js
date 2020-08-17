@@ -14,6 +14,7 @@ router.get('/', function (req, res, next) {
       }
     })
     .catch((err) => {
+      console.log('Error ', err);
       res.send('Error: ' + err);
     });
 });
@@ -33,12 +34,47 @@ router.get('/:id', function (req, res, next) {
       }
     })
     .catch((err) => {
+      console.log('Error ', err);
       res.send('Error: ' + err);
     });
 });
 
 router.post('/update', function (req, res, next) {
   console.log('Actualziando ', typeof req.body);
+  emprendedor
+    .update(req.body)
+    .then((emprendedor) => {
+      if (emprendedor) {
+        res.json(emprendedor);
+      } else {
+        console.log('No se pudo actualizar los datos de emprendedor');
+      }
+    })
+    .catch((err) => {
+      console.log('Error ', err);
+      res.send('Error: ' + err);
+    });
+});
+
+router.delete('/delete/:id', function (req, res, next) {
+  console.log('Actualziando ', typeof req.body);
+
+  emprendedor
+    .destroy({
+      where: {
+        idEmprendedor: req.params.id,
+      },
+    })
+    .then((rowsDeleted) => {
+      if (rowsDeleted === 1) {
+        console.log('Dato único eliminado correctamente');
+      }
+    })
+    .catch((err) => {
+      console.log('Error ', err);
+      res.send('Error: ' + err);
+    });
+
   emprendedor
     .update(req.body)
     .then((emprendedor) => {
