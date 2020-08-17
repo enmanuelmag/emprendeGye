@@ -16,10 +16,22 @@ export default function home() {
         <Grid item xs={12}>
           <Grid container justify="center" spacing={3}>
             <Grid item xs={10} md={3}>
-              <ColorButton className={classes.button}>Entidad</ColorButton>
+              <ColorButton
+                className={classes.button}
+                variant="contained"
+                color="primary"
+              >
+                Entidad
+              </ColorButton>
             </Grid>
+
             <Grid item xs={10} md={3}>
-              <ColorButton href="/login" className={classes.button}>
+              <ColorButton
+                href="/login"
+                variant="contained"
+                color="primary"
+                className={classes.button}
+              >
                 Emprendedor
               </ColorButton>
             </Grid>
