@@ -25,8 +25,6 @@ export default function Page() {
         return <SoftSkills />;
       case 3:
         return <ElEmprendimiento />;
-      case 4:
-        return <Preguntas />;
       default:
         return 'Unknown stepIndex';
     }

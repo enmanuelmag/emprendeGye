@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@material-ui/core';
 import style from './style';
-import Image from './image';
+
 
 export default function page() {
   const classes = style();
@@ -14,7 +14,7 @@ export default function page() {
           {titulo.titulo}
         </Typography>
 
-        <Image />
+
       </CardContent>
     </Card>
   );
