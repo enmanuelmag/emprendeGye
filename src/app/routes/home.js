@@ -20,6 +20,7 @@ import {
 
 import {
   Dashboard as DashboardView,
+  Reports as ReportsView,
   ProductList as ProductListView,
   UserList as UserListView,
   Typography as TypographyView,
@@ -47,6 +48,12 @@ export default function home() {
           layout={MainLayout}
           path="/admin/"
         />
+        <RouteWithLayout
+        component={ReportsView}
+        exact
+        layout={MainLayout}
+        path="/admin/reportes"
+      />
         <RouteWithLayout
           component={UserListView}
           exact

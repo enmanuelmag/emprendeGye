@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid , Typography} from '@material-ui/core';
 
 import {
   Budget,
@@ -34,6 +34,7 @@ const Dashboard = () => {
           sm={6}
           xl={3}
           xs={12}
+          
         >
           <Budget />
         </Grid>
