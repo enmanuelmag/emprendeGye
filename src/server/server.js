@@ -1,11 +1,8 @@
 const express = require('express');
 const path = require('path');
-const path = require('path');
+
 const { sequelize } = require('./database/db');
 
-var emprendedor = require('./routes/emprendedor');
-
-const PORT = 8080;
 const app = express();
 
 let mongoose = require('mongoose');
@@ -13,7 +10,7 @@ let cors = require('cors');
 let database = require('./database/db');
 
 //Rutas de la carpeta routes
-const exampleRutas = require('./routes/example.routes');
+var emprendedor = require('./routes/emprendedor');
 
 //CONEXION CON LA BASE DE DATOS EN CLEVER CLOUD
 
@@ -26,9 +23,8 @@ sequelize
     console.error('Unable to connect to the database :(', err);
   });
 
-app.use(cors());
 //CONFIGURACION DEL SERVER
-
+const PORT = 8080;
 app.use(express.json());
 
 //Especificamos donde estará la caperta de distribuición
@@ -40,14 +36,10 @@ app.set('port', process.env.PORT || PORT);
 //app.use("/", index);
 app.use('/emprendedor', emprendedor);
 
-const PORT = 8080;
-app.set('port', process.env.PORT || PORT);
-
 app.use(cors());
-app.use('/ruta-de-peticion', exampleRutas);
 
 //Conexcion base de datos
-mongoose.Promise = global.Promise;
+/* mongoose.Promise = global.Promise;
 mongoose
   .connect(database.db, {
     useUnifiedTopology: true,
@@ -60,7 +52,7 @@ mongoose
     (error) => {
       console.log('Database could not be connected : ' + error);
     }
-  );
+  ); */
 
 //Rutas genericas
 app.get('/ping', function (req, res) {
