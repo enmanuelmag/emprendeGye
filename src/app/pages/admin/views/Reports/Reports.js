@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SwipeableViews from 'react-swipeable-views';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -8,8 +8,25 @@ import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import { Grid, Typography, Card, Container } from '@material-ui/core';
 
+//
+import { useSelector, useDispatch } from 'react-redux';
+import { emprendimiento as emprendimientoSelector } from '../../../../../redux/selectors';
+import { getEmprendimiento } from '../../../../../redux/actions/emprendimiento';
+//
+
 function TabContainer(props) {
   const { children, dir } = props;
+  const dispatch = useDispatch();
+  const emprendimiento = useSelector((state) => emprendimientoSelector(state));
+
+  useEffect(() => {
+    if (!emprendimiento) {
+      console.log('e4');
+      dispatch(getEmprendimiento());
+    }
+  }, [emprendimiento, dispatch]);
+
+  console.log(emprendimiento);
 
   return (
     <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
