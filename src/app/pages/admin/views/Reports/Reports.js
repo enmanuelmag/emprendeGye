@@ -59,11 +59,11 @@ class FloatingActionButtonZoom extends React.Component {
 
     return (
       <div className={classes.root}>
-      <Card variant='elevation' elevation={2}>
-        <Typography variant="body2" className={classes.title}>
-								 Seleccione el tipo de reporte que desea generar:
+        <Card variant='elevation' elevation={2}>
+          <Typography variant="body2" className={classes.title}>
+            Seleccione el tipo de reporte que desea generar:
           </Typography>
-          </Card>
+        </Card>
         <AppBar position="static" color="default">
           <Tabs
             value={this.state.value}
@@ -82,9 +82,9 @@ class FloatingActionButtonZoom extends React.Component {
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}>
-          <Container className={classes.container} maxWidth={'xl'}>
+            <Container className={classes.container} maxWidth={'xl'}>
               <Grid container spacing={4}>
-            
+
                 <Grid item xs={12} md={6} lg={6}>
                   <form className={classes.container} noValidate>
                     <TextField
@@ -122,8 +122,8 @@ class FloatingActionButtonZoom extends React.Component {
           <TabContainer dir={theme.direction}>
             <Container className={classes.container} maxWidth={'xl'}>
               <Grid container spacing={4}>
-            
-                <Grid item xs={12} md={6} lg={6}>
+
+                <Grid item xs={12} md={6} lg={4}>
                   <form className={classes.container} noValidate>
                     <TextField
                       id="date"
@@ -138,7 +138,7 @@ class FloatingActionButtonZoom extends React.Component {
                   </form>
                 </Grid>
 
-                <Grid item xs={12} md={6} lg={6}>
+                <Grid item xs={12} md={6} lg={4}>
                   <form className={classes.container} noValidate>
                     <TextField
                       id="date"
@@ -152,6 +152,17 @@ class FloatingActionButtonZoom extends React.Component {
                     />
                   </form>
 
+                </Grid>
+
+                <Grid item xs={12} md={6} lg={4}>
+                <form className={classes.container} noValidate>
+                  <TextField
+                    id="outlined-number"
+                    label="Top deseado"
+
+                    type="number"
+                    />
+                    </form>
                 </Grid>
               </Grid>
             </Container>

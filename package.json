@@ -79,6 +79,7 @@
 		"nodemon": "^2.0.3",
 		"react-app-rewire-alias": "^0.1.6",
 		"react-app-rewired": "^2.1.6",
+		"redux-devtools": "^3.6.1",
 		"redux-devtools-extension": "^2.13.8"
 	}
 }
