@@ -15,13 +15,12 @@ export default function page() {
 	var titulo = {titulo: 'Curva de emprendimiento'}
 
 	return (
-		<Card className={classes.card}>
+		<Card className={classes.card} variant="outlined">
 			
 			<CardContent  className={classes.content} >
 				<Typography variant="h5" className={classes.titulo} >
 					{titulo.titulo}
 					</Typography>
-				
 				<Image/>	
 			</CardContent>
 		</Card>

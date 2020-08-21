@@ -136,8 +136,3 @@ export default function Page({ items }: { items: ItemsPeople[] }) {
     </React.Fragment>
   );
 }
-
-const top100Films = [
-  { title: 'Nombre de persona', year: 1994 },
-  { title: 'Tipo de emprendimiento', year: 1972 },
-];
