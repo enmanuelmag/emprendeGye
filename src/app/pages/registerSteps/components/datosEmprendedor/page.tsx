@@ -17,7 +17,7 @@ export default function Page() {
     let newValue = (event.target as HTMLInputElement).value;
     setValue(newValue);
 
-    if (newValue != 'otro') {
+    if (newValue !== 'otro') {
       setOther('');
     }
   };

@@ -29,8 +29,6 @@ export default function Home() {
 
     setChecked(newChecked);
   };
-        setChecked(newChecked);
-    };
 
 
     return (
