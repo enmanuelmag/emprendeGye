@@ -1,10 +1,9 @@
 import { makeStyles, createStyles } from '@material-ui/core';
 
-
 export default makeStyles((theme) =>
   createStyles({
     card: {
-      width: "100%"
+      width: '100%',
     },
     content: {
         paddingTop: theme.spacing(3),
@@ -16,7 +15,6 @@ export default makeStyles((theme) =>
       textAlign: 'center',
       paddingBottom: theme.spacing(2),
       fontWeight: 'bold',
-    }
-    
-  }),
+    },
+  })
 );

@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
 import style from './style';
 import {
-    List, ListItem,
-    ListItemIcon,
-    ListItemText,
-    Checkbox,
-    Card,
-    Typography,
-    CardContent,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Checkbox,
+  Card,
+  Typography,
+  CardContent,
 } from '@material-ui/core';
 
-const palabras = { encabezado: "Actividades" };
+const palabras = { encabezado: 'Actividades' };
 
 export default function Home() {
+  const classes = style();
+  const [checked, setChecked] = useState([0]);
 
-    const classes = style();
-    const [checked, setChecked] = useState([0]);
+  const handleToggle = (value: number) => () => {
+    const currentIndex = checked.indexOf(value);
+    const newChecked = [...checked];
 
-    const handleToggle = (value: number) => () => {
-        const currentIndex = checked.indexOf(value);
-        const newChecked = [...checked];
+    if (currentIndex === -1) {
+      newChecked.push(value);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
 
-        if (currentIndex === -1) {
-            newChecked.push(value);
-        } else {
-            newChecked.splice(currentIndex, 1);
-        }
-
+    setChecked(newChecked);
+  };
         setChecked(newChecked);
     };
 

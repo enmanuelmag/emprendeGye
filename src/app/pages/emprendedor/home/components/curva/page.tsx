@@ -3,7 +3,7 @@ import Image from './image'
 import { Card, CardContent, Typography } from '@material-ui/core';
 import style from './style';
 
-export default function fe(props) {
+export default function () {
   const classes = style();
   var titulo = { titulo: 'Curva de emprendimiento' };
 
