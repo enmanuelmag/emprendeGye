@@ -32,7 +32,7 @@ export default function Home() {
 
 
     return (
-        <Card className={classes.root }>
+        <Card className={classes.root } variant="outlined">
             <Typography className={classes.title} variant='h5'>
 							{palabras.encabezado}
 				</Typography>
