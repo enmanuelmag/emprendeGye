@@ -10,6 +10,7 @@ import { Steps } from "intro.js-react";
 import "intro.js/introjs.css";
 
 import { HomeSteps } from './steps/index.js';
+
 export default function Home() {
   const classes = style();
   const [stepsEnabled, setStepsEnabled] = React.useState(true);

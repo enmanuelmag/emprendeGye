@@ -6,11 +6,8 @@ import HerramientasEmprendedor from './herramientas';
 import QuienesSomosEmprendedor from './QuienesSomos';
 import EcosistemaEmprendedor from './ecosistema';
 import NotasEmprendeodr from './notas';
-import HomeEmprendedor from './home'
+import HomeEmprendedor from './home';
 import AprendizajeEmprendedor from './aprendizaje';
-import FContactanos from './informacion/contactanos';
-import NoticiasEmprendedor from './informacion/noticias';
-import QueHacemosEmprendedor from "./informacion/queHacemos";
 
 export function Page() {
   return <PageEmprendedor />;
@@ -37,22 +34,9 @@ export function Notas() {
 }
 
 export function Home() {
-	return <HomeEmprendedor />
+  return <HomeEmprendedor />;
 }
 
 export function Aprendizaje() {
-	return <AprendizajeEmprendedor />
+  return <AprendizajeEmprendedor />;
 }
-
-export function Contactanos() {
-	return <FContactanos />
-}
-
-export function Noticias() {
-	return <NoticiasEmprendedor />
-}
-
-export function QueHacemos() {
-	return <QueHacemosEmprendedor />
-}
-

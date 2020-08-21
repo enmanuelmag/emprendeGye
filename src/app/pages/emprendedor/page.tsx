@@ -14,7 +14,7 @@ import {
   Collapse,
 } from '@material-ui/core';
 import imagePath from './assets/logobarr.svg';
-import Informacion from './informacion';
+
 import style from './style';
 import MenuIcon from '@material-ui/icons/Menu';
 import ExpandLess from '@material-ui/icons/ExpandLess';
@@ -33,14 +33,14 @@ export default function DenseAppBar() {
   const emprendedor = useSelector((state) => emprendedorSelector(state));
 
   useEffect(() => {
-		if (!emprendedor) {
-      console.log("e4")
-			dispatch(getEmprendedor({idEmprendedor: "1"}));
-    } 
+    if (!emprendedor) {
+      console.log('e4');
+      dispatch(getEmprendedor({ idEmprendedor: '1' }));
+    }
   }, [emprendedor, dispatch]);
-  
+
   console.log(emprendedor);
-  
+
   useEffect(() => {
     if (display) {
       if (window.innerWidth <= 1279) {
@@ -244,10 +244,6 @@ export default function DenseAppBar() {
                 </Grid>
                 <Grid item lg={8} className={classes.tabs}>
                   <Typography>
-                    <Link className={classes.link}>
-                      <Informacion />
-                    </Link>
-
                     <Link
                       className={classes.link}
                       href="/emprendedor/ecosistema"
