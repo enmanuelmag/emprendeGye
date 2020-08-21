@@ -1,15 +1,15 @@
 var express = require('express');
 var router = express.Router();
-const inversionista = require('../models/inversionista');
+const emprendedorcuenta = require('../models/emprendedorcuenta');
 
 router.get('/', function (req, res, next) {
-  inversionista
+  emprendedorcuenta
     .findAll()
-    .then((inversionista) => {
-      if (inversionista) {
-        res.json(inversionista);
+    .then((emprendedorcuenta) => {
+      if (emprendedorcuenta) {
+        res.json(emprendedorcuenta);
       } else {
-        res.send('No existe ningún inversionista con ese id');
+        res.send('No existe ningún emprendedor');
       }
     })
     .catch((err) => {
@@ -19,17 +19,17 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
-  inversionista
+  emprendedorcuenta
     .findOne({
       where: {
-        idInversionista: req.params.id,
+        idEmprendedorCuenta: req.params.id,
       },
     })
-    .then((inversionista) => {
-      if (inversionista) {
-        res.json(inversionista);
+    .then((emprendedorcuenta) => {
+      if (emprendedorcuenta) {
+        res.json(emprendedorcuenta);
       } else {
-        console.log('No existe ningún inversionista con ese id');
+        console.log('No existe ninguna cuenta de emprendedor con ese id');
       }
     })
     .catch((err) => {
@@ -40,13 +40,13 @@ router.get('/:id', function (req, res, next) {
 
 router.post('/update', function (req, res, next) {
   console.log('Actualizando ', typeof req.body);
-  inversionista
+  emprendedorcuenta
     .update(req.body)
-    .then((inversionista) => {
-      if (inversionista) {
-        res.json(inversionista);
+    .then((emprendedorcuenta) => {
+      if (emprendedorcuenta) {
+        res.json(emprendedorcuenta);
       } else {
-        console.log('No se pudo actualizar los datos del inversionista');
+        console.log('No se pudo actualizar de la cuenta del emprendedor');
       }
     })
     .catch((err) => {
@@ -58,10 +58,10 @@ router.post('/update', function (req, res, next) {
 router.delete('/delete/:id', function (req, res, next) {
   console.log('Actualizando ', typeof req.body);
 
-  inversionista
+  emprendedorcuenta
     .destroy({
       where: {
-        idInversionista: req.params.id,
+        idEmprendedorCuenta: req.params.id,
       },
     })
     .then((rowsDeleted) => {
@@ -74,13 +74,13 @@ router.delete('/delete/:id', function (req, res, next) {
       res.send('Error: ' + err);
     });
 
-  inversionista
+  emprendedorcuenta
     .update(req.body)
-    .then((inversionista) => {
-      if (inversionista) {
-        res.json(inversionista);
+    .then((emprendedorcuenta) => {
+      if (emprendedorcuenta) {
+        res.json(emprendedorcuenta);
       } else {
-        console.log('No se pudo actualizar los datos de inversionista');
+        console.log('No se pudo actualizar los datos de la cuenta del emprendedor');
       }
     })
     .catch((err) => {

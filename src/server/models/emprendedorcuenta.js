@@ -2,22 +2,23 @@ const Sequelize = require("Sequelize");
 const db = require("../database/db.js");
 
 module.exports = db.sequelize.define(
-    "inversionista",
+    "emprendedorcuenta",
     {
-        idInversionista: {
+        idEmprendedorCuenta: {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        nombres: {
+        usuario: {
             type: Sequelize.STRING
         },
-        apellidos: {
+        contraseña: {
             type: Sequelize.STRING
         },
-        cedula: {
-            type: Sequelize.STRING
-        }  
+        idEmprendedor: {
+            type: Sequelize.INTEGER,
+            foreignKey: true,
+        },   
     },{ freezeTableName: true,timestamps: false}
     //{timestamps: false},
 
