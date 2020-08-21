@@ -11,14 +11,15 @@ export default function home() {
         const classes = style();
 
         return (
-                <Paper className={classes.root} >
-                        <Typography className={classes.typographyBody}>
+                <Paper className={classes.root} variant="outlined">
+                        <Typography variant="h5">
                                 {initData.saludo}
                         </Typography>
-                        <Typography className={classes.typographyBody}>
+                        <Typography variant="h5">
                                 {initData.hora}
                         </Typography>
-                        <Typography className={classes.typographyBody}>
+                        <Typography className={classes.typographyBody}
+                                    variant="h6">
                                 {initData.frase}
                         </Typography>
                 </Paper>

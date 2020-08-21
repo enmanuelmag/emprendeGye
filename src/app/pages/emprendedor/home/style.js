@@ -3,7 +3,10 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) =>
   createStyles({
     contPrincipal: {
-      padding: 50
+        padding: 50
+    },
+    container: {
+        paddingTop: 50,
     }
   }),
 );
