@@ -13,6 +13,7 @@ let database = require('./database/db');
 var emprendedor = require('./routes/emprendedor');
 var emprendimiento = require('./routes/emprendimiento');
 var emprendimientoStats = require('./routes/emprendimientoStats');
+var inversionista= require('./routes/inversionista');
 
 //CONEXION CON LA BASE DE DATOS EN CLEVER CLOUD
 
@@ -39,6 +40,7 @@ app.set('port', process.env.PORT || PORT);
 app.use('/emprendedor', emprendedor);
 app.use('/emprendimiento', emprendimiento);
 app.use('/emprendimientoStats', emprendimientoStats);
+app.use('/inversionista', inversionista);
 
 app.use(cors());
 
