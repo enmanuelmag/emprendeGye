@@ -28,18 +28,18 @@ export default function Home() {
         initialStep={0}
         onExit={onExit}
       />
-        <Grid container spacing={3}>
+        <Grid container>
           <Grid item md={5} xs={12}>
-            <Grid container direction="column" spacing={3} xs={12}>
+            <Grid container direction="column"  xs={12}>
               <Grid className="saludo" item xs={12}>
                 <Saludo />
               </Grid>
-              <Grid className="actividades" item xs={12}>
+              <Grid className={classes.container} item xs={12} >
                   <Actividades />
               </Grid>
             </Grid>
           </Grid>
-          <Grid className="curvaComponet" item md={7} xs={12}>
+          <Grid className={classes.plot} item md={7} xs={12}>
             <Curva />
           </Grid>
         </Grid>

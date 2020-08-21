@@ -6,7 +6,16 @@ export default makeStyles((theme) =>
         padding: 50
     },
     container: {
-        paddingTop: 50,
+        paddingTop: theme.spacing(4),
+
+    },
+    plot: {
+        [theme.breakpoints.down('sm')]: {
+            paddingTop: theme.spacing(3),
+        },
+        [theme.breakpoints.up('md')]: {
+            paddingLeft: theme.spacing(4),
+        },
     }
   }),
 );
