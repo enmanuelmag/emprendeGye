@@ -33,39 +33,20 @@ export default function fe(props) {
         <Typography variant="h5" className={classes.titulo}>
           {titulo.titulo}
         </Typography>
+        
+export default function page() {
+	const classes = style();
+	var titulo = {titulo: 'Curva de emprendimiento'}
 
-        <Line
-          data={chartData}
-          options={{
-            legend: {
-              display: false,
-              //position: props.legendPosition
-            },
-            scales: {
-              yAxes: [
-                {
-                  display: false,
-                },
-              ],
-              xAxes: [
-                {
-                  display: false,
-                },
-              ],
-            },
-            layout: {
-              padding: 10,
-            },
-            elements: {
-              point: {
-                radius: customRadius,
-                display: true,
-                backgroundColor: customColor,
-              },
-            },
-          }}
-        />
-      </CardContent>
-    </Card>
-  );
+	return (
+		<Card className={classes.card} variant="outlined">
+			
+			<CardContent  className={classes.content} >
+				<Typography variant="h5" className={classes.titulo} >
+					{titulo.titulo}
+					</Typography>
+				<Image/>	
+			</CardContent>
+		</Card>
+	);
 }
