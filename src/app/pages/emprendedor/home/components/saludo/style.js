@@ -5,9 +5,6 @@ export default makeStyles((theme) =>
     root: {
       textAlign: 'center',
       padding: '10px',
-    //   variant: 'outlined',
-    //   raised: "true",
-    //   elevation: '5',
 
     },
     typographyBody: {

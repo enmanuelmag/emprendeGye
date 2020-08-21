@@ -4,7 +4,7 @@ import style from './style';
 
 const initData = {
   saludo: 'Buenos dias, ',
-  frase: 'Existe el mañana por alguna razón',
+  frase: '“Existe el mañana por alguna razón”',
   hora: '21:04:56',
 };
 
@@ -16,11 +16,10 @@ export default function home() {
                         <Typography variant="h5">
                                 {initData.saludo}
                         </Typography>
-                        <Typography variant="h5">
+                        <Typography variant="h5" className={classes.typographyBody}>
                                 {initData.hora}
                         </Typography>
-                        <Typography className={classes.typographyBody}
-                                    variant="h6">
+                        <Typography variant="h6">
                                 {initData.frase}
                         </Typography>
                 </Paper>
