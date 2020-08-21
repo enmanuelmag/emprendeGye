@@ -20,7 +20,6 @@ router.get('/', function (req, res, next) {
     });
 });
 
-/*
 router.get('/:id', function (req, res, next) {
   emprendimiento
     .findOne({
@@ -32,7 +31,7 @@ router.get('/:id', function (req, res, next) {
       if (emprendimiento) {
         res.json(emprendimiento);
       } else {
-        console.log('No existe ningún emprendedor con ese id');
+        console.log('No existe ningún emprendimiento con ese id');
       }
     })
     .catch((err) => {
@@ -40,5 +39,55 @@ router.get('/:id', function (req, res, next) {
       res.send('Error: ' + err);
     });
 });
-*/
+
+router.post('/update', function (req, res, next) {
+  console.log('Actualizando ', typeof req.body);
+  emprendimiento
+    .update(req.body)
+    .then((emprendimiento) => {
+      if (emprendimiento) {
+        res.json(emprendimiento);
+      } else {
+        console.log('No se pudo actualizar los datos de emprendimiento');
+      }
+    })
+    .catch((err) => {
+      console.log('Error ', err);
+      res.send('Error: ' + err);
+    });
+});
+
+router.delete('/delete/:id', function (req, res, next) {
+  console.log('Actualizando ', typeof req.body);
+
+  emprendimiento
+    .destroy({
+      where: {
+        idEmprendimiento: req.params.id,
+      },
+    })
+    .then((rowsDeleted) => {
+      if (rowsDeleted === 1) {
+        console.log('Dato único eliminado correctamente');
+      }
+    })
+    .catch((err) => {
+      console.log('Error ', err);
+      res.send('Error: ' + err);
+    });
+
+  emprendimiento
+    .update(req.body)
+    .then((emprendimiento) => {
+      if (emprendimiento) {
+        res.json(emprendimiento);
+      } else {
+        console.log('No se pudo actualizar los datos de emprendimiento');
+      }
+    })
+    .catch((err) => {
+      res.send('Error: ' + err);
+    });
+});
+
 module.exports = router;
