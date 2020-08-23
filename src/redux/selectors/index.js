@@ -13,3 +13,4 @@ export const paqueteria = (state) => get(state, 'paqueteria');
 */ 
 export const emprendedor = (state) => get(state, 'emprendedor.object');
 export const emprendimiento = (state) => get(state, 'emprendimiento.array');
+export const ganancias = (state) => get(state, 'ganancias.array');

@@ -35,7 +35,7 @@ export default function Home() {
         <Card className={classes.root } variant="outlined">
             <Typography className={classes.title} variant='h5'>
 							{palabras.encabezado}
-				</Typography>
+				  </Typography>
             <CardContent className={classes.content}>
             <List className={classes.root}>
             
