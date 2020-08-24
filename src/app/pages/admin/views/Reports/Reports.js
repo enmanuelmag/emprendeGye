@@ -8,6 +8,10 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import clsx from "clsx";
+import { makeStyles } from "@material-ui/core/styles";
+import CircularProgress from "@material-ui/core/CircularProgress";
+
 import { Grid, Typography, Card, Container, Button } from '@material-ui/core';
 import { agrupar, filtrarPorFechas, tabularGrupos } from "./algoritmo"
 import { useSelector, useDispatch } from 'react-redux';
@@ -25,18 +29,21 @@ export default function Reportes() {
   const dispatch = useDispatch();
   const emprendimientos = useSelector((state) => emprendimientoSelector(state));
   const ganancias = useSelector((state) => gananciasSelector(state));
-  const [inicio, setInicio] = useState(0);
-  const [final, setFinal] = useState(0);
+  const [inicio, setInicio] = useState("2019-8-05");
+  const [final, setFinal] = useState("2019-12-05");
   const [agrupados, setAgrupados] = useState({});
-  const [filPorFecha, setFil] = useState()
+  //const [filPorFecha, setFil] = useState()
   const [tab, setTab] = useState([]);
+  const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
+  const timer = React.useRef();
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (!ganancias) {
       dispatch(getGanancias())
     }
   }, [ganancias, inicio, final, dispatch]);
-
+*/
   useEffect(() => {
     if (!emprendimientos) {
       dispatch(getEmprendimiento())
@@ -47,28 +54,36 @@ export default function Reportes() {
 
   const handleInicio = (event) => {
     if (event.type === "change") {
-      let val = event.target.value.split("-")
-      let init = new Date(parseInt(val[0]), parseInt(val[1]) - 1, parseInt(val[2]))
-      setInicio(init);
-      setFil(filtrarPorFechas(ganancias, init, final));
+      setInicio(event.target.value)
+      dispatch(getGanancias({inicio, fin: final}))
     }
   }
   const handleFinal = (event) => {
     if (event.type === "change") {
-      let val = event.target.value.split("-")
-      let fa = new Date(parseInt(val[0]), parseInt(val[1]) - 1, parseInt(val[2]))
-      setFinal(fa);
-      setFil(filtrarPorFechas(ganancias, inicio, fa));
+      setFinal(event.target.value);
+      dispatch(getGanancias({inicio, fin: final}))
     }
   }
-  const buttonClick = (event) => {
-    //setFil(filtrarPorFechas(ganancias, inicio, final));
 
-    setTab(tabularGrupos(agrupados, filPorFecha));
+  const buttonClassname = clsx({
+    [classes.buttonSuccess]: success
+  });
 
-  }
-
-
+  const handleButtonClick = () => {
+    
+    if (!loading) {
+      setSuccess(false);
+      setLoading(true);
+      setTimeout(()=>{
+        setTab(tabularGrupos(agrupados, ganancias ));
+        setSuccess(true);
+        setLoading(false);},1000)
+      
+    }
+  };
+  
+  
+  
   return (
     <Grid container className={classes.contPrincipal} spacing={3}>
 
@@ -110,7 +125,21 @@ export default function Reportes() {
         </Grid>
         <Grid item md={2} xs={2} container justify="center"
           alignItems="center">
-          <Button variant="contained" color="primary" onClick={buttonClick}>Filtrar</Button>
+          
+          <div className={classes.wrapper}>
+        <Button
+          variant="contained"
+          color="primary"
+          className={buttonClassname}
+          disabled={loading}
+          onClick={handleButtonClick}
+        >
+          Generar Reporte
+        </Button>
+        {loading && (
+          <CircularProgress size={24} className={classes.buttonProgress} />
+        )}
+      </div>
         </Grid>
       </Grid>
 

@@ -12,21 +12,9 @@ function agrupar(arregloEmprendimientos){
     //console.log({grupos, ids})
     return {grupos, ids}
 }
-function filtrarPorFechas(ganancias, fechaInicio, fechaFin){
-    console.log(fechaInicio, fechaFin);
-    let res = []
-    ganancias.forEach(e => {
-        let fechaGan = new Date(e.fechaGanancia);
-        if(fechaInicio <= fechaGan && fechaGan <= fechaFin){
-            res.push(e);
-        }
-    })
-    //console.log(res)
-    return res
-}
 function tabularGrupos(datos, fechasFiltradas){
     let nDatos = {grupos:[],totales:[]}
-    //console.log("Llegan",fechasFiltradas)
+    //console.log("Llegan",datos, fechasFiltradas)
     for(let i in datos.grupos){
         if(!nDatos.grupos.includes(datos.grupos[i])){
             nDatos.grupos.push(datos.grupos[i]);
@@ -44,7 +32,7 @@ function tabularGrupos(datos, fechasFiltradas){
     for(let j in nDatos.grupos){
         pros.push({"grupo": nDatos.grupos[j], "total": nDatos.totales[j]})
     }
-    console.log(pros);
+    //console.log(pros);
     return pros
 }
-export {agrupar, filtrarPorFechas, tabularGrupos};
+export {agrupar, tabularGrupos};
