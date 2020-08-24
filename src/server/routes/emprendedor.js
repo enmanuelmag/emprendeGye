@@ -7,7 +7,6 @@ router.get('/', function (req, res, next) {
     .findAll()
     .then((emprendedor) => {
       if (emprendedor) {
-        //console.log(emprendedor);
         res.json(emprendedor);
       } else {
         res.send('No existe ningún emprendedor con ese id');
@@ -39,13 +38,18 @@ router.get('/:id', function (req, res, next) {
     });
 });
 
-router.post('/update', function (req, res, next) {
-  console.log('Actualziando ', typeof req.body);
+router.post('/update/:id', function (req, res, next) {
+  console.log('update ', req.body);
   emprendedor
-    .update(req.body)
+    .update(req.body, {
+      where: {
+        idEmprendedor: req.params.id,
+      },
+    })
     .then((emprendedor) => {
       if (emprendedor) {
         res.json(emprendedor);
+        console.log('Se pudo actualizar los datos de emprendedor');
       } else {
         console.log('No se pudo actualizar los datos de emprendedor');
       }
@@ -56,9 +60,8 @@ router.post('/update', function (req, res, next) {
     });
 });
 
-router.delete('/delete/:id', function (req, res, next) {
-  console.log('Actualziando ', typeof req.body);
-
+router.get('/delete/:id', function (req, res, next) {
+  console.log('Borrando ', req.body);
   emprendedor
     .destroy({
       where: {
@@ -72,19 +75,6 @@ router.delete('/delete/:id', function (req, res, next) {
     })
     .catch((err) => {
       console.log('Error ', err);
-      res.send('Error: ' + err);
-    });
-
-  emprendedor
-    .update(req.body)
-    .then((emprendedor) => {
-      if (emprendedor) {
-        res.json(emprendedor);
-      } else {
-        console.log('No se pudo actualizar los datos de emprendedor');
-      }
-    })
-    .catch((err) => {
       res.send('Error: ' + err);
     });
 });
