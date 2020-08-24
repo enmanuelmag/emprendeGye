@@ -40,13 +40,18 @@ router.get('/:id', function (req, res, next) {
     });
 });
 
-router.post('/update', function (req, res, next) {
-  console.log('Actualizando ', typeof req.body);
+router.post('/update/:id', function (req, res, next) {
+  console.log('update ', req.body);
   emprendimiento
-    .update(req.body)
+    .update(req.body, {
+      where: {
+        idEmprendimiento: req.params.id,
+      },
+    })
     .then((emprendimiento) => {
       if (emprendimiento) {
         res.json(emprendimiento);
+        console.log('Se pudo actualizar los datos de emprendimiento');
       } else {
         console.log('No se pudo actualizar los datos de emprendimiento');
       }
@@ -57,9 +62,8 @@ router.post('/update', function (req, res, next) {
     });
 });
 
-router.delete('/delete/:id', function (req, res, next) {
-  console.log('Actualizando ', typeof req.body);
-
+router.get('/delete/:id', function (req, res, next) {
+  console.log('Borrando ', req.body);
   emprendimiento
     .destroy({
       where: {
@@ -73,19 +77,6 @@ router.delete('/delete/:id', function (req, res, next) {
     })
     .catch((err) => {
       console.log('Error ', err);
-      res.send('Error: ' + err);
-    });
-
-  emprendimiento
-    .update(req.body)
-    .then((emprendimiento) => {
-      if (emprendimiento) {
-        res.json(emprendimiento);
-      } else {
-        console.log('No se pudo actualizar los datos de emprendimiento');
-      }
-    })
-    .catch((err) => {
       res.send('Error: ' + err);
     });
 });
