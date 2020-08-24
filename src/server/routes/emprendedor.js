@@ -38,6 +38,24 @@ router.get('/:id', function (req, res, next) {
     });
 });
 
+router.post('/', function (req, res, next) {
+  console.log('post ', req.body);
+  emprendedor
+    .create(req.body)
+    .then((emprendedor) => {
+      if (emprendedor) {
+        res.json(emprendedor);
+        console.log('Se pudo crear un emprendedor nuevo');
+      } else {
+        console.log('No se pudo creat emprendedor');
+      }
+    })
+    .catch((err) => {
+      console.log('Error ', err);
+      res.send('Error: ' + err);
+    });
+});
+
 router.post('/update/:id', function (req, res, next) {
   console.log('update ', req.body);
   emprendedor
