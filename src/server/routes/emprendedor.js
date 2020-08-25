@@ -47,7 +47,7 @@ router.post('/', function (req, res, next) {
         res.json(emprendedor);
         console.log('Se pudo crear un emprendedor nuevo');
       } else {
-        console.log('No se pudo creat emprendedor');
+        console.log('No se pudo crear emprendedor');
       }
     })
     .catch((err) => {

@@ -38,6 +38,24 @@ router.get('/:id', function (req, res, next) {
     });
 });
 
+router.post('/', function (req, res, next) {
+  console.log('post ', req.body);
+  emprendimientoStats
+    .create(req.body)
+    .then((emprendimientoStats) => {
+      if (emprendimientoStats) {
+        res.json(emprendimientoStats);
+        console.log('Se pudo crear');
+      } else {
+        console.log('No se pudo crear');
+      }
+    })
+    .catch((err) => {
+      console.log('Error ', err);
+      res.send('Error: ' + err);
+    });
+});
+
 router.post('/update/:id', function (req, res, next) {
   console.log('update ', req.body);
   emprendimientoStats
