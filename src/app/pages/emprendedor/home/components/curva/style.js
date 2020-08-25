@@ -4,6 +4,7 @@ export default makeStyles((theme) =>
   createStyles({
     card: {
       width: '100%',
+      height: '100%'
     },
     content: {
       paddingTop: theme.spacing(3),
@@ -15,6 +16,11 @@ export default makeStyles((theme) =>
       textAlign: 'center',
       paddingBottom: theme.spacing(2),
       fontWeight: 'bold',
+    },
+    plot: {
+        [theme.breakpoints.up('md')]: {
+            margin: theme.spacing(3),
+        },
     },
   })
 );

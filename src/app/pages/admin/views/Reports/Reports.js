@@ -1,168 +1,182 @@
-import React from 'react';
-import SwipeableViews from 'react-swipeable-views';
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import React, { useEffect, useState } from 'react';
+import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
-import { Grid, Typography, Card, Container } from '@material-ui/core';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import clsx from "clsx";
+import { makeStyles } from "@material-ui/core/styles";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
-function TabContainer(props) {
-  const { children, dir } = props;
+import { Grid, Typography, Card, Container, Button } from '@material-ui/core';
+import { agrupar, filtrarPorFechas, tabularGrupos } from "./algoritmo"
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  emprendimiento as emprendimientoSelector,
+  ganancias as gananciasSelector
+} from '../../../../../redux/selectors';
+import { getEmprendimiento } from '../../../../../redux/actions/emprendimiento';
+import { getGanancias } from '../../../../../redux/actions/ganancias';
+import styles from "./styles";
 
-  return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
-      {children}
-    </Typography>
-  );
-}
+export default function Reportes() {
 
-const styles = theme => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-    width: 1127,
-    position: 'relative',
-    minHeight: 200,
-  },
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    width: 200,
-  },
-  title: {
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(1),
-  },
-});
+  const classes = styles();
+  const dispatch = useDispatch();
+  const emprendimientos = useSelector((state) => emprendimientoSelector(state));
+  const ganancias = useSelector((state) => gananciasSelector(state));
+  const [inicio, setInicio] = useState("2019-8-05");
+  const [final, setFinal] = useState("2019-12-05");
+  const [agrupados, setAgrupados] = useState({});
+  //const [filPorFecha, setFil] = useState()
+  const [tab, setTab] = useState([]);
+  const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
+  const timer = React.useRef();
 
-class FloatingActionButtonZoom extends React.Component {
-  state = {
-    value: 0,
-  };
+  /*useEffect(() => {
+    if (!ganancias) {
+      dispatch(getGanancias())
+    }
+  }, [ganancias, inicio, final, dispatch]);
+*/
+  useEffect(() => {
+    if (!emprendimientos) {
+      dispatch(getEmprendimiento())
+    } else {
+      setAgrupados(agrupar(emprendimientos));
+    }
+  }, [emprendimientos, dispatch]);
 
-  handleChange = (event, value) => {
-    this.setState({ value });
-  };
-
-  handleChangeIndex = index => {
-    this.setState({ value: index });
-  };
-
-  render() {
-    const { classes, theme } = this.props;
-
-
-    return (
-      <div className={classes.root}>
-      <Card variant='elevation' elevation={2}>
-        <Typography variant="body2" className={classes.title}>
-								 Seleccione el tipo de reporte que desea generar:
-          </Typography>
-          </Card>
-        <AppBar position="static" color="default">
-          <Tabs
-            value={this.state.value}
-            onChange={this.handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            variant="fullWidth"
-          >
-            <Tab label="REPORTES DE GANANCIAS POR TIPO DE EMPRENDIMIENTO " />
-            <Tab label="TOP DE EMPRENDEDORES CON MAYOR FINANCIAMIENTO" />
-          </Tabs>
-        </AppBar>
-        <SwipeableViews
-          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-          index={this.state.value}
-          onChangeIndex={this.handleChangeIndex}
-        >
-          <TabContainer dir={theme.direction}>
-          <Container className={classes.container} maxWidth={'xl'}>
-              <Grid container spacing={4}>
-            
-                <Grid item xs={12} md={6} lg={6}>
-                  <form className={classes.container} noValidate>
-                    <TextField
-                      id="date"
-                      label="Fecha de inicio"
-                      type="date"
-                      defaultValue="2017-05-24"
-                      className={classes.textField}
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                    />
-                  </form>
-                </Grid>
-
-                <Grid item xs={12} md={6} lg={6}>
-                  <form className={classes.container} noValidate>
-                    <TextField
-                      id="date"
-                      label="Fecha de fin"
-                      type="date"
-                      defaultValue="2020-02-24"
-                      className={classes.textField}
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                    />
-                  </form>
-
-                </Grid>
-              </Grid>
-            </Container>
-          </TabContainer>
-
-          <TabContainer dir={theme.direction}>
-            <Container className={classes.container} maxWidth={'xl'}>
-              <Grid container spacing={4}>
-            
-                <Grid item xs={12} md={6} lg={6}>
-                  <form className={classes.container} noValidate>
-                    <TextField
-                      id="date"
-                      label="Fecha de inicio"
-                      type="date"
-                      defaultValue="2017-05-24"
-                      className={classes.textField}
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                    />
-                  </form>
-                </Grid>
-
-                <Grid item xs={12} md={6} lg={6}>
-                  <form className={classes.container} noValidate>
-                    <TextField
-                      id="date"
-                      label="Fecha de fin"
-                      type="date"
-                      defaultValue="2020-02-24"
-                      className={classes.textField}
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                    />
-                  </form>
-
-                </Grid>
-              </Grid>
-            </Container>
-          </TabContainer>
-
-        </SwipeableViews>
-
-      </div>
-    );
+  const handleInicio = (event) => {
+    if (event.type === "change") {
+      setInicio(event.target.value)
+      dispatch(getGanancias({inicio, fin: final}))
+    }
   }
+  const handleFinal = (event) => {
+    if (event.type === "change") {
+      setFinal(event.target.value);
+      dispatch(getGanancias({inicio, fin: final}))
+    }
+  }
+
+  const buttonClassname = clsx({
+    [classes.buttonSuccess]: success
+  });
+
+  const handleButtonClick = () => {
+    
+    if (!loading) {
+      setSuccess(false);
+      setLoading(true);
+      setTimeout(()=>{
+        setTab(tabularGrupos(agrupados, ganancias ));
+        setSuccess(true);
+        setLoading(false);},1000)
+      
+    }
+  };
+  
+  
+  
+  return (
+    <Grid container className={classes.contPrincipal} spacing={3}>
+
+      <Grid container justify="center"
+        alignItems="center" item>
+        <Grid item md={12} xs={12} >
+          <Typography className={classes.title} variant='h5'>
+            REPORTES DE GANANCIAS POR TIPO DE EMPRENDIMIENTO
+          </Typography>
+        </Grid>
+
+        <Grid item md={5} xs={5} container justify="center"
+          alignItems="center">
+          <TextField
+            id="date"
+            label="Fecha de inicio"
+            type="date"
+            //defaultValue={new Date(inicio).toLocaleDateString()}
+            className={classes.textField}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            onChange={handleInicio}
+          />
+        </Grid>
+        <Grid item md={5} xs={5} container justify="center"
+          alignItems="center">
+          <TextField
+            id="date"
+            label="Fecha de fin"
+            type="date"
+            //defaultValue={new Date(final).toLocaleDateString()}
+            className={classes.textField}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            onChange={handleFinal}
+          />
+        </Grid>
+        <Grid item md={2} xs={2} container justify="center"
+          alignItems="center">
+          
+          <div className={classes.wrapper}>
+        <Button
+          variant="contained"
+          color="primary"
+          className={buttonClassname}
+          disabled={loading}
+          onClick={handleButtonClick}
+        >
+          Generar Reporte
+        </Button>
+        {loading && (
+          <CircularProgress size={24} className={classes.buttonProgress} />
+        )}
+      </div>
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        item
+        spacing={3}
+        justify="center"
+        alignItems="flex-start"
+        className={classes.gridGraphic}
+      >
+        <Grid item md={6} xs={6}>
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Sector Económico</TableCell>
+                  <TableCell align="left">Total</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {(tab) ? tab.map((row) => (
+                  <TableRow key={row.grupo}>
+                    <TableCell component="th" scope="row">
+                      {row.grupo}
+                    </TableCell>
+                    <TableCell align="right">{row.total}</TableCell>
+                  </TableRow>
+                )) : <></>
+                }
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
+      </Grid>
+
+    </Grid>
+  );
+
 }
-
-
-export default withStyles(styles, { withTheme: true })(FloatingActionButtonZoom);

@@ -11,6 +11,9 @@ let database = require('./database/db');
 
 //Rutas de la carpeta routes
 var emprendedor = require('./routes/emprendedor');
+var emprendimiento = require('./routes/emprendimiento');
+var emprendimientoStats = require('./routes/emprendimientoStats');
+var emprendedorcuenta= require('./routes/emprendedorcuenta');
 
 //CONEXION CON LA BASE DE DATOS EN CLEVER CLOUD
 
@@ -35,6 +38,9 @@ app.set('port', process.env.PORT || PORT);
 //Conexion base de datos
 //app.use("/", index);
 app.use('/emprendedor', emprendedor);
+app.use('/emprendimiento', emprendimiento);
+app.use('/emprendimientoStats', emprendimientoStats);
+app.use('/emprendedorcuenta', emprendedorcuenta);
 
 app.use(cors());
 

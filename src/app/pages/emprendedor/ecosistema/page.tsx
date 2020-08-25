@@ -1,11 +1,7 @@
 import React from 'react';
 import { useTheme } from '@material-ui/core/styles';
 import {
-  Grid,
-  Container,
-  Card,
   Typography,
-  Button,
   AppBar,
   Tabs,
   Box,
@@ -16,7 +12,7 @@ import SwipeableViews from 'react-swipeable-views';
 import CardPeople from './components/card-people';
 import CardGroups from './components/card-groups';
 
-import { EnvEvents, EnvGroupForum, EnvPeople } from '@interfaces/emprendedor';
+import { EnvGroupForum, EnvPeople } from '@interfaces/emprendedor';
 
 import style from './style';
 
@@ -51,11 +47,6 @@ export default function Page({ data }: { data: any }) {
   const classes = style();
   const theme = useTheme();
 
-  const initData = {
-    btnPeople: 'Ver más',
-    btnGroup: 'Ver más',
-    btnEvents: 'Ver más',
-  };
   const [value, setValue] = React.useState(0);
 
   const people: EnvPeople = data['people'];
