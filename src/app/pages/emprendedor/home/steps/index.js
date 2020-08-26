@@ -17,7 +17,6 @@ export const HomeSteps = [
     intro: 'En este gráfico podrás ver tus progreso en la curva del emprendimiento',
 
   },
-  
   {
     element: '#retroalimentacion',
     intro: 'Estas son las últimas retroalimentaciones dadas por tus mentores',
