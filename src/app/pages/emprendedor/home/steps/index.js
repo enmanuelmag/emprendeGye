@@ -5,21 +5,21 @@ export const HomeSteps = [
 //     intro: 'En esta sección podrás encontrar tus notificaciones más recientes',
 //   },
   {
-    element: '.saludo',
+    element: '#saludo',
     intro: 'Dale doble click y personaliza tu mensaje de inicio',
   },
   {
-    element: '.actividades',
+    element: '#actividades',
     intro: 'Agrega, elimina y administra tus próximas actividades',
   },
   {
-    element: '.curvaComponet',
+    element: '#plot',
     intro: 'En este gráfico podrás ver tus progreso en la curva del emprendimiento',
 
   },
   
   {
-    element: '.retroalimentacion',
+    element: '#retroalimentacion',
     intro: 'Estas son las últimas retroalimentaciones dadas por tus mentores',
   },
 ];
