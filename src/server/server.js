@@ -1,23 +1,17 @@
 const express = require('express');
 const path = require('path');
-
-const { sequelize } = require('./database/db');
-
+const { sequelize } = require(path.join(__dirname, 'database', 'db'));
 const app = express();
-
-let mongoose = require('mongoose');
 let cors = require('cors');
-let database = require('./database/db');
-
 //Rutas de la carpeta routes
-var emprendedor = require('./routes/emprendedor');
-var emprendimiento = require('./routes/emprendimiento');
-var emprendimientoStats = require('./routes/emprendimientoStats');
-var emprendedorcuenta = require('./routes/emprendedorcuenta');
+var emprendedor = require(path.join(__dirname, 'routes', 'emprendedor'));
+var emprendimiento = require(path.join(__dirname, 'routes', 'emprendimiento'));
+var emprendimientoStats = require(path.join(__dirname, 'routes', 'emprendimientoStats'));
+var emprendedorcuenta = require(path.join(__dirname, 'routes', 'emprendedorcuenta'));
+//path.join(__dirname, 'database', 'db')
 var emailRoutes = require(path.join(__dirname, 'routes', 'email.routes'));
 
 //CONEXION CON LA BASE DE DATOS EN CLEVER CLOUD
-
 sequelize
   .authenticate()
   .then(() => {
@@ -39,10 +33,10 @@ app.set('port', process.env.PORT || PORT);
 //Conexion base de datos
 //app.use("/", index);
 app.use('/email', emailRoutes);
-app.use('/emprendedor', emprendedor);
-app.use('/emprendimiento', emprendimiento);
-app.use('/emprendedorcuenta', emprendedorcuenta);
-app.use('/emprendimientoStats', emprendimientoStats);
+app.use('/api/emprendedor', emprendedor);
+app.use('/api/emprendimiento', emprendimiento);
+app.use('/api/emprendedorcuenta', emprendedorcuenta);
+app.use('/api/emprendimientoStats', emprendimientoStats);
 
 app.use(cors());
 
@@ -68,9 +62,12 @@ app.get('/ping', function (req, res) {
   return res.send({ data: 'pong' });
 });
 
-app.get('/', function (req, res) {
+/*app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '..', '..', 'build', 'index.html'));
-});
+});*/
+app.use(express.static(path.join(__dirname, '..', '..', 'build')));
+
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '..', '..', 'build', 'index.html')));
 
 //INICIALIZACION DEL SERVIDOR
 app.listen(app.get('port'), () => {

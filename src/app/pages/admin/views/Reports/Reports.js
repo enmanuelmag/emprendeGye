@@ -70,14 +70,13 @@ export default function Reportes() {
   });
 
   const handleButtonClick = () => {
-    
+    setTab(tabularGrupos(agrupados, ganancias ));
     if (!loading) {
       setSuccess(false);
       setLoading(true);
       setTimeout(()=>{
-        setTab(tabularGrupos(agrupados, ganancias ));
         setSuccess(true);
-        setLoading(false);},1000)
+        setLoading(false);},2000)
       
     }
   };

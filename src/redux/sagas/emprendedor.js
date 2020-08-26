@@ -13,7 +13,7 @@ function* getEmprendedor({ idEmprendedor }) {
   try {
     const response = yield call(
       apiCall,
-      `/emprendedor/${idEmprendedor}`,
+      `/api/emprendedor/${idEmprendedor}`,
       null,
       null,
       'GET'
@@ -28,7 +28,7 @@ function* updateEmprendedor(emprendedor) {
     //url, data, headers, method
     const response = yield call(
       apiCall,
-      `/emprendedor/update`,
+      `/api/emprendedor/update`,
       emprendedor,
       { 'Content-Type': 'application/json' },
       'UPDATE'

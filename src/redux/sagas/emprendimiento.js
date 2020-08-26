@@ -10,7 +10,7 @@ function* getEmprendimiento() {
   try {
     const response = yield call(
       apiCall,
-      `/emprendimiento/`,
+      `/api/emprendimiento/`,
       null,
       null,
       'GET'
