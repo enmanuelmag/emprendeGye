@@ -19,12 +19,14 @@ export default makeStyles((theme) =>
       marginTop: '1rem',
     },
     root: {
+      borderRadius: '10px',
       display: 'flex',
       flexWrap: 'wrap',
       minWidth: 300,
       width: '100%',
     },
     image: {
+      borderRadius: '10px',
       position: 'relative',
       width: '85%',
       height: 150,
@@ -41,12 +43,14 @@ export default makeStyles((theme) =>
           opacity: 0,
         },
         '& $imageTitle': {
+          borderRadius: '10px',
           border: '4px solid currentColor',
         },
       },
     },
     focusVisible: {},
     imageButton: {
+      borderRadius: '10px',
       position: 'absolute',
       left: 0,
       right: 0,
@@ -58,6 +62,7 @@ export default makeStyles((theme) =>
       color: theme.palette.common.white,
     },
     imageSrc: {
+      borderRadius: '10px',
       position: 'absolute',
       left: 0,
       right: 0,
@@ -67,6 +72,7 @@ export default makeStyles((theme) =>
       backgroundPosition: 'center 40%',
     },
     imageBackdrop: {
+      borderRadius: '10px',
       position: 'absolute',
       left: 0,
       right: 0,
@@ -85,6 +91,7 @@ export default makeStyles((theme) =>
     imageMarked: {
       height: 3,
       width: 18,
+      borderRadius: '10px',
       backgroundColor: theme.palette.common.white,
       position: 'absolute',
       bottom: -2,
