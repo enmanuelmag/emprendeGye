@@ -12,16 +12,29 @@ import {
   List,
   ListItem,
   Collapse,
+  Dialog,
+  DialogContent,
+  DialogActions,
+  Button,
+  DialogTitle,
+  DialogContentText,
+  TextField,
 } from '@material-ui/core';
 import imagePath from './assets/logobarr.svg';
 
+import Notifier from 'app/utils/Notifier';
 import style from './style';
 import MenuIcon from '@material-ui/icons/Menu';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import { useSelector, useDispatch } from 'react-redux';
-import { emprendedor as emprendedorSelector } from '../../../redux/selectors';
+import {
+  emprendedor as emprendedorSelector,
+  email as emailSelector,
+} from '../../../redux/selectors';
 import { getEmprendedor } from '../../../redux/actions/emprendedor';
+import { sendEmail } from 'redux/actions/enviarEmail';
+import { enqueueSnackbar, removeSnackbar } from 'redux/actions/notifier';
 
 export default function DenseAppBar() {
   const classes = style();
@@ -31,13 +44,56 @@ export default function DenseAppBar() {
   const [drawer, setDrawer] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const emprendedor = useSelector((state) => emprendedorSelector(state));
+  const email = useSelector((state) => emailSelector(state));
+
+  const [infoContact, setinfoContact] = useState({ email: '', subject: '' });
+
+  const [openDialog, setOpenDialog] = React.useState(false);
 
   useEffect(() => {
     if (!emprendedor) {
       console.log('e4');
       dispatch(getEmprendedor({ idEmprendedor: '1' }));
     }
-  }, [emprendedor, dispatch]);
+
+    switch (email.state) {
+      case 'START':
+        dispatch(
+          enqueueSnackbar({
+            message: 'Enviando correo',
+            options: {
+              key: new Date().getTime() + Math.random(),
+              variant: 'warning',
+            },
+          })
+        );
+        break;
+      case 'ERROR':
+        dispatch(
+          enqueueSnackbar({
+            message: 'Error al enviar el correo',
+            options: {
+              key: new Date().getTime() + Math.random(),
+              variant: 'error',
+            },
+          })
+        );
+        handleClose();
+        break;
+      case 'COMPLETE':
+        dispatch(
+          enqueueSnackbar({
+            message: 'Correo enviando correctamente',
+            options: {
+              key: new Date().getTime() + Math.random(),
+              variant: 'success',
+            },
+          })
+        );
+        handleClose();
+        break;
+    }
+  }, [email, emprendedor, dispatch]);
 
   console.log(emprendedor);
 
@@ -247,6 +303,9 @@ export default function DenseAppBar() {
                     <Link
                       className={classes.link}
                       href="/emprendedor/ecosistema"
+                      onClick={(event) => {
+                        handleClickOpen(event);
+                      }}
                     >
                       Soporte
                     </Link>
@@ -287,5 +346,86 @@ export default function DenseAppBar() {
     );
   };
 
-  return <div>{drawerActivate ? createDrawer() : destroyDrawer()}</div>;
+  const handleClickOpen = (event) => {
+    event.preventDefault();
+    setOpenDialog(true);
+  };
+
+  const handleClose = () => {
+    setOpenDialog(false);
+  };
+
+  const setNewValue = (event) => {
+    let valor = event.target.value;
+    let clave = event.target.name;
+    setinfoContact((prevState) => {
+      return { ...prevState, [clave]: valor };
+    });
+  };
+
+  const clickEmail = (event) => {
+    event.preventDefault();
+    console.log(infoContact);
+
+    dispatch(sendEmail(infoContact));
+  };
+
+  const dialogContact = () => {
+    return (
+      <Dialog
+        open={openDialog}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+      >
+        <DialogTitle id="form-dialog-title">Contáctanos</DialogTitle>
+        <form
+          onSubmit={(event) => {
+            clickEmail(event);
+          }}
+        >
+          <DialogContent>
+            <DialogContentText>
+              Si tienes dudas sobre alguna características o problemas en el
+              servicio avísanos para ayudarte a solucionarlo.
+            </DialogContentText>
+            <TextField
+              autoFocus
+              name="email"
+              margin="dense"
+              id="email"
+              label="Correo"
+              type="email"
+              onChange={setNewValue}
+              fullWidth
+            />
+            <TextField
+              name="subject"
+              margin="dense"
+              id="subject"
+              label="Asunto"
+              type="text"
+              onChange={setNewValue}
+              fullWidth
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="primary">
+              Cancelar
+            </Button>
+            <Button type="submit" color="primary">
+              Enviar
+            </Button>
+          </DialogActions>
+        </form>
+      </Dialog>
+    );
+  };
+
+  return (
+    <div>
+      {drawerActivate ? createDrawer() : destroyDrawer()}
+      {dialogContact()}
+      <Notifier />
+    </div>
+  );
 }
