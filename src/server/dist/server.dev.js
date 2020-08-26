@@ -24,7 +24,7 @@ var emprendimientoStats = require('./routes/emprendimientoStats');
 
 var emprendedorcuenta = require('./routes/emprendedorcuenta');
 
-var emailRoutes = require(path.join(__dirname, '..', 'routers', 'email.routes')); //CONEXION CON LA BASE DE DATOS EN CLEVER CLOUD
+var emailRoutes = require(path.join(__dirname, 'routes', 'email.routes')); //CONEXION CON LA BASE DE DATOS EN CLEVER CLOUD
 
 
 sequelize.authenticate().then(function () {

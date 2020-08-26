@@ -248,6 +248,12 @@ export default function DenseAppBar() {
                       className={classes.link}
                       href="/emprendedor/ecosistema"
                     >
+                      Soporte
+                    </Link>
+                    <Link
+                      className={classes.link}
+                      href="/emprendedor/ecosistema"
+                    >
                       Ecosistema
                     </Link>
 
