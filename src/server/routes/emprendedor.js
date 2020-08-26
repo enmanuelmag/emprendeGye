@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const emprendedor = require('../models/emprendedor');
 
+//GET
 router.get('/', function (req, res, next) {
   emprendedor
     .findAll()
@@ -18,6 +19,7 @@ router.get('/', function (req, res, next) {
     });
 });
 
+//GET CON ID
 router.get('/:id', function (req, res, next) {
   emprendedor
     .findOne({
@@ -38,6 +40,7 @@ router.get('/:id', function (req, res, next) {
     });
 });
 
+//POST
 router.post('/', function (req, res, next) {
   console.log('post ', req.body);
   emprendedor
@@ -56,6 +59,7 @@ router.post('/', function (req, res, next) {
     });
 });
 
+//PUT
 router.post('/update/:id', function (req, res, next) {
   console.log('update ', req.body);
   emprendedor
@@ -78,6 +82,8 @@ router.post('/update/:id', function (req, res, next) {
     });
 });
 
+
+//DELETE
 router.get('/delete/:id', function (req, res, next) {
   console.log('Borrando ', req.body);
   emprendedor
