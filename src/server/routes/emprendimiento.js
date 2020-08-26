@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const emprendimiento = require('../models/emprendimiento');
 
-
+//GET
 router.get('/', function (req, res, next) {
   emprendimiento
     .findAll()
@@ -20,6 +20,7 @@ router.get('/', function (req, res, next) {
     });
 });
 
+//GET CON ID
 router.get('/:id', function (req, res, next) {
   emprendimiento
     .findOne({
@@ -40,6 +41,7 @@ router.get('/:id', function (req, res, next) {
     });
 });
 
+//POST
 router.post('/', function (req, res, next) {
   console.log('post ', req.body);
   emprendimiento
@@ -58,16 +60,21 @@ router.post('/', function (req, res, next) {
     });
 });
 
-
-router.post('/update', function (req, res, next) {
-  console.log('Actualizando ', typeof req.body);
+//PUT
+router.post('/update/:id', function (req, res, next) {
+  console.log('update ', req.body);
   emprendimiento
-    .update(req.body)
-    .then((emprendimiento) => {
-      if (emprendimiento) {
-        res.json(emprendimiento);
+    .update(req.body, {
+      where: {
+        idEmprendimiento: req.params.id,
+      },
+    })
+    .then(( emprendimiento) => {
+      if ( emprendimiento) {
+        res.json( emprendimiento);
+        console.log('Se pudo actualizar los datos');
       } else {
-        console.log('No se pudo actualizar los datos de emprendimiento');
+        console.log('No se pudo actualizar los datos');
       }
     })
     .catch((err) => {
@@ -76,9 +83,9 @@ router.post('/update', function (req, res, next) {
     });
 });
 
-router.delete('/delete/:id', function (req, res, next) {
-  console.log('Actualizando ', typeof req.body);
-
+//DELETE
+router.get('/delete/:id', function (req, res, next) {
+  console.log('Borrando ', req.body);
   emprendimiento
     .destroy({
       where: {
@@ -92,19 +99,6 @@ router.delete('/delete/:id', function (req, res, next) {
     })
     .catch((err) => {
       console.log('Error ', err);
-      res.send('Error: ' + err);
-    });
-
-  emprendimiento
-    .update(req.body)
-    .then((emprendimiento) => {
-      if (emprendimiento) {
-        res.json(emprendimiento);
-      } else {
-        console.log('No se pudo actualizar los datos de emprendimiento');
-      }
-    })
-    .catch((err) => {
       res.send('Error: ' + err);
     });
 });

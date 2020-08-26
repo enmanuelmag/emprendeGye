@@ -10,7 +10,7 @@ module.exports = db.sequelize.define(
             autoIncrement: true,
         },
         fundacion: {
-            type: Sequelize.DATE,
+            type: Sequelize.STRING,
         },
     },{ freezeTableName: true,timestamps: false}
 )

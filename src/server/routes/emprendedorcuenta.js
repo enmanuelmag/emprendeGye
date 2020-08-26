@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const emprendedorcuenta = require('../models/emprendedorcuenta');
 
+//GET
 router.get('/', function (req, res, next) {
   emprendedorcuenta
     .findAll()
@@ -18,6 +19,7 @@ router.get('/', function (req, res, next) {
     });
 });
 
+//GET CON ID
 router.get('/:id', function (req, res, next) {
   emprendedorcuenta
     .findOne({
@@ -38,6 +40,8 @@ router.get('/:id', function (req, res, next) {
     });
 });
 
+
+//POST
 router.post('/', function (req, res, next) {
   console.log('post ', req.body);
   emprendedorcuenta
@@ -56,6 +60,7 @@ router.post('/', function (req, res, next) {
     });
 });
 
+//PUT
 router.post('/update/:id', function (req, res, next) {
   console.log('update ', req.body);
   emprendedorcuenta
@@ -78,6 +83,7 @@ router.post('/update/:id', function (req, res, next) {
     });
 });
 
+//DELETE
 router.get('/delete/:id', function (req, res, next) {
   console.log('Borrando ', req.body);
   emprendedorcuenta
