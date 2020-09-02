@@ -13,6 +13,7 @@ export const paqueteria = (state) => get(state, 'paqueteria');
 */
 export const notifications = (state) => get(state, 'notifier.notifications');
 export const emprendedor = (state) => get(state, 'emprendedor.object');
+export const emprendedorCuenta = (state) => get(state, 'emprendedorCuenta.object');
 export const emprendimiento = (state) => get(state, 'emprendimiento.array');
 export const ganancias = (state) => get(state, 'ganancias.array');
 export const email = (state) => get(state, 'email');

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Container,
   CssBaseline,
@@ -12,6 +12,12 @@ import {
   Box,
   CardMedia,
 } from '@material-ui/core';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
+import {
+  emprendedorCuenta as emprendedorCuentaSelector,
+} from '../../../redux/selectors';
+import { getEmprendedorCuenta } from '../../../redux/actions/emprendedorCuenta';
 
 import style from './style';
 
@@ -30,8 +36,14 @@ function Copyright() {
 
 export default function Page({ func }: { func: any }) {
   const classes = style();
-  console.log(func);
-  const { updateEmail } = func;
+  //console.log(func);
+  const [usuario, setUsuario] = useState("");
+  const [contrasenia, setContrasenia] = useState("");
+  const [ref, setRef] = useState("/login");
+  const history = useHistory();
+  //const { updateEmail } = func;
+  const dispatch = useDispatch();
+  const emprendedorCuenta = useSelector((state) => emprendedorCuentaSelector(state));
 
   const initData = {
     title: 'Inicio de sesión',
@@ -43,6 +55,23 @@ export default function Page({ func }: { func: any }) {
     create: '¿No tiene una cuenta? Regístrese',
     mySite: 'EmprendeGye',
   };
+  
+  React.useEffect(() => {
+    if (ref !== "/login") {
+      history.push(ref);
+    }
+  }); 
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    console.log("En submit");
+    let body = { "usuario": usuario, "contraseña": contrasenia }
+    //console.log(body);
+    dispatch(getEmprendedorCuenta(body));
+    setRef("/emprendedor/home")
+  }
+  
+
 
   return (
     <Container component="main" maxWidth="xs">
@@ -63,7 +92,7 @@ export default function Page({ func }: { func: any }) {
             name="email"
             autoComplete="email"
             autoFocus
-            onChange={updateEmail}
+            onChange={(event) => setUsuario(event.target.value)}
           />
           <TextField
             variant="outlined"
@@ -75,6 +104,7 @@ export default function Page({ func }: { func: any }) {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={(event) => setContrasenia(event.target.value)}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -86,8 +116,8 @@ export default function Page({ func }: { func: any }) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            //onClick={login}
-            href="/emprendedor/home"
+            onClick={(event) => {submitHandler(event)}}
+            //href={ref}
           >
             {initData.button}
           </Button>

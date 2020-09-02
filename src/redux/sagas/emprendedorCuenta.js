@@ -18,14 +18,15 @@ import {
 } from '../actions/emprendedorCuenta';
 
 import { apiCall } from '../api';
-function* getEmprendedorCuenta({ idEmprendedorCuenta }) {
+function* getEmprendedorCuenta({emprendedorC}) {
+  //console.log("reducer",emprendedorC);
   try {
     const response = yield call(
       apiCall,
-      `/api/emprendedorcuenta/${idEmprendedorCuenta}`,
-      null,
-      null,
-      'GET'
+      `/api/emprendedorcuenta/valid`,
+      emprendedorC,//mybody
+      { 'Content-Type': 'application/json' },
+      'POST'
     );
     yield put({ type: GET_EMPCUENTA_COMPLETE, response });
   } catch (err) {
@@ -61,7 +62,8 @@ function* deleteEmprendedorCuenta({ idEmprendedorCuenta }) {
   } catch (err) {
     yield put({ type: DELETE_EMPCUENTA_ERROR });
   }
-},
+}
+
 function* createEmprendedorCuenta(emprendedorCuenta) {
   try {
     //url, data, headers, method

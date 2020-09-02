@@ -15,9 +15,10 @@ export const DELETE_EMPCUENTA_ERROR = 'DELETE_EMPCUENTA_ERROR'
 export const DELETE_EMPCUENTA_COMPLETE = 'DELETE_EMPCUENTA_COMPLETE'
 
 //Son llamadas por los componentes
-export const getEmprendedorCuenta = ({idEmprendedorC}) => ({
-    type: GET_EMPCUENTA_START, idEmprendedorC
+export const getEmprendedorCuenta = (emprendedorC) => ({
+    type: GET_EMPCUENTA_START, emprendedorC
 })
+
 export const deleteEmprendedorCuenta = ({idEmprendedorC}) => ({
     type: DELETE_EMPCUENTA_START, idEmprendedorC
 })

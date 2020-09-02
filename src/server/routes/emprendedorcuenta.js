@@ -3,9 +3,15 @@ var router = express.Router();
 const emprendedorcuenta = require('../models/emprendedorcuenta');
 
 //GET
-router.get('/', function (req, res, next) {
+router.post('/valid', function (req, res, next) {
+  console.log("body", req.body)
   emprendedorcuenta
-    .findAll()
+    .findOne({
+      where: {
+        usuario:  req.body['usuario'],
+        contraseña: req.body['contraseña']
+      },
+    })
     .then((emprendedorcuenta) => {
       if (emprendedorcuenta) {
         res.json(emprendedorcuenta);

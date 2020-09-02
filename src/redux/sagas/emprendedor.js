@@ -53,15 +53,15 @@ function* deleteEmprendedor({ idEmprendedor }) {
     const response = yield call(
       apiCall,
       `/api/emprendedor/delete/${idEmprendedor}`,
-      emprendedor,
-      { 'Content-Type': 'application/json' },
-      'GET'//GET ES DELETE
+      null,
+      null,
+      'GET',//GET ES DELETE
     );
     yield put({ type: DELETE_EMPRENDEDOR_COMPLETE, response });
   } catch (err) {
     yield put({ type: DELETE_EMPRENDEDOR_ERROR });
   }
-},
+}
 function* createEmprendedor(emprendedor) {
   try {
     //url, data, headers, method
