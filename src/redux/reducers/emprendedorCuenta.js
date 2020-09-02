@@ -13,7 +13,8 @@ import {
 
 	CREATE_EMPCUENTA_START,
 	CREATE_EMPCUENTA_ERROR,
-	CREATE_EMPCUENTA_COMPLETE
+	CREATE_EMPCUENTA_COMPLETE,
+	GET_EMPRENDEDOR_SESION
 } from '../actions/emprendedorCuenta';
 
 export default function EMPCUENTA(
@@ -46,6 +47,9 @@ export default function EMPCUENTA(
 			return { state: "CREATE_ERROR", object: {} };
 		case CREATE_EMPCUENTA_COMPLETE:
 			return { state: "CREATE_COMPLETE", object: response.data };
+
+		case GET_EMPRENDEDOR_SESION:
+			return state;
 		default:
 			return state;
 	}

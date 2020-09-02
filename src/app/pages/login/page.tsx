@@ -64,7 +64,7 @@ export default function Page({ func }: { func: any }) {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log("En submit");
+    //console.log("En submit");
     let body = { "usuario": usuario, "contraseña": contrasenia }
     //console.log(body);
     dispatch(getEmprendedorCuenta(body));

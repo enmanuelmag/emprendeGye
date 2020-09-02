@@ -4,7 +4,7 @@ const emprendedorcuenta = require('../models/emprendedorcuenta');
 
 //GET
 router.post('/valid', function (req, res, next) {
-  console.log("body", req.body)
+  //console.log("body", req.body)
   emprendedorcuenta
     .findOne({
       where: {

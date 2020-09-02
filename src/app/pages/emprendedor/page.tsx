@@ -30,9 +30,11 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   emprendedor as emprendedorSelector,
+  emprendedorCuenta as emprendedorCuentaSelector,
   email as emailSelector,
 } from '../../../redux/selectors';
 import { getEmprendedor } from '../../../redux/actions/emprendedor';
+import { getSesionEmprendedor } from '../../../redux/actions/emprendedorCuenta';
 import { sendEmail } from 'redux/actions/enviarEmail';
 import { enqueueSnackbar, removeSnackbar } from 'redux/actions/notifier';
 
@@ -43,6 +45,8 @@ export default function DenseAppBar() {
   const [drawerActivate, setDrawerActivate] = useState(false);
   const [drawer, setDrawer] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const emprendedorCuenta = useSelector((state) => emprendedorCuentaSelector(state));
+
   const emprendedor = useSelector((state) => emprendedorSelector(state));
   const email = useSelector((state) => emailSelector(state));
 
@@ -51,11 +55,23 @@ export default function DenseAppBar() {
   const [openDialog, setOpenDialog] = React.useState(false);
 
   useEffect(() => {
-    if (!emprendedor) {
-      console.log('e4');
-      dispatch(getEmprendedor({ idEmprendedor: '1' }));
+    if(!emprendedor && emprendedorCuenta && Object.keys(emprendedorCuenta).length>0 ){
+      console.log("home", emprendedorCuenta)
+      dispatch(getEmprendedor({ idEmprendedor: emprendedorCuenta.idEmprendedor }));
     }
+  },[emprendedorCuenta, dispatch, emprendedor]);
 
+  useEffect(() => {
+    if (!emprendedorCuenta) {
+      dispatch(getSesionEmprendedor());
+    }
+  },[emprendedorCuenta, dispatch]);
+
+  
+
+
+  useEffect(() => {
+    
     switch (email.state) {
       case 'START':
         dispatch(
@@ -93,7 +109,7 @@ export default function DenseAppBar() {
         handleClose();
         break;
     }
-  }, [email, emprendedor, dispatch]);
+  }, [email, emprendedor, dispatch, emprendedorCuenta]);
 
   console.log(emprendedor);
 
