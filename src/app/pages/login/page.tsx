@@ -18,7 +18,9 @@ import {
   emprendedorCuenta as emprendedorCuentaSelector,
 } from '../../../redux/selectors';
 import { getEmprendedorCuenta } from '../../../redux/actions/emprendedorCuenta';
-
+import { useForm, Controller } from "react-hook-form";
+//import { Checkbox, Input } from "@material-ui/core";
+//import { Input as AntdInput } from "antd";
 import style from './style';
 
 function Copyright() {
@@ -36,12 +38,19 @@ function Copyright() {
 
 export default function Page({ func }: { func: any }) {
   const classes = style();
-  //console.log(func);
   const [usuario, setUsuario] = useState("");
   const [contrasenia, setContrasenia] = useState("");
   const [ref, setRef] = useState("/login");
   const history = useHistory();
-  //const { updateEmail } = func;
+  const { register, handleSubmit, errors } = useForm();
+
+  const onSubmit = data => {
+    //alert(JSON.stringify(data));
+    let body = { "usuario": usuario, "contraseña": contrasenia }
+    //console.log(body);
+    //dispatch(getEmprendedorCuenta(body));
+    setRef("/emprendedor/home")
+  };
   const dispatch = useDispatch();
   const emprendedorCuenta = useSelector((state) => emprendedorCuentaSelector(state));
 
@@ -70,6 +79,19 @@ export default function Page({ func }: { func: any }) {
     dispatch(getEmprendedorCuenta(body));
     setRef("/emprendedor/home")
   }
+  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+  const validUserFun =  async  () => {
+    let body = { "usuario": usuario, "contraseña": contrasenia }
+    dispatch(getEmprendedorCuenta(body));
+    await sleep(2000);
+    if (emprendedorCuenta && Object.keys(emprendedorCuenta).length > 0){
+      return true;
+    }else{
+      return false;
+    }
+    
+  }
   
 
 
@@ -81,7 +103,7 @@ export default function Page({ func }: { func: any }) {
         <Typography className={classes.title} component="h1" variant="h5">
           {initData.title}
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={handleSubmit(onSubmit)} >
           <TextField
             variant="outlined"
             margin="normal"
@@ -93,7 +115,11 @@ export default function Page({ func }: { func: any }) {
             autoComplete="email"
             autoFocus
             onChange={(event) => setUsuario(event.target.value)}
-          />
+            inputRef={register({ required: true, validate: validUserFun})}
+          />{errors.email && errors.email.type === "required" 
+          && (<p className={classes.validateError}>Ingrese un email válido</p>)}
+      {errors.email && errors.email.type === "validate" 
+          && (<p className={classes.validateError}>Credenciales inválidas</p>)}
           <TextField
             variant="outlined"
             margin="normal"
@@ -105,7 +131,12 @@ export default function Page({ func }: { func: any }) {
             id="password"
             autoComplete="current-password"
             onChange={(event) => setContrasenia(event.target.value)}
+            inputRef={register({ required: true})}
           />
+          {errors.email && errors.email.type === "required" 
+          && (<p className={classes.validateError}>Ingrese su contraseña</p>)}
+          {errors.password && errors.password.type === "validate" 
+          && (<p className={classes.validateError}>Credenciales inválidas</p>)}
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label={initData.remember}
@@ -116,8 +147,6 @@ export default function Page({ func }: { func: any }) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={(event) => {submitHandler(event)}}
-            //href={ref}
           >
             {initData.button}
           </Button>

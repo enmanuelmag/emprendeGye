@@ -16,7 +16,7 @@ router.post('/valid', function (req, res, next) {
       if (emprendedorcuenta) {
         res.json(emprendedorcuenta);
       } else {
-        res.send('No existe ningún emprendedor');
+        res.send({});
       }
     })
     .catch((err) => {

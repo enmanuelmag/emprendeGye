@@ -21,4 +21,7 @@ export default makeStyles((theme) => ({
   title: {
     fontWeight: 'bold',
   },
+  validateError: {
+    color: "red",
+  }
 }));
