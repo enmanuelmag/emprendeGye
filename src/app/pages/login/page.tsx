@@ -84,7 +84,7 @@ export default function Page({ func }: { func: any }) {
   const validUserFun =  async  () => {
     let body = { "usuario": usuario, "contraseña": contrasenia }
     dispatch(getEmprendedorCuenta(body));
-    await sleep(2000);
+    await sleep(3000);
     if (emprendedorCuenta && Object.keys(emprendedorCuenta).length > 0){
       return true;
     }else{
