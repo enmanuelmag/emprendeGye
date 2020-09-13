@@ -38,7 +38,7 @@ export default function Home() {
         <Grid container>
             <Grid item md={5} xs={12}>
                 <Grid container direction="column"  xs={12}>
-                    <Grid className="saludo" item xs={12}>
+                    <Grid id="saludo" className="saludo" item xs={12}>
                         <Saludo />
                     </Grid>
                     <Grid id="actividades" className={classes.container} item xs={12} >
@@ -59,16 +59,16 @@ export default function Home() {
                 <Grid id="retroalimentacion" className="retroalimentacion" item xs={12}>
                     <Retroalimentación peopleCard={feed} />
                 </Grid>
-                <Grid item xs={12} lg={6}>
+                <Grid id="graficaHistoricoEmprendimiento" item xs={12} lg={6}>
                     <HistoricoEmprendimientos/>
                 </Grid>
-                <Grid item xs={12} lg={6}>
+                <Grid id="graficaAsesoriasAnio" item xs={12} lg={6}>
                     <AsesoriasAnio/>
                 </Grid>
-                <Grid item xs={12} lg={6}>
+                <Grid id="graficaInversinistasAngeles" item xs={12} lg={6}>
                     <InversionistasAngeles />
                 </Grid>
-                <Grid item xs={12} lg={6}>
+                <Grid id="graficaCapitalSemilla" item xs={12} lg={6}>
                     <CapitalSemilla />
                 </Grid>
             </Grid>
