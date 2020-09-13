@@ -1,12 +1,13 @@
 import React from 'react';
 import imagePathfooter from './emprendedor/assets/logodark.svg';
-import { Grid } from '@material-ui/core';
+import { Grid, Container } from '@material-ui/core';
 import style from './style';
 import { ColorButton } from './style';
 export default function home() {
   const classes = style();
 
   return (
+      <Container maxWidth={'lg'}>
       <Grid container spacing={3} className={classes.app}>
         <Grid item xs={12}>
           <img className={classes.imagen} src={imagePathfooter} alt="Logo" />
@@ -57,5 +58,6 @@ export default function home() {
           </Grid>
         </Grid>
       </Grid>
+      </Container>
   );
 }

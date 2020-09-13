@@ -3,15 +3,8 @@ import { makeStyles } from '@material-ui/core';
 export default makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
-	},
-	paper: {
-		padding: theme.spacing(2),
-		textAlign: 'center',
-		color: theme.palette.text.secondary,
-    },
-    
-    gridItem: {
-        alignItems:'stretch',
+	},    
+    image: {
         display: 'block',
         margin: 'auto',
     },
@@ -23,9 +16,24 @@ export default makeStyles((theme) => ({
     textPerfil: {
         textAlign: 'center',
         marginTop: '4%',
-        // marginRight: '13%',
-        // marginLeft: '5%',
-        // margin: '0px',
         padding: '0px !important',
-    }
+    },
+    border: {
+        border: 'solid',
+        borderColor: 'transparent'
+    },
+    table: {
+        maxWidth: 500,
+        border: 'solid 1px #d9d9d9',
+        borderRadius: '7px',
+        marginTop: '3rem',
+      },
+    title: {
+        fontWeight: 'bold',
+    },
+    center: {
+		display: 'block',
+        margin: 'auto',
+        textTransform: 'none',
+	},
 }));
