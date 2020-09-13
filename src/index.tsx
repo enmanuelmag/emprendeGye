@@ -4,12 +4,15 @@ import './index.css';
 import HomeRoutes from './app/routes/home';
 //import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
+import { SnackbarProvider } from 'notistack';
 import storeFn from './redux/store';
 const store = storeFn();
 
 ReactDOM.render(
   <Provider store={store}>
-    <HomeRoutes />,
+    <SnackbarProvider>
+      <HomeRoutes />,
+    </SnackbarProvider>
   </Provider>,
   document.getElementById('root')
 );

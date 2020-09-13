@@ -10,6 +10,7 @@ var emprendimientoStats = require(path.join(__dirname, 'routes', 'emprendimiento
 var emprendedorcuenta = require(path.join(__dirname, 'routes', 'emprendedorcuenta'));
 //path.join(__dirname, 'database', 'db')
 var emailRoutes = require(path.join(__dirname, 'routes', 'email.routes'));
+//var utilRoutes = require(path.join(__dirname, 'routes', 'util'));
 
 //CONEXION CON LA BASE DE DATOS EN CLEVER CLOUD
 sequelize
@@ -37,6 +38,7 @@ app.use('/api/emprendedor', emprendedor);
 app.use('/api/emprendimiento', emprendimiento);
 app.use('/api/emprendedorcuenta', emprendedorcuenta);
 app.use('/api/emprendimientoStats', emprendimientoStats);
+//app.use('/api/util', utilRoutes);
 
 app.use(cors());
 

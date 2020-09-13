@@ -41,12 +41,12 @@ export default function Home() {
                     <Grid className="saludo" item xs={12}>
                         <Saludo />
                     </Grid>
-                    <Grid className={classes.container} item xs={12} >
+                    <Grid id="actividades" className={classes.container} item xs={12} >
                         <Actividades />
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid className={classes.plot} item md={7} xs={12}>
+            <Grid id="plot" className={classes.plot} item md={7} xs={12}>
                 <Curva />
             </Grid> 
             <Grid
@@ -56,7 +56,7 @@ export default function Home() {
                 alignItems="flex-start"
                 className={classes.container}
             >
-                <Grid className="retroalimentacion" item xs={12}>
+                <Grid id="retroalimentacion" className="retroalimentacion" item xs={12}>
                     <Retroalimentación peopleCard={feed} />
                 </Grid>
                 <Grid item xs={12} lg={6}>

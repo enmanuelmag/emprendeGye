@@ -21,6 +21,7 @@ router.get('/', function (req, res, next) {
 
 //GET CON ID
 router.get('/:id', function (req, res, next) {
+  console.log("body", req.params.id)
   emprendedor
     .findOne({
       where: {
