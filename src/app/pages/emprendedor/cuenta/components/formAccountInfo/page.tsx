@@ -1,27 +1,37 @@
 import React from 'react';
 
 import style from './style';
-import { TextField, Button, Typography } from '@material-ui/core';
+import { TextField, Typography } from '@material-ui/core';
 
 export default function page() {
-	const classes = style();
+    const classes = style();
+    
+    let emprendedorCuenta = localStorage.getItem('emprendedorCuenta');
+    const emprendedorCuentaData = JSON.parse(emprendedorCuenta || "{}");
+
+    let emprendedor = localStorage.getItem('emprendedor');
+    const emprendedorData = JSON.parse(emprendedor || "{}");
+
 	return (
 		<form className={classes.root} autoComplete='off'>
             <Typography variant='body1'>
                 Cuenta:
             </Typography>
 			<TextField
-				id='outlined-basic'
-				required
+				id='email'
+                required
+                disabled
 				type='email'
-				label='Correo'
+                label='Correo'
+                defaultValue= {emprendedorCuentaData.usuario ? emprendedorCuentaData.usuario+"@gmail.com" : ""}
 				variant='outlined'
 			/>
 			<TextField
-				id='outlined-basic'
-				required
+				id='telf'
+                required
 				type='tel'
-				label='Teléfono'
+                label='Teléfono'
+                defaultValue= {emprendedorData.telefono || ""}
 				variant='outlined'
 			/>
 		</form>

@@ -8,8 +8,8 @@ import FormAccountInfo from './components/formAccountInfo';
 import FormBasicInfo from './components/formBasicInfo';
 import Image from './components/image';
 
-export default function page() {
-	const classes = style();
+export default function Page() {
+    const classes = style();
 
 	return (
         <Container maxWidth={'lg'} className={classes.root}>
@@ -33,7 +33,7 @@ export default function page() {
                         <TableBody>
                             <TableRow>
                                 <TableCell>
-                                    <FormBasicInfo />
+                                    <FormBasicInfo/>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
