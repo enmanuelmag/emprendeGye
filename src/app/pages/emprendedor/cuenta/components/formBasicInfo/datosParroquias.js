@@ -57,10 +57,6 @@ export default {
             label : "XIMENA"
         },
         {
-            value: "pascuales",
-            label : "PASCUALES"
-        },
-        {
             value: "guayaquil",
             label : "GUAYAQUIL"
         },
