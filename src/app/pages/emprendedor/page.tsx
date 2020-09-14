@@ -23,6 +23,7 @@ import {
 import imagePath from './assets/logobarr.svg';
 
 import Notifier from 'app/utils/Notifier';
+import CuentaOptions from './cuentaOptions';
 import style from './style';
 import MenuIcon from '@material-ui/icons/Menu';
 import ExpandLess from '@material-ui/icons/ExpandLess';
@@ -36,7 +37,7 @@ import {
 import { getEmprendedor } from '../../../redux/actions/emprendedor';
 import { getSesionEmprendedor } from '../../../redux/actions/emprendedorCuenta';
 import { sendEmail } from 'redux/actions/enviarEmail';
-import { enqueueSnackbar, removeSnackbar } from 'redux/actions/notifier';
+import { enqueueSnackbar } from 'redux/actions/notifier';
 
 export default function DenseAppBar() {
   const classes = style();
@@ -45,8 +46,8 @@ export default function DenseAppBar() {
   const [drawerActivate, setDrawerActivate] = useState(false);
   const [drawer, setDrawer] = React.useState(false);
   const [open, setOpen] = React.useState(false);
-  const emprendedorCuenta = useSelector((state) => emprendedorCuentaSelector(state));
 
+  const emprendedorCuenta = useSelector((state) => emprendedorCuentaSelector(state));
   const emprendedor = useSelector((state) => emprendedorSelector(state));
   const email = useSelector((state) => emailSelector(state));
 
@@ -56,19 +57,23 @@ export default function DenseAppBar() {
 
   useEffect(() => {
     if(!emprendedor && emprendedorCuenta && Object.keys(emprendedorCuenta).length>0 ){
-      console.log("home", emprendedorCuenta)
       dispatch(getEmprendedor({ idEmprendedor: emprendedorCuenta.idEmprendedor }));
+      localStorage.setItem('emprendedorCuenta', JSON.stringify(emprendedorCuenta));
     }
   },[emprendedorCuenta, dispatch, emprendedor]);
+
+  useEffect(() => {
+      console.log('BEFORE IF ', emprendedor);
+    if(emprendedor){
+        localStorage.setItem('emprendedor', JSON.stringify(emprendedor));
+    }
+  },[emprendedor]);
 
   useEffect(() => {
     if (!emprendedorCuenta) {
       dispatch(getSesionEmprendedor());
     }
   },[emprendedorCuenta, dispatch]);
-
-  
-
 
   useEffect(() => {
     
@@ -110,8 +115,6 @@ export default function DenseAppBar() {
         break;
     }
   }, [email, emprendedor, dispatch, emprendedorCuenta]);
-
-  console.log(emprendedor);
 
   useEffect(() => {
     if (display) {
@@ -348,10 +351,7 @@ export default function DenseAppBar() {
                     <Link className={classes.link} href="/emprendedor/notas">
                       Notas
                     </Link>
-
-                    <Link className={classes.link} href="/emprendedor/cuenta">
-                      Cuenta
-                    </Link>
+                    <CuentaOptions/>
                   </Typography>
                 </Grid>
               </Grid>
@@ -381,8 +381,6 @@ export default function DenseAppBar() {
 
   const clickEmail = (event) => {
     event.preventDefault();
-    console.log(infoContact);
-
     dispatch(sendEmail(infoContact));
   };
 
