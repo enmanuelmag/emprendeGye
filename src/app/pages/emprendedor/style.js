@@ -101,17 +101,5 @@ export default makeStyles((theme) =>
     nested: {
       paddingLeft: theme.spacing(2),
     },
-    // sectionDesktop: {
-    //     display: 'none',
-    //     [theme.breakpoints.up('md')]: {
-    //         display: 'flex',
-    //     },
-    // },
-    // sectionMobile: {
-    //     display: 'flex',
-    //     [theme.breakpoints.up('md')]: {
-    //         display: 'none',
-    //     },
-    // },
   })
 );
