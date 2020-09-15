@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const emprendimiento = require('../models/emprendimiento');
-
+const emprendimientoStats = require('../models/emprendimientoStats');
 //GET
 router.get('/', function (req, res, next) {
   emprendimiento
@@ -27,6 +27,10 @@ router.get('/:id', function (req, res, next) {
       where: {
         idEmprendimiento: req.params.id,
       },
+      include: [{
+        model: emprendimientoStats, as: "emprendimientostats"
+      }
+      ]
     })
     .then((emprendimiento) => {
       if (emprendimiento) {

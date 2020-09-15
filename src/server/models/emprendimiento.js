@@ -1,7 +1,8 @@
 const Sequelize = require("Sequelize");
 const db = require("../database/db.js");
+const emprendimientoStats = require("./emprendimientoStats");
 
-module.exports = db.sequelize.define(
+var emprendimiento = db.sequelize.define(
     "emprendimiento",
     {
         idEmprendimiento: {
@@ -25,3 +26,7 @@ module.exports = db.sequelize.define(
         },   
     },{ freezeTableName: true,timestamps: false}
 )
+
+emprendimiento.hasOne(emprendimientoStats, {as: 'emprendimientostats',
+foreignKey: "idEmprendimientoStats"});
+module.exports = emprendimiento;
