@@ -9,6 +9,7 @@ var emprendimiento = require(path.join(__dirname, 'routes', 'emprendimiento'));
 var emprendimientoStats = require(path.join(__dirname, 'routes', 'emprendimientoStats'));
 var emprendedorcuenta = require(path.join(__dirname, 'routes', 'emprendedorcuenta'));
 var emprendimientoInversionista = require(path.join(__dirname, 'routes', 'emprendimientoInversionista'));
+var inversionista = require(path.join(__dirname, 'routes', 'inversionista'));
 //path.join(__dirname, 'database', 'db')
 var emailRoutes = require(path.join(__dirname, 'routes', 'email.routes'));
 //var utilRoutes = require(path.join(__dirname, 'routes', 'util'));
@@ -36,6 +37,7 @@ app.set('port', process.env.PORT || PORT);
 //app.use("/", index);
 app.use('/email', emailRoutes);
 app.use('/api/emprendedor', emprendedor);
+app.use('/api/inversionista', inversionista);
 app.use('/api/emprendimiento', emprendimiento);
 app.use('/api/emprendedorcuenta', emprendedorcuenta);
 app.use('/api/emprendimientoStats', emprendimientoStats);

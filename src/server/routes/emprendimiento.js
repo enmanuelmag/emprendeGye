@@ -5,7 +5,12 @@ const emprendimientoStats = require('../models/emprendimientoStats');
 //GET
 router.get('/', function (req, res, next) {
   emprendimiento
-    .findAll()
+    .findAll({
+      include: [{
+        model: emprendimientoStats, as: "emprendimientostats"
+      }
+      ]
+    })
     .then((emprendimiento) => {
       if (emprendimiento) {
         //console.log(emprendedor);

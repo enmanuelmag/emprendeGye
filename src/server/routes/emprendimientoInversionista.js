@@ -6,7 +6,16 @@ const inversionista = require("../models/inversionista");
 //GET
 router.get('/', function (req, res, next) {
   emprendimientoInversionista
-    .findAll()
+    .findAll({
+      include: [
+        {
+        model: emprendimiento, as: "emprendimiento",
+      },
+      {
+        model: inversionista, as: "inversionista",
+      }
+      ]
+    })
     .then((emprendimientoInversionista) => {
       if (emprendimientoInversionista) {
         //console.log(emprendedor);
@@ -24,11 +33,12 @@ router.get('/', function (req, res, next) {
 //GET CON ID
 router.get('/:idInversionista', function (req, res, next) {
   emprendimientoInversionista
-    .findOne({
+    .findAll({
       where: {
         idInversionista: req.params.idInversionista,
       },
-      include: [{
+      include: [
+        {
         model: emprendimiento, as: "emprendimiento",
       },
       {
@@ -36,11 +46,11 @@ router.get('/:idInversionista', function (req, res, next) {
       }
       ]
     })
-    .then((emprendimiento) => {
-      if (emprendimiento) {
-        res.json(emprendimiento);
+    .then((emprendimientoInversionista) => {
+      if (emprendimientoInversionista) {
+        res.json(emprendimientoInversionista);
       } else {
-        console.log('No existe ningún emprendimiento con ese id');
+        console.log('No existe ningún emprendimientoInversionista con ese idInversionista');
       }
     })
     .catch((err) => {

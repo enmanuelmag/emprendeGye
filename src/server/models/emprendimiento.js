@@ -27,6 +27,6 @@ var emprendimiento = db.sequelize.define(
     },{ freezeTableName: true,timestamps: false}
 )
 
-emprendimiento.hasOne(emprendimientoStats, {as: 'emprendimientostats',
+emprendimiento.belongsTo(emprendimientoStats, {as: 'emprendimientostats',
 foreignKey: "idEmprendimientoStats"});
 module.exports = emprendimiento;
