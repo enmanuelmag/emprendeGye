@@ -22,11 +22,11 @@ router.get('/', function (req, res, next) {
 });
 
 //GET CON ID
-router.get('/:id', function (req, res, next) {
+router.get('/:idInversionista', function (req, res, next) {
   emprendimientoInversionista
     .findOne({
       where: {
-        idEmprendimientoInversionista: req.params.id,
+        idInversionista: req.params.idInversionista,
       },
       include: [{
         model: emprendimiento, as: "emprendimiento",

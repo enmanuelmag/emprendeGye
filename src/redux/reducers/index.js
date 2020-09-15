@@ -5,6 +5,7 @@ import ganancias from './ganancias';
 import email from './enviarEmail';
 import notifier from './notifier';
 import emprendedorCuenta from "./emprendedorCuenta";
+import emprendimientoInversionista from "./emprendimientoInversionista";
 //import notifier from './notifier';
 
 export const initialState = {
@@ -13,7 +14,8 @@ export const initialState = {
   ganancias,
   email,
   notifier,
-  emprendedorCuenta
+  emprendedorCuenta,
+  emprendimientoInversionista
 };
 const STORE = combineReducers(initialState);
 

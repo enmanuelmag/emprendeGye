@@ -4,6 +4,10 @@ import emprendimiento from './emprendimiento';
 import ganancias from './ganancias';
 import email from './enviarEmail';
 import emprendedorCuenta from "./emprendedorCuenta";
+import emprendimientoInversionista from "./emprendimientoInversionista";
 export default function* rootSaga() {
-  yield all([emprendedor(), emprendimiento(), ganancias(), email(), emprendedorCuenta()]);
+  yield all([emprendedor(), 
+    emprendimiento(), ganancias(), 
+    email(), emprendedorCuenta(),
+    emprendimientoInversionista()]);
 }
