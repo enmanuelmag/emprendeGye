@@ -6,28 +6,28 @@ export default {
                 type: "bar",
                 stack: "Base",
                 backgroundColor: "#eece01",
-                data: [ 2000, 3000, 4000, 5000, 6000, 8000],
+                data: [ 0, 1, 1, 2, 0, 1],
             }, 
             {
                 label: "Agtech",
                 type: "bar",
                 stack: "Base",
                 backgroundColor: "#87d84d",
-                data: [ 500, 1000, 1500, 2000, 2500, 3000 ],
+                data: [ 1, 1, 2, 1, 1, 2 ],
             }, 
             {
                 label: "Healthtech",
                 type: "bar",
                 stack: "Base",
                 backgroundColor: "#f8981f",
-                data: [ 1500, 3000, 4000, 5500, 5700, 6000 ],
+                data: [ 1, 0, 1, 1, 1, 0 ],
             }, 
             {
                 label: "Biotech",
                 type: "bar",
                 stack: "Base",
                 backgroundColor: "#00b300",
-                data: [ 700, 1000, 1400, 2000, 2300, 3000 ]
+                data: [ 1, 1, 1, 2, 1, 1 ]
             }
         ]
 }

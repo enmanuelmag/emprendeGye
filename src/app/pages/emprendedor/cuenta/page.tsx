@@ -138,7 +138,7 @@ export default function Page() {
                                             disabled
                                             type='email'
                                             label='Correo'
-                                            defaultValue= {emprendedorCuenta.usuario ? emprendedorCuenta.usuario+"@gmail.com" : ""}
+                                            defaultValue= {emprendedorCuenta.usuario || ""}
                                             variant='outlined'
                                         />
                                         <TextField

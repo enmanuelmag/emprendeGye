@@ -16,7 +16,7 @@ export default {
                     '#007BCF',
                     '#FF7F00'
                 ],
-                data: [ 10, 50, 35, 20 ],
+                data: [ 4, 0, 4, 5 ],
             }
         ]
 }
