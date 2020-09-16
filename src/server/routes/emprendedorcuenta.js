@@ -49,9 +49,9 @@ router.get('/:id', function (req, res, next) {
 
 //POST
 router.post('/', function (req, res, next) {
-  console.log('post ', req.body);
+  console.log('post ', req.body.emprendedorC);
   emprendedorcuenta
-    .create(req.body)
+    .create(req.body.emprendedorC)
     .then((emprendedorcuenta) => {
       if (emprendedorcuenta) {
         res.json(emprendedorcuenta);
@@ -91,7 +91,7 @@ router.post('/update/:id', function (req, res, next) {
 
 //DELETE
 router.get('/delete/:id', function (req, res, next) {
-  console.log('Borrando ', req.body);
+  console.log('Borrando ', req.params);
   emprendedorcuenta
     .destroy({
       where: {

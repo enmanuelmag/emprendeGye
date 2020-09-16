@@ -45,7 +45,8 @@ export default function emprendedor(
 		case CREATE_EMPRENDEDOR_ERROR:
 			return { state: "CREATE_ERROR", object: {} };
 		case CREATE_EMPRENDEDOR_COMPLETE:
-			return { state: "CREATE_COMPLETE", object: response.data };
+            console.log(response);
+            return { state: "CREATE_COMPLETE", object: response.data };
 		default:
 			return state;
 	}

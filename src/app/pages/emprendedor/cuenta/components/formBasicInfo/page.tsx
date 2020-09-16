@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import style from './style';
 import { TextField, Typography } from '@material-ui/core';
 
@@ -12,6 +12,9 @@ export default function Page({ data }: { data: any }) {
 
     let emprendedor = localStorage.getItem('emprendedor');
     const emprendedorData = JSON.parse(emprendedor || "{}");
+    let  nombres = useRef(null);
+    let apellidos = useRef(null);
+    let nacimiento = useRef(null);
 
 	return (
 		<form className={classes.root} autoComplete='off'>
@@ -20,7 +23,8 @@ export default function Page({ data }: { data: any }) {
             </Typography>
 			<TextField
 				id = 'firstNames'
-				required
+                required
+                ref = {nombres}
 				type = 'text'
                 label = 'Nombres'
                 defaultValue = {emprendedorData.nombres || ""}
@@ -28,18 +32,20 @@ export default function Page({ data }: { data: any }) {
 			/>
 			<TextField
 				id='lastNames'
-				required
+                required
+                ref = {apellidos}
 				type='text'
                 label='Apellidos'
                 defaultValue = {emprendedorData.apellidos || ""}
-				variant='outlined'
+                variant='outlined'
 			/>
 			<TextField
 				id='birthDay'
-				required
+                required
+                ref = {nacimiento}
                 label='Fecha de nacimiento'
                 defaultValue = {emprendedorData.nacimiento || ""}
-				variant='outlined'
+                variant='outlined'
 			/>
             <TextField
                 id="parroquia"
@@ -59,14 +65,6 @@ export default function Page({ data }: { data: any }) {
                     </option>
                 ))}
             </TextField>
-            {/* <TextField
-				id='description'
-                required
-                label='Breve descripción'
-                multiline
-                rows={3}
-				variant='outlined'
-			/> */}
 		</form>
 	);
 }

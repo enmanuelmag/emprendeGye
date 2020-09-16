@@ -63,7 +63,6 @@ export default function DenseAppBar() {
   },[emprendedorCuenta, dispatch, emprendedor]);
 
   useEffect(() => {
-      console.log('BEFORE IF ', emprendedor);
     if(emprendedor){
         localStorage.setItem('emprendedor', JSON.stringify(emprendedor));
     }

@@ -48,13 +48,14 @@ function* updateEmprendedorCuenta(emprendedorCuenta) {
     yield put({ type: UPDATE_EMPCUENTA_ERROR });
   }
 }
-function* deleteEmprendedorCuenta({ idEmprendedorCuenta }) {
+function* deleteEmprendedorCuenta({ idEmprendedorC }) {
+    console.log("SAGA", idEmprendedorC);
   try {
     //url, data, headers, method
     const response = yield call(
       apiCall,
-      `/api/emprendedorcuenta/delete/${idEmprendedorCuenta}`,
-      idEmprendedorCuenta,
+      `/api/emprendedorcuenta/delete/${idEmprendedorC}`,
+      idEmprendedorC,
       { 'Content-Type': 'application/json' },
       'GET'//GET ES DELETE
     );
@@ -64,13 +65,13 @@ function* deleteEmprendedorCuenta({ idEmprendedorCuenta }) {
   }
 }
 
-function* createEmprendedorCuenta(emprendedorCuenta) {
+function* createEmprendedorCuenta(emprendedorC) {
   try {
     //url, data, headers, method
     const response = yield call(
       apiCall,
-      `/api/emprendedorcuenta/update`,
-      emprendedorCuenta,
+      `/api/emprendedorcuenta`,
+      emprendedorC,
       { 'Content-Type': 'application/json' },
       'POST'
     );

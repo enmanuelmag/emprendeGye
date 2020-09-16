@@ -43,9 +43,9 @@ router.get('/:id', function (req, res, next) {
 
 //POST
 router.post('/', function (req, res, next) {
-  console.log('post ', req.body);
+  console.log('ESTE ES post ', req.body.emprendedor);
   emprendedor
-    .create(req.body)
+    .create(req.body.emprendedor)
     .then((emprendedor) => {
       if (emprendedor) {
         res.json(emprendedor);
@@ -62,11 +62,12 @@ router.post('/', function (req, res, next) {
 
 //PUT
 router.post('/update/:id', function (req, res, next) {
-  console.log('update ', req.body);
+  console.log('update ', req.body.emprendedor);
+  console.log('params', req.params);
   emprendedor
-    .update(req.body, {
+    .update(req.body.emprendedor, {
       where: {
-        idEmprendedor: req.params.id,
+        idEmprendedor: req.body.emprendedor.idEmprendedor,
       },
     })
     .then((emprendedor) => {
