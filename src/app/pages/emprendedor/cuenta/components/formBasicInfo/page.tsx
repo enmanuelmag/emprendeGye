@@ -10,29 +10,35 @@ export default function Page({ data }: { data: any }) {
         setParroquia(event.target.value);
     };
 
+    let emprendedor = localStorage.getItem('emprendedor');
+    const emprendedorData = JSON.parse(emprendedor || "{}");
+
 	return (
 		<form className={classes.root} autoComplete='off'>
             <Typography variant='body1'>
                 Información básica:
             </Typography>
 			<TextField
-				id='firstNames'
+				id = 'firstNames'
 				required
-				type='text'
-				label='Nombres'
-                variant='outlined'
+				type = 'text'
+                label = 'Nombres'
+                defaultValue = {emprendedorData.nombres || ""}
+                variant = 'outlined'
 			/>
 			<TextField
 				id='lastNames'
 				required
 				type='text'
-				label='Apellidos'
+                label='Apellidos'
+                defaultValue = {emprendedorData.apellidos || ""}
 				variant='outlined'
 			/>
 			<TextField
 				id='birthDay'
 				required
-				label='Fecha de nacimiento'
+                label='Fecha de nacimiento'
+                defaultValue = {emprendedorData.nacimiento || ""}
 				variant='outlined'
 			/>
             <TextField
@@ -53,14 +59,14 @@ export default function Page({ data }: { data: any }) {
                     </option>
                 ))}
             </TextField>
-            <TextField
+            {/* <TextField
 				id='description'
                 required
                 label='Breve descripción'
                 multiline
                 rows={3}
 				variant='outlined'
-			/>
+			/> */}
 		</form>
 	);
 }
