@@ -67,7 +67,7 @@ function* createEmprendedor(emprendedor) {
     //url, data, headers, method
     const response = yield call(
       apiCall,
-      `/api/emprendedor/update`,
+      `/api/emprendedor`,
       emprendedor,
       { 'Content-Type': 'application/json' },
       'POST'

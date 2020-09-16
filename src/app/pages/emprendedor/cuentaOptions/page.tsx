@@ -10,13 +10,45 @@ import {
     Link
 } from '@material-ui/core';
 
+import { deleteEmprendedorCuenta } from '../../../../redux/actions/emprendedorCuenta';
+import { useDispatch } from 'react-redux';
+
 export default function Cuenta() {
   const classes = style();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLButtonElement>(null);
+  const dispatch = useDispatch();
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
+  };
+
+  const emprendedorCuenta = JSON.parse(localStorage.getItem("emprendedorCuenta") || "{}");
+
+  const handleCloseDelete = (event: React.MouseEvent<EventTarget>) => {
+    if (
+      anchorRef.current &&
+      anchorRef.current.contains(event.target as HTMLElement)
+    ) {
+      console.log("id",emprendedorCuenta.idEmprendedor);
+      console.log("DELETING",dispatch(deleteEmprendedorCuenta({idEmprendedorC: emprendedorCuenta.idEmprendedor})));
+      localStorage.removeItem("emprendedorCuenta");
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const handleCloseCerrarSesion = (event: React.MouseEvent<EventTarget>) => {
+    if (
+      anchorRef.current &&
+      anchorRef.current.contains(event.target as HTMLElement)
+    ) {
+        localStorage.removeItem("emprendedorCuenta");
+      return;
+    }
+
+    setOpen(false);
   };
 
   const handleClose = (event: React.MouseEvent<EventTarget>) => {
@@ -88,7 +120,7 @@ export default function Cuenta() {
                         Ver perfil
                         </Link>
                     </MenuItem>
-                    <MenuItem onClick={handleClose}>
+                    <MenuItem onClick={handleCloseDelete}>
                         <Link
                         href="/"
                         className={classes.link}
@@ -97,7 +129,7 @@ export default function Cuenta() {
                         Eliminar cuenta
                         </Link>
                     </MenuItem>
-                    <MenuItem onClick={handleClose}>
+                    <MenuItem onClick={handleCloseCerrarSesion}>
                         <Link
                         href="/login"
                         className={classes.link}
