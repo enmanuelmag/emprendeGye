@@ -32,7 +32,7 @@
 		"moment": "^2.24.0",
 		"mongoose": "^5.9.9",
 		"mysql2": "^2.1.0",
-		"node-sass": "^4.14.1",
+		"node-sass": "^7.0.0",
 		"nodemailer": "^6.4.11",
 		"notistack": "^1.0.0",
 		"prop-types": "^15.7.2",
